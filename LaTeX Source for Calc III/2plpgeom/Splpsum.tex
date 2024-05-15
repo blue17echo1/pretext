@@ -1,0 +1,64 @@
+\renewcommand\thesubsection{\thesection.\Alph{subsection}}
+\setcounter{subsection}{18}
+\subsection{Points, Lines and Planes Summary}
+\begin{definition}{Forms of a Plane}
+\begin{itemize}
+\item \textbf{Standard Form:} $$ax+by+cz=d\text{ where }\bmat{a\\b\\c}\text{ is the normal vector.} $$
+\item \textbf{Parametric Form:} Let $\vcr_0$ lie in the plane and $\vcd_1$ and $\vcd_2$ be independent vectors parallel to the plane. Then the plane can be parameterized as:
+$$\vcr(s,t)=\vcr_0+\vcd_1 s+\vcd_2 t.$$
+\item \textbf{Vector-Dot Product Form:} Let $$\vcr_0=\bmat{x_0\\y_0\\z_0}$$ lie in the plane and $$\vcn=\bmat{a\\b\\c} $$ be normal to the plane. Then we can write the plane as
+\begin{align*}
+(\vcx-\vcr_0)\bullet \vcn=&0\\
+\bmat{x-x_0\\y-y_0\\z-z_0}\bullet\bmat{a\\b\\c}=&0\\
+a(x-x_0)+b(y-y_0)+c(z-z_0)=&0.
+\end{align*}
+\end{itemize}
+\end{definition}
+
+\begin{definition}{Forms of a Line}
+Let $\vcd=\bmat{a\\b\\c}$ be the direction vector and $\vcx=\bmat{x_0\\y_0\\z_0}$ be a point the line passes through.
+\begin{itemize}
+\item \textbf{Parametric Form:} The line that passes through $\vcx$ with direction $\vcd$ is given in parametric form as $$\vcr(t)=\vcd\cdot t+\vcx. $$
+\item \textbf{Symmetric Form:} The line that passes through $\vcx$ with direction $\vcd$ can be described using the symmetric form equation $$\vcd=\bmat{a\\b\\c} $$ is $$\frac{x-x_0}{a}=\frac{y-y_0}{b}=\frac{z-z_0}{c}.$$
+\item \textbf{``Standard" Form:} The line that passes through $\vcx$ with direction $\vcd$ can also be given by the intersection of two planes with normal vectors $\vcn_1$ and $\vcn_2$ where $\vcn_1\times\vcn_2=\pm\vcd$ and $\vcx$ lies in both planes.
+\end{itemize}
+\end{definition}
+
+\begin{definition}{Distance from Point, Line or Plane to Plane}
+\begin{itemize}
+\item To find the distance between a point $P$ and a plane, you should pick some point $Q$ in the plane. Then take the vector between $P$ and $Q$, and project that vector onto the normal vector of the plane, that is the distance $d$ is found as $$d=\proj{\vcp-\vcq}{\vcn} $$ where $\vcp$ is the vector that represents the point $P$ and $\vcq$ is the vector that represents the point $Q$.
+
+\vspace{1em}
+
+\item To find the distance between a line and a plane, check to see if the line intersects the plane. If the direction of the line and normal vector to the plane are perpendicular, then the line does not intersect the plane unless it coincides with the plane. Otherwise, they intersect and the distance is zero. If they do not intersect, then pick any point $P$ on the line and find the distance between $P$ and the plane.
+
+\vspace{1em}
+
+\item To find the distance between two planes, first check to see if the planes are parallel by checking if the normal vectors are parallel. If they are not parallel, then the distance between the two is zero. If they \textit{are} parallel, then pick any point $P$ on one of the two planes and find the distance between $P$ and the other plane.
+\end{itemize}
+\end{definition}
+
+\begin{definition}{Point to Line}
+
+To find the distance between a point $P$ and a line, pick some point $Q$ on the line, then use the formula $$d=\frac{||(\vcp-\vcq)\times\vcd||}{||\vcd||} $$ where $\vcp$ is the vector the represents the point $P$, $\vcq$ is the vector that represents the point $Q$, and $\vcd$ is the direction vector of the line.
+\end{definition}
+
+\begin{definition}{Line to Line}
+\begin{itemize}
+\item If the two lines are \textit{parallel} to each other, pick a point $P$ on one of the two lines, then proceed to use point to line to find the distance between $P$ and the other line.
+
+\vspace{1em}
+
+\item If the two lines are \textit{skew} to each other, then use the direction vectors of the two lines and a point $Q$ on one of the two lines to generate a plane that is parallel to both lines and contains one of the lines. Then proceed with finding the distance between the other line and your new plane.
+\end{itemize}
+\end{definition}
+
+\subsubsection*{Companion Videos by Ken Monks}
+\begin{itemize}
+\item \href{https://www.youtube.com/watch?v=ZVJzzVEpwsQ}{Planes in 3D.}
+\item \href{https://www.youtube.com/watch?v=H0yZECa1HZA}{Lines in 3D.}
+\item \href{https://www.youtube.com/watch?v=xxpIPthhOUg}{Distance between Points, Lines and Planes in 3D, Part 1.}
+\item\href{https://www.youtube.com/watch?v=LIsp59EGbnk}{Distance between Points, Lines and Planes in 3D, Part 2.}
+\end{itemize}
+
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}

@@ -1,0 +1,59 @@
+\renewcommand\thesubsection{\thesection.\Alph{subsection}}
+\setcounter{subsection}{18}
+\subsection{Partial Derivatives Summary}
+
+\begin{definition}{Partial Derivatives}
+\begin{itemize}
+\item The \textbf{partial derivative} of $f(x,y)$ with respect to $x$ is defined as the derivative of $f(x,y)$ with respect to $x$, while holding $y$ constant. It is written as $f_x$ or $\frac{\del f}{\del x}$. The partial differential operator with respect to $x$ is $\delx{}$. 
+\vspace{1em}
+\item The \textbf{partial derivative} of $f(x,y)$ with respect to $y$ is defined as the derivative of $f(x,y)$ with respect to $y$, while holding $x$ constant. It is written as $f_y$ or $\frac{\del f}{\del y}$. The partial differential operator with respect to $y$ is $\dely{}$. 
+\end{itemize}
+\end{definition}
+
+\begin{definition}{Tangent Plane}
+Let $f(x,y)$ be a surface. Then the plane tangent to $f(x,y)$ at the point $\big(x_0,y_0,f(x_0,y_0)\big)$ is $$\ell(x,y)=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0). $$
+\end{definition}
+
+ \begin{theorem}{{Clairaut-Schwarz Theorem}}
+Let $f(x,y)$ be a function $f:D\to\bbr$ where $D$ (the domain) is a subset of $\bbr^2$. Let $(x_0,y_0)$ be in $D$. Then, if some neighborhood of $(x_0,y_0)$ is contained in $D$ and $f_{xy}$ and $f_{yx}$ are continuous on that neighborhood, $$f_{xy}(x_0,y_0)=f_{yx}(x_0,y_0). $$
+ \end{theorem}
+
+ \begin{definition}{Gradient}
+Let $f(\vcx)$ be a function with an $n$-dimensional vector input. Then the \textbf{gradient} of $f(\vcx)$, written $\nabla f(\vcx)$ is defined as the $n$-dimensional vector:
+$$\nabla f(\vcx)=\bmat{\frac{\del f}{\del x_1}\\ \frac{\del f}{\del x_2}\\ \vdots \\ \frac{\del f}{\del x_n}}. $$
+In particular, if $f(x,y)$ is a surface in 3-d space, $$\nabla f(x,y)=\bmat{f_x\\f_y}.$$
+\end{definition}
+
+ \begin{definition}{Critical Points}
+Let $f(x,y)$ be a differentiable surface. Then if $\nabla f(x_0,y_0)$ does not exist, or $\nabla f(x_0,y_0)=\vzero$, we say that $f(x,y)$ has a critical point at $(x_0,y_0)$.
+\end{definition}
+
+\begin{definition}{Second Derivative Test, Multivariable Edition}
+Let $f(x,y)$ be a surface which has continuous second partials. Then define the discriminant, $$D(x,y)=f_{xx}f_{yy}-f_{xy}f_{yx}.$$ Let $f$ have a critical point at $(x_0,y_0)$. Then:
+\vspace{1em}
+\begin{itemize}
+\item If $D(x_0,y_0)<0$, $f$ has a saddle at $(x_0,y_0)$.
+\vspace{1em}
+\item If $D(x_0,y_0)=0$, the test gives no information.
+\vspace{1em}
+\item If $D(x_0,y_0)>0$ and $f_{xx}(x_0,y_0)>0$ (or $f_{yy}(x_0,y_0)>0$), $f$ has a local minimum at $(x_0,y_0)$.
+\vspace{1em}
+\item If $D(x_0,y_0)>0$ and $f_{xx}(x_0,y_0)<0$ (or $f_{yy}(x_0,y_0)<0$), $f$ has a local maximum at $(x_0,y_0)$.
+\end{itemize}
+\end{definition}
+
+\begin{theorem}{Lagrange Multipliers}
+Let $z=f(x_1,\ldots, x_n)$ be a function and $c=g(x_1,\ldots,x_n)$ be a constraint curve. Then any max or min of $f$ along $g(x,y)=c$ will be found at a point satisfying the equation $$\nabla f=\lambda \nabla g $$ where $\lambda$ is some constant.
+\end{theorem}
+
+\subsubsection*{Companion Videos by Ken Monks}
+\begin{itemize}
+\item \href{https://www.youtube.com/watch?v=7M0O_Y88wYM}{Surfaces and Contour Plots.}
+\item \href{https://www.youtube.com/watch?v=LmDz71ssyEA}{Partial Derivatives of Surfaces and Tangent Planes.}
+\item \href{https://www.youtube.com/watch?v=rNK0GXjsjEg}{Critical Points of Surfaces.}
+\item \href{https://www.youtube.com/watch?v=ontRtIlXu3A}{Gradients of Surfaces.}
+\item \href{https://www.youtube.com/watch?v=26h_eWSdcrA}{Lagrange Multipliers.}
+\item \href{https://www.youtube.com/watch?v=JVnyQUNnuSU}{Lagrange Multipliers and the Multivariable Extreme Value Theorem.}
+\end{itemize}
+
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}

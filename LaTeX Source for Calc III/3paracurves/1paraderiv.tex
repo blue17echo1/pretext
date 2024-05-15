@@ -1,0 +1,57 @@
+\section{Parametric Curves}
+\hypertarget{paraderiv}{\subsection{Parametric Functions and their Derivatives}}
+
+Our first foray into multivariate calculus is functions with multiple outputs. The best way to scale this out is by using a \textbf{parametric} or \textbf{vector valued} function, which you should be mildly familiar with from Calculus II. But for the sake of completion:
+
+\begin{definition}{Parametric Functions}
+A \textbf{parametric function} or \textbf{vector-valued function} is a function $r:\bbr\to\bbr^n$. We usually write a parametric function as an $n$-dimensional vector of functions, typically all with a placeholder input variable of $t$. That is: $$\vcr(t)=\bmat{x_1(t)\\x_2(t)\\ \vdots \\ x_n(t)}.$$
+
+\end{definition}
+
+\begin{definition}{Vector Function Derivative}
+We define the derivative of a vector-valued function componentwise. That is, if $$\vcr(t)=\bmat{x_1(t)\\x_2(t)\\ \vdots \\ x_n(t)},$$
+then
+\begin{align*}
+\vcr\hspace{0.2em}'(t)=&\frac{d}{dt}\big(\vcr(t)\big)\\
+=&\bmat{\frac{d}{dt}\big(x_1(t)\big)\\\frac{d}{dt}\big(x_2(t)\big)\\ \vdots \\ \frac{d}{dt}\big(x_n(t)\big)}\\
+=&\bmat{x_1'(t)\\x_2'(t)\\ \vdots \\ x_n'(t)}.
+\end{align*}
+\end{definition}
+
+As with the single variable derivative, this vector derivative follows some quite nice properties. In particular, linearity holds.
+
+\begin{claim}{Linearity of Vector Derivative}
+Let $\vec{r_1}(t)$ and $\vec{r_2}(t)$ be $n$ dimensional vector valued functions and let $c_1,c_2\in\bbr$. Then $$\left(c_1\vec{r_1}(t)+c_2 \vec{r_2}(t)\right)'=c_1\vec{r_1}'(t)+c_2\vec{r_2}'(t).$$ 
+\end{claim}
+
+We also get three distinct but almost identical product rules for our three distinct products, scalar, dot and cross.
+
+\begin{claim}{Scalar Product Rule}
+Let $\vcr(t)$ be a $n$-dimensional vector function and $f(t)$ be a scalar function. Then $$\big(f(t)\vcr(t)\big)'=f(t)\vcr\hspace{0.2em}'(t)+f'(t)\vcr(t).$$
+\end{claim}
+
+\begin{claim}{Dot Product Rule}
+Let $\vcr_1(t)$ and $\vcr_2(t)$ be $n$-dimensional vector functions. Then $$\big(\vcr_1(t)\bullet\vcr_2(t)\big)'=\vcr_1(t)\bullet\vcr_2\hspace{0.2em}'(t)+\vcr_1\hspace{0.2em}'(t)\bullet\vcr_2(t).$$
+\end{claim}
+
+\begin{claim}{Cross Product Rule}
+Let $\vcr_1(t)$ and $\vcr_2(t)$ be $3$-dimensional vector functions. Then $$\big(\vcr_1(t)\times\vcr_2(t)\big)'=\vcr_1(t)\times\vcr_2\hspace{0.2em}'(t)+\vcr_1\hspace{0.2em}'(t)\times\vcr_2(t).$$
+\end{claim}
+
+\begin{exercise}{Scalar Quotient Rule?}
+While it doesn't make any sense to divide a scalar by a vector or to divide two vectors using either of our vector products, we can certainly divide a vector by a scalar. Prove the scalar quotient rule. That is, let $$\vcr(t)=\bmat{x_1(t)\\x_2(t)\\ \vdots\\x_n(t)},$$ and $f(t)$ be a scalar function. Prove that $$\left(\frac{\vcr(t)}{f(t)}\right)'=\frac{f(t)\vcr\hspace{0.2em}'(t)-\vcr(t)f'(t)}{\left(f(t)\right)^2}. $$ Hint: There are two primary approaches here. You can rewrite the division as multiplication by the reciprocal, then proceed to use the scalar product rule and the traditional chain rule, or you could use the traditional quotient rule and component wise differentiation!
+\end{exercise}
+
+\begin{exercise}{Derivatives? I remember \textit{those}}
+Find the following derivatives:
+\begin{enumerate}
+\item Find $\vcr\hspace{0.2em}'(t)$ where $\vcr(t)=\bmat{t^2+2\\ \sin(t)\\ \tan(t)}.$
+\vspace{1em}
+\item Find $\vcr\hspace{0.2em}'(t)$ where $\vcr(t)=\bmat{\cos(t^2-4)\\ e^t\ln(t)\\ \arctan(t)}.$
+\vspace{1em}
+\item Find $\dfrac{d}{dt}\left(\bmat{\frac{t}{t+3}\\ t^2-4\\t+6}\bullet\bmat{t+3\\ \frac{1}{t-2}\\ \sin(t)}\right).$
+\vspace{1em}
+\item Find $\dfrac{d}{dt}\left(\bmat{t\\3t\\ \sin(t)}\times\bmat{\cos(t)\\3\\e^t}\right).$
+\vspace{1em}
+\end{enumerate}
+\end{exercise}

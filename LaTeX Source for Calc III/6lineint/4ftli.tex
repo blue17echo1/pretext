@@ -1,0 +1,63 @@
+\subsection{The Fundamental Theorem of Line Integrals}
+Recall the Fundamental Theorem of Calculus-- specifically the bit that's helpful when finding definite integrals.
+
+\begin{theorem}{Fundamental Theorem of Calculus}
+Let $f(x)$ be a piecewise continuous and differentiable function on $[a,b]$ and $F(x)$ be an antiderivative of $f(x)$. Then $$\int_{a}^{b}f(x)\ dx=F(b)-F(a).$$
+\end{theorem}
+
+This momentous theorem allows for relatively easy evaluation of integrals. We have a similar style of theorem for line integrals called the \textbf{Fundamental Theorem of Line Integrals}, sometimes abbreviated as FTLI. Much like the Fundamental Theorem of Calculus allows us to evaluate integrals by just looking at their endpoints, the Fundamental Theorem of Line Integrals allows us to evaluate line integrals by just looking at their endpoints (in certain situations.)
+
+\begin{theorem}{Fundamental Theorem of Line Integrals}
+Let $C$ be a smooth curve parameterized by $\vcr(t)$, $a\leq t\leq b$. Let $f$ be a function such that $\nabla f$ is continuous over $C$. Then
+$$\int_C \nabla f \ dr=f\big(\vcr(b)\big)-f(\big(\vcr(a)\big). $$
+\end{theorem}
+
+FTLI states that over a conservative vector field, we need only know the potential function and the end points of the curve to evaluate a line integral. 
+
+\begin{example}{Doing it forwards... with FTLI!}
+Lets look back at the \hyperlink{ftli}{same integral} we did in the last section. That is, consider the vector field $$\vcF=\bmat{y+1\\x} $$ and the curve $C$ parameterized by $$\vcr(t)=\bmat{\cos(t)\\ \sin(t)},\ 0\leq t\leq \frac{\pi}{2}.$$
+First, note that this vector field is in fact conservative. We can compute the curl,
+\begin{align*}
+\nabla\times\vcF=&\det\bmat{\delx{}&\dely{}\\ y+1&x}\\
+=&\delx{}(x)-\dely{}(y+1)\\
+=&1-1\\
+=&0
+\end{align*}
+Since $\curl\vcF=0$, we know the vector field is conservative. We can find the potential function by examining the antiderivatives of the respective components: 
+\begin{align*}
+\int y+1\ dx=&xy+x+g(y)\\
+\int x \ dy=&xy+h(x).
+\end{align*}
+This yields a potential function $f=xy+x$. Then our line integral can be computed using FTLI:
+\begin{align*}
+\int_C\nabla f\ dr=& f(\cos(\pi/2),\sin(\pi/2))-f(\cos(0),\sin(0))\\
+=&f(0,1)-f(1,0)\\
+=&(0)(1)+0-((1)(0)+1)\\
+=&-1.
+\end{align*}
+\end{example}
+
+Note that an important consequence of FTLI is that line integrals over conservative vector fields are \textit{independant of path}. That is, it doesn't actually matter what $C$ is, as long as the vector field is continuous along a smooth curve, you need only the end points.
+
+\begin{theorem}{FTLI, Take 2}
+Let $C$ be a smooth curve from $(x_1,y_1)$ to $(x_2,y_2)$, and $\vcF$ be a conservative vector field that is continuous on $C$ with potential $f$. Then $$\int_C \vcF \ dr=f(x_2,y_2)-f(x_1,y_1). $$ 
+\end{theorem}
+
+\begin{exercise}{Try It Out}
+For the following line integrals, verify that FTLI holds and then evaluate using FTLI.
+\vspace{1em}
+\begin{enumerate}
+\item Let $\vcF=\nabla f$, $f=3xy+2e^x$, and $C$ be parameterized as $$C=\left\{\vcr(t):\ \vcr(t)=\bmat{t^2\\t},\ 0\leq t\leq 2 \right\}. $$ Evaluate $$\int_C\vcF\ dr.$$
+\item Let $$\vcF=\bmat{2xy-y^2\\x^2-2xy} $$ and $$C=\left\{\vcr(t):\ \vcr(t)=(2t+1)\vci-t^2\vcj,\ 0\leq t\leq 3  \right\}.$$ Evaluate $$\int_C \vcF \ dr.$$
+\item Let $$\vcF=\bmat{2xy^2z-e^x\\z+2x^2yz\\y+x^2y^2} $$ and $C$ be any path from $(0,0,0)$ to $(1, 4, -2)$. Evaluate $$\int_C \vcF\ dr. $$
+\end{enumerate}
+
+\end{exercise}
+
+\begin{claim}{A Corollary to FTLI}
+Let $C$ be a closed path, that is $C$ is a path that begins and ends at the same point. Then if $\vcF$ is a continuous, conservative vector field, $$\int_C \vcF \ dr=0. $$
+\end{claim}
+
+\begin{exercise}{Prove It!}
+Prove the above claim.
+\end{exercise}

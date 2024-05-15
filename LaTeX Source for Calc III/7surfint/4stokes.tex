@@ -1,0 +1,28 @@
+\subsection{Stokes' Theorem}
+While the divergence theorem is analogous to Green's theorem, Stokes' Theorem is a genuine \textit{generalization} of Green's Theorem that relates line integrals to surface integrals. Let $S$ be an oriented surface in $\bbr^3$ and let $C$ be the boundary curve of $S$ with \textit{positive orientation}. In this case, positive orientation means in the counter-clockwise direction, or as you walk along the boundary curve, the surface should be on the left hand side. Then we can state Stokes' Theorem:
+
+\begin{theorem}{Stokes' Theorem}
+Let $S$ be an oriented smooth surface that is bounded by a simple, closed, smooth boundary curve $C$ with positive orientation. Let $\vcF$ be a vector field. Then $$\int_C\vcF \ d\vcr=\iint_S\curl\vcF\ d\vcS.$$
+\end{theorem}
+
+\begin{exercise}{Generalizing Green's}
+Let $S$ be a smooth surface parameterized by $$\vcr(u,v)=\bmat{x(u,v)\\y(u,v)\\0} $$ over some region $R$. Let $\vcF$ be a vector field where $$\vcF=\bmat{P(x,y)\\Q(x,y)\\0}.$$ Show that $$\iint_S \curl\vcF \ d\vcS=\iint_R\curl\vcF dA.$$ Hint: What's going on with the $z$-coordinate here? What's the difference between $R$ and $S$?
+\end{exercise}
+
+Note: Just like Green's theorem, while technically you can use Stokes' theorem in a situation with a conservative vector field, if the vector field is conservative, then $\curl\vcF=0$, so both the line integral and the surface integral should evaluate to 0.
+
+Also worth noting-- while double integrals and line integrals are relatively similar in ``difficulty", surface integrals tend to be much more annoying than either of them. Because of this, Stokes's theorem is much more likely to reduce a surface integral to a line integral rather than the other way around.
+
+\begin{exercise}{Surface Independence}
+\begin{enumerate}
+\item Let $S$ be the portion of $z=\sqrt{4-x^2-y^2} $ that is above the $xy$-plane and let $$\vcF=\bmat{z^2\\-3xy\\x^3y^3}.$$ Evaluate $$\iint_S \curl\vcF \ d\vcS $$ as a line integral using Stokes' theorem.
+\vspace{1em}
+\item Let $S$ be the portion of $z=16-4x^2-4y^2 $ that is above the $xy$-plane and let $$\vcF=\bmat{z^2\\-3xy\\x^3y^3}.$$ Evaluate $$\iint_S \curl\vcF \ d\vcS $$ as a line integral using Stokes' theorem.
+\end{enumerate}
+\end{exercise}
+
+The previous exercise should justify that as long as the boundary curve is the same, it doesn't matter what surface you actually integrate. In this case, the ability to choose the surface can lead to a pretty tidy surface integral.
+
+\begin{pexercise}{Another Annoying Line Integral}
+Use Stokes' theorem to evaluate $$\int_C\vcF\ d\vcr $$ where $$\vcF=\bmat{z^2\\y^2\\x}$$ and $C$ is the triangle with vertices at $(1,0,0)$, $(0,1,0)$, and $(0,0,1)$. Hint: Consider the surface: $$\vcr(x,y)=\bmat{x\\y\\1-x-y},\ 0\leq x\leq 1, 0\leq y\leq 1-x $$ which is just the plane $x+y+z=1$ over the triangle with vertices at $(0,0)$, $(1,0)$ and $(0,1)$.
+\end{pexercise}

@@ -1,0 +1,40 @@
+\subsection{Divergence Theorem}
+We visited an important operator on vector fields earlier in the curl operator. Here, we visit its companion, divergence. Where $\curl \vcF$ measures the tendency to rotate clockwise about a given vector at a point in a vector field, $\divo \vcF$ measures the tendency to diverge away from a given point in a vector field. A positive divergence means that the rate of flow out of the point is higher than the rate of flow into a point. Of course, with most incompressible fluids like water, this is impossible. In fact, in these types of \textbf{incompressible} fields, $\divo\vcF=0$.
+
+\begin{definition}{Divergence}
+Let $\vcF$ be a vector field. Then the divergence of $\vcF$ can be calculated as
+$$\divo\vcF=\nabla\bullet\vcF.$$
+If $\vcF$ is a 3-dimensional vector field, $$\vcF=\bmat{P(x,y,z)\\Q(x,y,z)\\R(x,y,z)} $$ then:
+$$\divo\vcF=\nabla\bullet\vcF=\bmat{\delx{}\\ \dely{} \\ \delz{}}\bullet\bmat{P\\Q\\R}=\delx{P}+ \dely{Q}+ \delz{R} .$$
+\end{definition}
+
+\begin{exercise}{Divergence}
+\begin{enumerate}
+\item Let $\vcF=\bmat{x^2-y\\y\sin(z)\\z^4}$. Find $\divo\vcF$.
+\vspace{1em}
+\item Let $\vcF=\bmat{e^{x^2}\\xyz\\z\sec{z}}$. Find $\divo\vcF$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{Divergence and Curl}
+Let $\vcF=\bmat{P(x,y,z)\\Q(x,y,z)\\R(x,y,z)}$, where $P$, $Q$, and $R$ have continuous second partials. Verify that $$\divo(\curl\vcF)=0.$$
+\end{exercise}
+
+In the same way that Green's Theorem relates line integrals over closed paths to double integrals of the curl of the enclosed region, the \textbf{divergence theorem} relates surface integrals of closed surfaces to triple integrals of the divergence of the enclosed region.
+
+\begin{theorem}{Divergence Theorem}
+Let $R$ be a simple solid region and $S$ be the closed surface that encloses $R$ with positive orientation. Let $F$ be a vector field with continuous first partials. Then $$\iint_S \vcF \ d\vcS=\iiint_R \divo\vcF \ dV.$$
+\end{theorem}
+
+Much like Green's theorem, the divergence theorem allows us to both compute surface integrals using triple integrals and triple integrals using surface integrals. 
+
+\begin{exercise}{EVEN MORE SPHEEEEEEEERE}
+Let $S$ be the unit sphere, parameterized as $$\vcr(\phi,\theta)=\bmat{\sin(\phi)\cos(\theta)\\\sin(\phi)\sin(\theta)\\\cos(\phi)}, \ 0\leq \phi\leq \pi,\ 0\leq\theta\leq2\pi.$$
+Let $R$ be the region enclosed by $S$, and let $$\vcF=\bmat{0\\0\\z}.$$ Verify that $\divo\vcF=1$, so then the volume of the sphere can be calculated via a surface integral by way of divergence theorem, $$\iiint_R \divo\vcF \ dV=\iint_S \vcF \ d\vcS,$$ then compute the volume of the unit sphere by way of said surface integral.
+\end{exercise}
+
+Note however, surface integrals tend to be very tedious to compute, while divergence is relatively easy to compute, so more often we see divergence theorem used to translate surface integrals to triple integrals.
+
+\begin{pexercise}{Surface to Triple}
+Let $$\vcF=\bmat{\sin{(\pi x)}\\ zy^3\\z^2+4x}$$ and $S$ be the surface of the box that surrounds the rectangular prism $[-1,2]\times[0,1]\times[1,4]$ with positive orientation. Use the divergence theorem to evaluate $$\iint_S \vcF \ d\vcS $$ as a triple integral.
+\end{pexercise}

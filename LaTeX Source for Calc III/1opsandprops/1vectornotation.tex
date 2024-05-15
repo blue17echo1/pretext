@@ -1,0 +1,38 @@
+\section{Vector Operations and Properties}
+\subsection{Vector Notation and Introduction}
+Your previous journeys into Calculus so far have been generally restricted to experimentation with just $\bbr$, the set of real numbers. You have mastered (hopefully!) derivatives and integrals of functions $f:\bbr\to\bbr$ that take a single real number to a second real number. Calculus III expands on this idea by introducing \textbf{vectors}, which are essentially ordered lists of real numbers.
+
+\begin{definition}{$n$-Dimensional Real Euclidean Space}
+Define \textbf{$n$-dimensional real Euclidean space} to be the set of all lists of exactly $n$ real numbers. In set builder notation, $$\mathbb{R}^n=\left\lbrace \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n\end{bmatrix}:a_i\in\bbr\right\rbrace, $$ where $n\in\bbn$ or $n$ is a natural number.
+\end{definition}
+
+\begin{definition}{Vector}
+A single element of $n$-dimensional real Euclidean space is called a \textbf{vector} and usually written with a short arrow above it. For example, $$\vcv=\bmat{x\\y\\z}$$ would describe a vector in $\bbr^3$. While vertical vectors are often the best for us, to save space you will occasionally see vectors written horizontally with parentheses or angle brackets, that is:
+$$\vcv=\bmat{x\\y\\z}=(x,y,z)=\langle x,y,z\rangle$$ all represent the same vector!
+\end{definition}
+
+We actually need quite a bit of \textit{linear algebra} to accurately define the definition of the term \textbf{dimension}, but it's important enough that we'll give an informal definition here.
+
+\begin{definition}{Dimension}
+The \textbf{dimension} of a vector space is the number of values needed to exactly describe an object in that vector space. The \textbf{dimension} of a vector is the dimension of the vector space that that vector lives in.
+\end{definition}
+
+Note that the dimension of $\bbr^n$ is $n$, since we need a list of $n$ real numbers to exactly describe a single vector in $\bbr^n$.
+
+We typically draw vectors in $n$-dimensional Euclidean space as arrows, where the tail of the arrow lies on the origin and the tip of the arrow lies at the point whose coordinates are exactly said vector.
+
+\begin{example}{$n=2$}
+Let $\vcv$ and $\vcu$ be vectors in $\bbr^2$, and $\vcv=\bmat{3\\1}$ and $\vcu=\bmat{2\\-2}$. Then we draw $\vcv$ and $\vcu$ in the Euclidean plane as below:
+
+\begin{center}
+\begin{tikzpicture}[scale=.7, x=1cm, y=1cm, semitransparent]
+	%\draw[step=1mm, line width=0.1mm, black!20!white] (0,0) grid (\width,\hauteur);
+	%\draw[step=5mm, line width=0.2mm, black!90!white] (0,0) grid (\width,\hauteur);
+	\draw[step=5cm, line width=0.5mm, black!90!white] (0,0) grid (\width,\hauteur);
+	\draw[step=1cm, line width=0.2mm, black!50!white] (0,0) grid (\width,\hauteur);
+	\draw[->, color=blue,line width=0.5mm](5,5)--(8,6);
+	\node[color=blue] (v) at (6,6){$\vcv$};
+	\draw[->, color=red, line width=0.5mm](5,5)--(7,3);
+	\node[color=red] (u) at (5.6,3.8){$\vcu$};
+	\end{tikzpicture}\end{center}
+\end{example}

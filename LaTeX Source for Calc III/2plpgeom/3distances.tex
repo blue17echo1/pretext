@@ -1,0 +1,31 @@
+\subsection{Distances in 3-space}
+One useful playground to work on vector operations and your understanding of geometry in $\bbr^3$ is to use our vector operations and definitions to find the distance between points, lines and planes. First, let's tackle the simplest one.
+
+To find the distance between two points, we note that if we take the difference of the vectors that represent those two points, we get the vector between them. Then the distance between those two points is merely the magnitude of the difference.
+
+\begin{definition}{Distance Between Points in $\bbr^3$}
+Let $\vcv_1$ be the vector that represents the point $(x_1,y_1,z_1)$ and let $\vcv_2$ be the vector that represents the point $(x_2,y_2,z_2)$. Then the distance between these two points is $$d=||\vcv_2-\vcv_1||=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}. $$
+Note, this is just a generalization of the Pythagorean distance formula into $\bbr^3$.
+\end{definition}
+
+\begin{example}{Point to Point}
+Consider the points $(1,2,-1)$ and $(-2,3,1)$. Then let
+$$\vcv_1=\bmat{1\\2\\-1}\text{ and }\vcv_2=\bmat{-2\\3\\1} .$$
+Then we can find their difference:
+$$\vcv_2-\vcv_1=\bmat{-3\\1\\2}. $$ Then take the magnitude: $$||\vcv_2-\vcv_1||=\sqrt{(-3)^2+1^2+2^2}=\sqrt{14}.$$
+\end{example}
+
+\begin{exercise}{}
+Find the distance between the following pairs of points in $\bbr^3$.
+\begin{enumerate}
+\item $(1,2,4)$ and $(-1,-5,12)$.
+\vspace{1em}
+\item $(5,-3,12)$ and $(3,8,-4)$.
+\end{enumerate}
+\end{exercise}
+
+The distance between two points is pretty easy to find, because there's really only one possible distance between two points. However, when we introduce objects that have a higher dimension, then we need to be more precise about what we mean by distance. In general, when we use the term distance, we are looking for the \textit{shortest} distance between the two objects. To be more precise:
+
+\begin{definition}{Distance in $\bbr^3$}
+Let $S_1$, $S_2$ be two subsets in $\bbr^3$. Note that points, lines, planes are all sets of vectors in $\bbr^3$! Then let $\vcv_1\in S_1$ and $\vcv_2\in S_2$. Then the \textbf{distance}, $d$, between $S_1$ and $S_2$ is defined as the minimum value of $||\vcv_1-\vcv_2||$ over all possible choices of $\vcv_1$ and $\vcv_2$.
+\end{definition}

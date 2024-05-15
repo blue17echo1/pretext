@@ -1,0 +1,99 @@
+
+\subsection{Lines in 3-space}
+
+So how \textit{do} we formulate a line (a 1-dimensional object) in $\bbr^3$? Well, there's a few different ways. First, we can do \textbf{standard form}.
+
+\begin{definition}{Standard Form of a Line in $\bbr^3$}
+While $ax+by+cz=d$ describes a plane in $\bbr^3$, rather than a line, if you have two non-parallel planes in $\bbr^3$, their \textit{intersection} will form a line. So we can describe a line using two simultaneous linear equations, that is:
+\begin{align*}
+a_1x+b_1y+c_1z=&d_1\\
+a_2x+b_2y+c_2z=&d_2
+\end{align*}
+together can describe a line.
+\end{definition}
+
+Standard form is a little awkward, certainly. Another option is what is called \textbf{parametric} form.
+
+\begin{definition}{Parametric Form of a Line in $\bbr^3$}
+The line that contains the point $(x_0,y_0,z_0)$ in the direction of the vector $$\vcd=\bmat{a\\b\\c} $$ can be given by the parameterization:
+\begin{align*}
+x(t)=&at+x_0\\
+y(t)=&bt+y_0\\
+z(t)=&ct+z_0.
+\end{align*}
+It is often convenient to notate this as a single vector of functions: $\vcr(t)$, where $$\vcr(t)=\vcd\cdot t+\bmat{x_0\\y_0\\z_0}=\bmat{at+x_0\\bt+y_0\\ct+z_0}=\bmat{x(t)\\y(t)\\z(t)}.$$
+\end{definition}
+
+Thirdly, we have \textbf{symmetric} form, which can be found by solving for $t$ in each function for parametric form and then writing as a three-part equality.
+
+\begin{definition}{Symmetric Form of a Line in $\bbr^3$}
+The symmetric form of a line that contains the point $(x_0,y_0,z_0)$ in the direction of the vector $$\vcd=\bmat{a\\b\\c} $$ is $$\frac{x-x_0}{a}=\frac{y-y_0}{b}=\frac{z-z_0}{c}. $$
+\end{definition}
+
+\begin{exercise}{Conversions}
+Let's suppose we have a line given in standard form as 
+\begin{align*}
+x+2y-z=&2\\
+x+y+z=&-2
+\end{align*}
+\begin{enumerate}
+\item Find a point on the line. You can do that by setting $x=0$, then solving the remaining system of equations to find $y$ and $z$.
+\vspace{1em}
+\item Find the direction vector for the line. You can do this by taking a cross product of the two normal vectors for the two planes (if a line is contained in a plane, then it must be perpendicular to that plane's normal vector, so the vector perpendicular to both normal vectors is the direction vector for our line!) You can also do this by finding a second point on the line and just taking the difference of the two points.
+\vspace{1em}
+% \item Find the direction of the line. Remember that the difference between two vectors is the vector that runs from the tip of one to the tip of the other, so you can find a direction vector by taking the difference of the two vectors found in the first two parts.
+% \vspace{1em}
+\item Now find $\vcr(t)$, the vector of functions that represents this line in parametric form.
+\vspace{1em}
+\item Find the symmetric form of this line.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{The other way!}
+Suppose we have a line given in parametric form by:
+$$\vcr(t)=\bmat{3t-1\\-t+2\\2t}.$$
+\begin{enumerate}
+\item Find the direction vector, $\vcd$, for this line.
+\vspace{1em}
+\item Find a point on this line.
+\vspace{1em}
+\item Find any 2 non-parallel vectors that are perpendicular to this line. That is find two vectors, $\vcv$, $\vcw$ such that $\vcv\bullet\vcd=0=\vcw\bullet\vcd$.
+\vspace{1em}
+\item Your two planes then will be $v_1x+v_2y+v_3z=d_1$ and $w_1x+w_2y+w_3z=d_2$, assuming the two vectors you found in the last part are $$\vcv=\bmat{v_1\\v_2\\v_3},\ \vcw=\bmat{w_1\\w_2\\w_3}.$$ Solve for $d_1$ and $d_2$ by plugging in the point on the plane you found earlier.
+\vspace{1em}
+\end{enumerate}
+Note that your answers may vary here, depending on your choice of $\vcv$ and $\vcw$.
+\end{exercise}
+
+\begin{exercise}{Convert from Standard}
+Suppose you have a line given in standard form by the equations 
+\begin{align*}
+x+3y-2z=&4\\
+-x+y+z=&1.
+\end{align*}
+\begin{enumerate}
+\item Find the parametric form of the line.
+\vspace{1em}
+\item Find the symmetric form of the line.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{Convert from Parametric}
+Suppose you have a line given in parametric form by the vector function
+$$\vcr(t)=\bmat{t+3\\-t\\2} .$$
+\begin{enumerate}
+\item Find the standard form of the line.
+\vspace{1em}
+\item Find the symmetric form of the line.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{Convert from Symmetric}
+Suppose you have a line given in symmetric form by the three-way equality
+$$\frac{x}{2}=2y-1=\frac{z+3}{3}.$$
+\begin{enumerate}
+\item Find the parametric form of the line.
+\vspace{1em}
+\item Find the standard form of the line.
+\end{enumerate}
+\end{exercise}

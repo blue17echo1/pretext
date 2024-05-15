@@ -1,0 +1,39 @@
+\subsection{Integrals and Arc Length}
+
+We define the integral of a vector function in much the same way that we defined the derivative of a vector function:
+
+\begin{definition}{Integral of Vector Function}
+The indefinite integral of a vector function with respect to $t$ is done coordinatewise. That is, for $$\vcr(t)=\bmat{x(t)\\y(t)\\z(t)}, $$
+$$\int \vcr(t) \ dt=\bmat{\int x(t)\ dt\\ \int y(t)\ dt\\ \int z(t)\ dt}. $$
+Similarly, the definite integral is defined:
+$$\int_a^b \vcr(t) \ dt=\bmat{\int_a^b x(t)\ dt\\ \int_a^b y(t)\ dt\\ \int_a^b z(t)\ dt}. $$
+\end{definition}
+
+This doesn't have a particularly relevant geometric definition, as we're integrating a parametric function. It can kind of best be thought of as an ``accumulation function", where we're accumulating the change in $\vcr(t)$ over some interval of time. It's also just helpful as notation for the antiderivative, i.e. if you're given the velocity function you can integrate to recover the position function, etc.
+
+\begin{exercise}{Antidifferentiating}
+Suppose you have a projectile that is moving in 3-d space with velocity function $$\vcv(t)=\bmat{\sin(t)\\t\\t^2},$$ and at time $t=0$ the projectile is at the origin. What is $\vcr(t)$, the position function for this projectile?
+\end{exercise}
+
+Something that \textit{does} have relevant geometry is the \textit{arc length}. You may recall the arc length formula from Calculus II for a curve $y=f(x)$ on the $x$-interval $[a,b]$ as:
+
+$$\ell(x)=\int_{a}^{b} \sqrt{1+\left(\tfrac{dy}{dx}\right)^2} \ dx. $$
+
+We also saw a parametric version of this same curve, where $f$ is parameterized via an $x(t)$, $y(t)$:
+
+$$\ell(t)=\int_{a}^{b} \sqrt{\left(\tfrac{dx}{dt}\right)^2+\left(\tfrac{dy}{dt}\right)^2}\ dt. $$
+
+And in fact, given the function $$\vcr(t)=\bmat{x(t)\\y(t)}, $$ this is exactly the integral:
+$$\ell(t)=\int_{a}^{b} ||\vcr\vprime(t)|| \ dt. $$
+
+\begin{definition}{Arc Length of a Curve}
+Let $\vcr(t)$ be a $n$-dimensional vector valued function. Then the \textbf{arc length} of $\vcr(t)$ between $t=a$ and $t=b$ is $$\ell(t)=\int_{a}^{b} ||\vcr\vprime(t)|| \ dt. $$
+\end{definition}
+
+\begin{exercise}{Arc Length of an Helix}
+Let $$\vcr(t)=\bmat{\sin t\\ \cos t\\ t}.$$ Find the length of \href{https://www.geogebra.org/3d/a3g6kayf}{this curve (Geogebra Link)} from $t=0$ to $t=2\pi$.
+\end{exercise}
+
+\begin{exercise}{Arc Length of a Stretchy Helix}
+Let $$\vcr(t)=\bmat{\sin t\\ \cos t\\ \frac{t^2}{2}}.$$ Find the length of \href{https://www.geogebra.org/3d/e34aasz5}{this curve (Geogebra Link)} from $t=0$ to $t=2\pi$.
+\end{exercise}

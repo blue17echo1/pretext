@@ -1,0 +1,34 @@
+\renewcommand\thesubsection{\thesection.\Alph{subsection}}
+\setcounter{subsection}{18}
+\subsection{Surface Integrals Summary}
+\begin{definition}{Parametric Surface} $$\vcr(u,v)=\bmat{x(u,v)\\y(u,v)\\z(u,v)}.$$ 
+\end{definition}
+
+\begin{definition}{Partial Derivatives of Parametric Surfaces}
+$$\vcr_u(u,v)=\bmat{x_u(u,v)\\y_u(u,v)\\z_u(u,v)}\quad\vcr_v(u,v) \bmat{x_v(u,v)\\y_v(u,v)\\z_v(u,v)} $$
+\end{definition}
+
+\begin{definition}{Tangent Plane to Parametric Surface}
+The plane tangent to the surface $\vcr(u,v)$ at $u=u_0$, $v=v_0$ has normal vector $\vcr_u(u_0,v_0)\times\vcr_v(u_0,v_0)$ and passes through $\vcr(u_0,v_0)$, yielding vector-dot product form: $$\big(\vcx-\vcr(u_0,v_0)\big)\bullet\big(\vcr_u(u_0,v_0)\times\vcr_v(u_0,v_0)\big)=0. $$
+\end{definition}
+
+\begin{definition}{Surface Integral}
+$$\iint_S \ dS= \iint_R ||\vcr_u\times\vcr_v||\ dA.$$
+\end{definition}
+
+\begin{definition}{Surface Integral of a Vector Field}
+$$\iint_S \vcF \ d\vec{S} =\iint_R \vcF\big(\vcr(u,v)\big)\bullet(\vcr_u\times\vcr_v)\ dA$$
+\end{definition}
+
+\begin{definition}{Divergence}
+$$\divo\vcF=\nabla\bullet\vcF=\delx{P}+ \dely{Q}+ \delz{R} .$$
+\end{definition}
+
+\begin{theorem}{Divergence Theorem}
+Let $R$ be a simple solid region and $S$ be the closed surface that encloses $E$ with positive orientation. Let $F$ be a vector field with continuous first partials. Then $$\iint_S \vcF \ d\vcS=\iiint_R \divo\vcF \ dV.$$
+\end{theorem}
+
+\begin{theorem}{Stokes' Theorem}
+Let $S$ be an oriented smooth surface that is bounded by a simple, closed, smooth boundary curve $C$ with positive orientation. Let $\vcF$ be a vector field. Then $$\int_C\vcF \ d\vcr=\iint_S\curl\vcF\ d\vcS.$$
+\end{theorem}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}

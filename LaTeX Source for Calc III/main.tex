@@ -1,0 +1,433 @@
+\documentclass[11pt,titlepage]{article}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\usepackage{enumerate}
+\usepackage[margin =.75in]{geometry}
+\usepackage{graphicx}
+\usepackage{mathtools,amssymb,amsfonts,amsthm}
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{comment}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{polynom}
+\usepackage{cancel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{petri}
+\usetikzlibrary{trees}
+\usepackage{url}
+\usepackage[linktoc=all,colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=cyan]{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{newverbs}
+\usepackage{euscript,mathrsfs}
+\usepackage{pdfpages}
+\usepackage{bbm}
+\usepackage{parskip}
+\usepackage[most]{tcolorbox}
+
+\usepackage{cmbright}
+%\usepackage[sfdefault]{atkinson}
+\usepackage[T1]{fontenc}
+\usepackage[italic]{mathastext}
+%Cursed: Do not touch.
+%\usepackage{fontspec} 
+%\setmainfont{Comic Sans MS}
+
+%\usepackage[all]{xy}
+%\usepackage{wrapfig}
+%\usepackage{caption}
+\raggedbottom
+\allowdisplaybreaks
+
+\specialcomment{lecturenotes}{}{}\excludecomment{lecturenotes}
+\specialcomment{answers}{\sss \textsc{Answer: }}{\sss}
+%\excludecomment{answers} % comment to compile with answers.
+\specialcomment{remarks}{
+
+\sss
+\begingroup\color{blue}}
+{\endgroup
+
+\sss}
+\specialcomment{inremarks}{\begingroup\color{blue}[}{]\endgroup}
+%\specialcomment{undefined}{\begingroup\color{orange}}{\endgroup}
+\specialcomment{unjustified}{\begingroup\color{red}}{\endgroup}
+\specialcomment{grammar}{\begingroup\color{Green}}{\endgroup}
+\specialcomment{tex}{\begingroup\color{purple}}{\endgroup}
+
+\newverbcommand{\cverb}{\small\color{purple}}{}
+\newverbcommand{\everb}{\small\color{blue}}{}
+
+\newcolumntype{L}[1]{>{\hsize=#1\hsize\raggedright\arraybackslash}X}
+\newcolumntype{R}[1]{>{\hsize=#1\hsize\raggedleft\arraybackslash}X}
+\newcolumntype{C}[1]{>{\hsize=#1\hsize\centering\arraybackslash}X}
+
+\newcommand{\sss}{\vspace{2 mm}\noindent}
+\newcommand{\lss}{\vspace{5 mm}\noindent}
+\newcommand{\lls}{\vspace{7 mm}\noindent}
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
+\newcommand\Bstrut{\rule[-1ex]{0pt}{0pt}}   % = `bottom' strut
+\newcommand{\ds}{\displaystyle}
+\newcommand{\HR}{\vspace{5pt}\hrule height 1pt \vspace{5pt}}
+\newcommand{\atext}[1]{\text{\quad #1 \quad }}
+
+\newcommand{\Proj}[2]{\ensuremath{\mathrm{Proj}_{#2}\left({#1}\right)}}
+\newcommand{\proj}[2]{\ensuremath{\mathrm{Proj}_{#2}\left({#1}\right)}}
+\newcommand{\ca}{\mathcal}
+\newcommand{\fr}{\mathfrak}
+\newcommand{\eucal}{\EuScript}
+\newcommand{\scr}{\mathscr}
+\newcommand{\bbf}{\mathbb{F}}
+\newcommand{\bbn}{\mathbb{N}}
+\newcommand{\bbr}{\mathbb{R}}
+\newcommand{\bbq}{\mathbb{Q}}
+\newcommand{\bbc}{\mathbb{C}}
+\newcommand{\bbz}{\mathbb{Z}}
+\newcommand{\bbp}{\mathbb{P}}
+\newcommand{\bfa}{\mathbf{a}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfc}{\mathbf{c}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\vca}{\vec{a}}
+\newcommand{\vcb}{\vec{b}}
+\newcommand{\vcc}{\vec{c}}
+\newcommand{\vcd}{\vec{d}}
+\newcommand{\vce}{\vec{e}}
+\newcommand{\vcf}{\vec{f}}
+\newcommand{\vcg}{\vec{g}}
+\newcommand{\vch}{\vec{h}}
+\newcommand{\vci}{\hat{i}}%i'm sorry for this gross hack but i am lazy
+\newcommand{\vcj}{\hat{j}}
+\newcommand{\vck}{\hat{k}}
+\newcommand{\vcl}{\vec{l}}
+\newcommand{\vcm}{\vec{m}}
+\newcommand{\vcn}{\vec{n}}
+\newcommand{\vco}{\vec{o}}
+\newcommand{\vcp}{\vec{p}}
+\newcommand{\vcq}{\vec{q}}
+\newcommand{\vcr}{\vec{r}}
+\newcommand{\vcs}{\vec{s}}
+\newcommand{\vct}{\vec{t}}
+\newcommand{\vcu}{\vec{u}}
+\newcommand{\vcv}{\vec{v}}
+\newcommand{\vcw}{\vec{w}}
+\newcommand{\vcx}{\vec{x}}
+\newcommand{\vcy}{\vec{y}}
+\newcommand{\vcz}{\vec{z}}
+\newcommand{\vcT}{\vec{T}}
+\newcommand{\vcN}{\vec{N}}
+\newcommand{\vcE}{\vec{E}}
+\newcommand{\vcF}{\vec{F}}
+\newcommand{\vcS}{\vec{S}}
+\newcommand{\vomega}{\vec{\omega}}
+\newcommand{\vprime}{\hspace{0.2em}'}
+\newcommand{\vzero}{\vec{0}}
+\newcommand{\mcl}{\mathcal{L}}
+\newcommand{\mcm}{\mathcal{M}}
+\newcommand{\del}{\partial}
+\newcommand{\delx}[1]{\frac{\partial #1}{\partial x}}
+\newcommand{\dely}[1]{\frac{\partial #1}{\partial y}}
+\newcommand{\delz}[1]{\frac{\partial #1}{\partial z}}
+
+\newcommand{\inv}{^{-1}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\isom}{\overset{\sim}{\to}}
+\renewcommand{\iff}{\Leftrightarrow}
+\renewcommand{\implies}{\Rightarrow}
+\renewcommand{\impliedby}{\Leftarrow}
+\newcommand{\contradiction}{\Rightarrow\Leftarrow}
+
+\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\vmat}[1]{\begin{vmatrix}#1\end{vmatrix}}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\Floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\vect}[1]{\langle #1 \rangle}
+
+\newcommand{\Ad}{\operatorname{Ad}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\disc}{\operatorname{disc}}
+\newcommand{\domain}{\operatorname{domain}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\ind}{\operatorname{ind}}
+\newcommand{\nul}{\operatorname{Nul}}
+\newcommand{\nullity}{\operatorname{nullity}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\red}{\operatorname{red}}
+\newcommand{\bbref}{\operatorname{rref}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\trunc}{\operatorname{Trunc}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\bd}{\operatorname{bd}}
+\newcommand{\inte}{\operatorname{int}}
+\newcommand{\sub}{\operatorname{sub}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\fix}{\operatorname{Fix}}
+\newcommand{\syl}{\operatorname{Syl}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\curl}{\operatorname{Curl}}
+\newcommand{\divo}{\operatorname{Div}}
+\newcommand{\de}{^\circ}
+%\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem*{prop*}{Proposition}
+\newtheorem*{cor*}{Corollary}
+\newtheorem*{lem*}{Lemma}
+\newtheorem*{thm*}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{defn}[thm]{Definition}
+%\newtheorem{claim}[thm]{Claim}
+%\newtheorem{example}{}[thm]{example}{}
+\newtheorem*{practice}{Practice}
+\newtheorem*{conj*}{Conjecture}
+\newtheorem*{rd}{Read from the text}
+ \newcounter{counter}[subsection]
+\newcommand*\dif{\mathop{}\!\mathtt{d}}
+
+\setcounter{tocdepth}{3}  %How many levels to include in TOC
+\addtocontents{toc}{\protect\sloppy}    %Keeps long chapters within page # margins
+%%--------Solutions------%%
+
+\newcommand{\solushun}[2]{
+   
+   \ifnum\showsolutions=1
+       \hrulefill \\
+       {\bf A Solution:}
+       #1 \vspace*{\baselineskip}
+       \hrulefill
+   \fi
+ 
+   \ifnum\showsolutions=0 \vspace*{#2}
+   \fi
+}
+
+%%-------------AnswerKey----%%
+ %\Newassociation{solution}{Soln}{AnswerKey}
+
+% \renewcommand{\Solnlabel}[1]{\bf Exercise ~\thesubsection.#1.}
+
+\newcommand{\AnswerKeyEntry}[1]{\Writetofile{AnswerKey}{
+{\noindent \bf Exercise ~\thesubsection.\thecounter} #1 \newline \newline } }
+
+%%-----ColorBox----------%%
+\newtcolorbox{moretbox}[2][]{colback=black!50,
+colframe=black!75!black,fonttitle=\bfseries,colbacktitle=gray!10,coltitle=black,enhanced,attach boxed title to top left={yshift=-2mm,xshift=5mm},title=#2,#1}
+
+       \tcbset{colframe=black!50,colback=white,colupper=black,
+	fonttitle=\bfseries,nobeforeafter,center title}
+
+
+%%----EXAMPLE---------%%
+
+    \newenvironment{example}[1]{\refstepcounter{counter}
+    \medskip
+    \vspace*{.05in}
+    \noindent
+\begin{moretbox}[breakable,colback=white,colbacktitle=gray!5]{\textbf{Example~\thesubsection.\thecounter. #1}}
+\medskip } 
+ { \medskip
+\end{moretbox} \medskip
+   }
+   
+%%----Claim---------%%
+
+    \newenvironment{claim}[1]{\refstepcounter{counter}
+    \medskip
+    \vspace*{.05in}
+    \noindent
+\begin{moretbox}[breakable,colback=white,colbacktitle=gray!5]{\textbf{Claim~\thesubsection.\thecounter. #1}}
+\medskip } 
+ { \medskip
+\end{moretbox} \medskip
+   }
+   
+%%----Proof---------%%
+
+    \newenvironment{pf}[1]{\refstepcounter{counter}
+    \medskip
+    \vspace*{.05in}
+    \noindent
+\begin{moretbox}[breakable,colback=white,colbacktitle=gray!5]{\textbf{Proof~\thesubsection.\thecounter. #1}}
+\medskip } 
+ { \medskip
+\end{moretbox} \medskip
+   }
+   
+%%----EXERCISE---------%%   
+
+\newenvironment{exercise}[1]{\refstepcounter{counter}  
+    \medskip 
+    \vspace*{.05in}
+    \noindent
+\begin{moretbox}[breakable,colback=white,colbacktitle=gray!35]{\textbf{Exercise~\thesubsection.\thecounter. #1}}
+\medskip } 
+ { \medskip 
+\end{moretbox} \medskip
+   }      
+%%----EXERCISE---------%%   
+
+\newenvironment{pexercise}[1]{\refstepcounter{counter}  
+    \medskip 
+    \vspace*{.05in}
+    \noindent
+\begin{moretbox}[breakable,colback=white,colbacktitle=gray!35]{\textbf{Exercise~\thesubsection.\thecounter. #1\hyperlink{PON}{$^\text{P}$}}}
+\medskip } 
+ { \medskip 
+\end{moretbox} \medskip
+   }   
+%%----REVEXERCISE---------%%   
+
+\newenvironment{revex}[1]{\refstepcounter{counter}  
+    \medskip 
+    \vspace*{.05in}
+    \noindent
+\begin{moretbox}[breakable,colback=white,colbacktitle=gray!35]{\textbf{Exercise~\thecounter. #1}}
+\medskip } 
+ { \medskip 
+\end{moretbox} \medskip
+   }
+%%----THEOREM---------%%
+    \newenvironment{theorem}[1]{\refstepcounter{counter}  
+    \medskip     
+    \vspace*{.05in}
+    \noindent
+\begin{moretbox}[colback=white,colbacktitle=gray!5]{\textbf{Theorem~\thesubsection.\thecounter. #1}}
+\medskip } 
+ { \medskip
+\end{moretbox} \medskip
+   }
+   
+%%----DEFINITION---------%%
+
+    \newenvironment{definition}[1]{\refstepcounter{counter}  
+    \medskip 
+    \vspace*{.05in}
+    \noindent
+\begin{moretbox}[colback=white,colbacktitle=gray!5]{\textbf{Definition~\thesubsection.\thecounter. #1}}
+\medskip } 
+ { \medskip
+\end{moretbox} \medskip
+   }
+
+%%------Formula Boxes---------%%
+\newcommand{\FormulaBox}[2]{
+\begin{center}
+\tcbox[left=0mm,right=0mm,top=0mm,bottom=0mm,boxsep=0mm,toptitle=0.5mm,bottomtitle=0.5mm,center title,title=#1]
+{
+	\renewcommand*{\arraystretch}{1.8} 
+  #2
+}
+\end{center}}
+\newenvironment{answer}{
+
+\sss
+\textsc{Answer:}}{\hfill $\square$
+
+\sss}
+\def\width{10}
+\def\hauteur{10}
+\newenvironment{prompt}{\begin{center}\begin{tikzpicture}[scale=.8, x=1cm, y=1cm, semitransparent]
+%\draw[step=1mm, line width=0.1mm, black!20!white] (0,0) grid (\width,\hauteur);
+%\draw[step=5mm, line width=0.2mm, black!30!white] (0,0) grid (\width,\hauteur);
+\draw[step=5cm, line width=0.5mm, black!50!white] (0,0) grid (\width,\hauteur);
+\draw[step=1cm, line width=0.3mm, black!70!white] (0,0) grid (\width,\hauteur);
+\end{tikzpicture}\end{center}}{
+
+\sss}
+\newcounter{homework}
+\newtheorem{hw}[homework]{Homework}
+
+\newcounter{exercise}[homework]
+\newtheorem{exer}[exercise]{Exercise}
+\renewcommand{\theexercise}{\arabic{homework}.\arabic{exercise}}
+
+\theoremstyle{remark}
+\newtheorem*{defn*}{Definition}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem*{remark*}{Remark}
+\newtheorem{notation}[thm]{Notation}
+\title{Calculus III \\ Lecture Notes and Practice}
+\author{Aaron Allen}
+\date{}
+\begin{document}
+\include{titlepage}
+\tableofcontents
+\pagebreak
+
+\include{ackn}
+
+\include{1opsandprops/1vectornotation}
+\include{1opsandprops/2vectoroperations}
+\include{1opsandprops/3dotprod}
+\include{1opsandprops/4crossprod}
+\include{1opsandprops/5vectorproj}
+\include{1opsandprops/Svecsum}
+\include{1opsandprops/Rvectorhw}
+
+\include{2plpgeom/1planes}
+\include{2plpgeom/2lines}
+\include{2plpgeom/3distances}
+\include{2plpgeom/4planedist}
+\include{2plpgeom/5linedist}
+\include{2plpgeom/Splpsum}
+\include{2plpgeom/Rplphw}
+
+\include{3paracurves/1paraderiv}
+\include{3paracurves/2pva}
+\include{3paracurves/3curvature}
+\include{3paracurves/4paraint}
+\include{3paracurves/Sparasum}
+\include{3paracurves/Rparahw}
+
+\include{review/4review1}
+
+\include{5partialderiv/1surfgraph}
+\include{5partialderiv/2partialderiv}
+\include{5partialderiv/3critpts}
+\include{5partialderiv/4lagrange}
+\include{5partialderiv/Spdsum}
+\include{5partialderiv/Rpdhw}
+
+\include{6multipleint/1multint}
+\include{6multipleint/2jacobian}
+\include{6multipleint/3polarchange}
+\include{6multipleint/4surfarea}
+\include{6multipleint/5centerofmass}
+\include{6multipleint/Smultintsum}
+\include{6multipleint/Rmultinthw}
+
+\include{review/7review2}
+
+\include{8lineint/1vectorfields}
+\include{8lineint/2curlpotent}
+\include{8lineint/3lineint}
+\include{8lineint/4ftli}
+\include{8lineint/5green}
+\include{8lineint/Slineintsum}
+\include{8lineint/Rlineinthw}
+
+\include{9surfint/1surfparam}
+\include{9surfint/2surfint}
+\include{9surfint/3div}
+\include{9surfint/4stokes}
+\include{9surfint/Ssurfintsum}
+\include{9surfint/Rsurfinthw}
+
+\include{review/11review3}
+
+
+\end{document}

@@ -1,0 +1,105 @@
+\renewcommand\thesubsection{\thesection.\Alph{subsection}}
+\setcounter{subsection}{18}
+\subsection{Multiple Integrals Summary}
+\begin{theorem}{Fubini's Theorem for Evaluating Double Integrals}
+Let $f(x,y)$ be continuous on the rectangle $R=[a,b]\times[c,d]$. Then $$\iint_R f(x,y)\ dA=\int_{a}^{b}\int_{c}^{d}f(x,y)\ dy\ dx=\int_{c}^{d}\int_{a}^{b}f(x,y)\ dx\ dy.$$ In other words, we can compute the double integral through iterated integration with respect to $x$ then with respect to $y$.
+\end{theorem}
+
+\begin{definition}{Non-Rectangular Double Integrals}
+\begin{itemize}
+\item Let $f(x,y)$ be continuous on the domain $D=\{(x,y):\ a<x<b,\ g(x)<y<h(x) \}.$ Then: $$\iint_D f(x,y)\ dA=\int_{a}^{b}\int_{g(x)}^{h(x)}f(x,y)\ dy \ dx. $$
+\item Let $f(x,y)$ be continuous on the domain $D=\{(x,y):\ g(y)<x<h(y).\ a<y<b \}. $ Then: $$\iint_{D}f(x,y)\ dA=\int_{a}^b\int_{g(y)}^{h(y)}f(x,y)\ dx \ dy. $$
+\end{itemize}
+\end{definition}
+
+\begin{definition}{Triple Integral on a Rectangular Prism}
+Let $f(x,y,z)$ be a function and $R$ be the rectangular prism $R=[a,b]\times[c,d]\times[e,f]$. Then we can evaluate the triple integral $$\iiint_R f(x,y,z)\ dV=\int_e^f\int_c^d\int_a^b f(x,y,z) \ dx \ dy \ dz.$$
+You can also order the integration any of the 6 possible ways!
+\end{definition}
+
+\begin{definition}{Triple Integral on an Arbitrary Region}
+Let $f(x,y,z)$ be a function and $D$ be a region in $3$-space such that $$D=\big\{(x,y,z): \ a\leq x\leq b,\ g(x)\leq y\leq h(x),\ G(x,y)\leq z\leq H(x,y)  \big\}.$$ Then the triple integral can be evaluated as the iterated integral: $$\iiint_D f(x,y,z)\ dV=\int_a^b\int_{g(x)}^{h(x)}\int_{G(x,y)}^{H(x,y)}f(x,y,z)\ dz \ dy \ dx. $$
+\end{definition}
+
+\begin{definition}{2-D Jacobian}
+For a $2$-dimensional change of coordinates, $x=x(u,v)$ and $y=y(u,v)$, the Jacobian is $$J=\bmat{\frac{\del x}{\del u} & \frac{\del x}{\del v} \\ \frac{\del y}{\del u} & \frac{\del y}{\del v}}=\bmat{x_u & x_v \\ y_u & y_v}.$$
+\end{definition}
+
+\begin{definition}{3-D Jacobian}
+For a $3$-dimensional change of coordinates, $x=x(u,v,w)$, $y=y(u,v,w)$ and $z=z(u,v,w)$, then the Jacobian is $$J=
+\bmat{
+\frac{\del x}{\del u} & \frac{\del x}{\del v} & \frac{\del x}{\del w}\\
+\frac{\del y}{\del u} & \frac{\del y}{\del u} & \frac{\del y}{\del w}\\
+\frac{\del z}{\del u} & \frac{\del z}{\del v} & \frac{\del z}{\del w}
+}=\bmat{x_u & x_v & x_w \\ y_u & y_v & y_w \\ z_u & z_v & z_w}.$$
+\end{definition}
+
+\begin{claim}{Change of Variables, Double Integral}
+Consider the surface $f(x,y)$ over the region $R$. When applying the transformation $x=x(u,v)$, $y=y(u,v)$, the region becomes $S$, the function transforms to $f_t(u,v)$ and $$\iint_R f(x,y)\ dA=\iint_S f_t(u,v)\cdot |\det(J)|\ d\ca{A} $$ where $d\ca{A}$ indicates that the variables of integration are now $u$ and $v$ instead of $x$ and $y$ and $|\det(J)|$ is the absolute value of the determinant of the Jacobian of the transformation.
+\end{claim}
+
+\begin{claim}{Change of Variables, Triple Integral}
+Consider the function $f(x,y,z)$ over the region $R$. When applying the transformation $x=x(u,v,w),$ $y=y(u,v,w)$ and $z=z(u,v,w)$, the region becomes $S$, the function transforms to $f_t(u,v,w)$ and $$\iiint_R f(x,y,z)\ dV=\iiint_S f_t(u,v,w)\cdot |\det(J)| \ d\ca{V} $$ where $d\ca(V)$ indicates that the variables of integration are now $u$, $v$ and $w$ instead of $x$, $y$ and $z$ and $|\det(J)|$ is the absolute value of the determinant of the Jacobian of the transformation.
+\end{claim}
+
+\begin{definition}{Polar Transformation and Jacobian}
+The polar transformation for a 2-dimensional function is given as 
+\begin{align*}
+x(r,\theta)=&r\cos\theta\\
+y(r,\theta)=&r\sin\theta.
+\end{align*}
+The determinant of the Jacobian for the polar transformation is $$\det|J|=r. $$
+\end{definition}
+
+\begin{definition}{Cylindrical Transformation and Jacobian}
+The cylindrical transformation for a 3-dimensional function is given as
+\begin{align*}
+x(r,\theta,z)=&r\cos\theta\\
+y(r,\theta,z)=&r\sin\theta
+z(r,\theta,z)=&z.
+\end{align*}
+The determinant of the Jacobian for the cylindrical transformation is $$\det|J|=r. $$
+\end{definition}
+
+\begin{definition}{Spherical Transformation and Jacobian}
+The spherical transformation for a 3-dimensional function is given as 
+\begin{align*}
+x(\rho,\theta,\phi)=&\rho\sin\phi\cos\theta\\
+y(\rho,\theta,\phi)=&\rho\sin\phi\sin\theta\\
+z(\rho,\theta,\phi)=&\rho\cos\phi.
+\end{align*}
+The determinant of the Jacobian for the spherical transformation is $$\det|J|=\rho^2\sin\phi. $$
+\end{definition}
+
+\begin{definition}{Surface Area}
+The area of the surface $f(x,y)$ above the region $R$ in the $xy$-plane is $$S=\iint_R \sqrt{1+(f_x)^2+(f_y)^2}\ dA. $$
+\end{definition}
+
+\begin{definition}{1-Dimensional Center of Mass}
+Let $\rho(x)$ be an integrable density function over the integral $[a,b]$ which represents a rod of variable density. Then the center of mass is located at the point $\overline{x}=\frac{M}{m}$, where $M$ is the total moment and $m$ is the total mass of the object, which can be calculated as:
+$$M=\int_a^b x\rho(x)\ dx\text{ and }m=\int_a^{b}\rho(x)\ dx.$$
+\end{definition}
+
+\begin{definition}{2-Dimensional Center of Mass}
+Consider a 2-dimensional region $R$ with density function $\rho(x,y)$ which is integrable over all of $R$. Then the center of mass of the region is $(\overline{x},\overline{y})$ where $$\overline{x}=\frac{1}{m}\iint_R x\cdot\rho(x,y) \ dA $$ and $$\overline{y}=\frac{1}{m}\iint_R y\cdot\rho(x,y)\ dA.$$
+As before, the mass of the object, $m$ is $$m=\iint_R \rho(x,y)\ dA. $$
+\end{definition}
+
+\begin{definition}{3-Dimensional Center of Mass}
+Consider a 3-dimensional region $R$ with density function $\rho(x,y,z)$ which is integrable over all of $R$. Then the center of mass of the region is $(\overline{x},\overline{y},\overline{z})$, where
+ \begin{align*}
+ \overline{x}=&\frac{1}{m}\iiint_R x\cdot\rho(x,y,z) \ dV \\
+ \overline{y}=&\frac{1}{m}\iiint_R y\cdot\rho(x,y,z)\ dV \\
+ \overline{z}=&\frac{1}{m}\iiint_R z\cdot\rho(x,y,z)\ dV
+ \end{align*}
+ and $$m=\iiint_R \rho(x,y,z)\ dV. $$
+\end{definition}
+
+\subsubsection*{Companion Videos by Ken Monks}
+\begin{itemize}
+\item \href{https://www.youtube.com/watch?v=ga7g3kuoGBY}{Riemann Sum Definition of Double Integrals.}
+\item \href{https://www.youtube.com/watch?v=14pepJeFyAQ}{Spherical Coordinates.}
+\item \href{https://www.youtube.com/watch?v=6b6TWV9rFZM}{Triple Integrals in Spherical Coordinates.}
+\end{itemize}
+
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}

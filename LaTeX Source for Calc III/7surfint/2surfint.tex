@@ -1,0 +1,43 @@
+\subsection{Surface Integrals}
+We now visit \textbf{surface integrals}, a generalization of multiple integrals to integration over surfaces. The surface integral is to double integrals as the line integral is to single integrals. Much like we defined the line integral in terms of a single integral, we'll define the surface integral in terms of a double integral.
+
+\begin{definition}{Surface Integral of a Parametric Surface}
+Let $S$ be a surface parameterized by $\vcr(u,v)$ with $(u,v)$ over some region $R$. Then we define the surface integral $$\iint_S \ dS $$ as the area of that surface over the region $R$. The surface integral can be evaluated as $$\iint_S \ dS= \iint_R ||\vcr_u\times\vcr_v||\ dA.$$
+\end{definition}
+\begin{exercise}{Is That Really Surface Area?}
+Let $S$ be a surface parameterized by $$\vcr(x,y)=\bmat{x\\y\\f(x,y)}$$ with $(x,y)$ in some region $R$. Show that the above surface area integral is equivalent to the integral given \hyperlink{surfarea}{last unit}. That is, show: $$\iint_R ||\vcr_x\times\vcr_y||\ dA=\iint_R \sqrt{(f_x)^2+(f_y)^2+1}\ dA. $$
+\end{exercise}
+\begin{exercise}{The Surface Area of a Sphere... Again}
+Let $S$ be the sphere with radius 1 centered at the origin, parameterized as: $$\vcr(\phi,\theta)=\bmat{\sin(\phi)\cos(\theta)\\\sin(\phi)\sin(\theta)\\\cos(\phi)} $$ where $0\leq \phi\leq\pi$ and $0\leq \theta\leq 2\pi$. Compute the surface area of the sphere using a surface integral: $$\iint_S \ dS =\iint_R ||\vcr_\phi\times\vcr_\theta||\ dA.$$
+\end{exercise}
+
+Surface integrals go a little further than this though-- in fact, the analogy between surface integrals and line integrals extends to the fact that they are most interesting over vector fields. 
+
+Recall that a line integral essentially computes how ``aligned" with a given vector field a trajectory is. If we thought of a vector field as a force field and the curve as a trajectory that a particle moves along, then a positive line integral meant that the vector field helps the particle along and a negative line integral meant that the vector field was hindering the particle's movement.
+
+The metaphor for a surface integral is more like that of a ``sail". Essentially, given a surface in a vector field, the surface integral measures how much the vector field pushes that surface along it's normal vector. Essentially, at each point along the surface we project the vector field onto the normal vector of the surface at that point, then the integral accumulates all of the different projections.
+
+\begin{definition}{Surface Integral of a Parametric Surface over a Vector Field}
+Let $S$ be a smooth surface in $\bbr^3$ parameterized by $\vcr(u,v)$ with $(u,v)$ in some region $R$. Let $\vcF$ be a vector field. Let $\vcn$ be the unit normal vector function to $S$, that is, $$\vcn=\frac{\vcr_u\times\vcr_v}{||\vcr_u\times\vcr_v||}.$$ Then the surface integral $$\iint_S \vcF \ d\vec{S} $$ can be computed as follows: 
+\begin{align*}
+\iint_S \vcF \ d\vec{S} =&\iint_S ||\proj{\vcF}{\vcn} || \ dS\\
+=&\hyperlink{unitproj}{\iint_S \vcF\bullet\vcn \ dS}\\
+=&\iint_S \frac{\vcF\bullet(\vcr_u\times\vcr_v)}{||\vcr_u\times\vcr_v||}\ dS\\
+=&\iint_R \frac{\vcF\bullet(\vcr_u\times\vcr_v)}{||\vcr_u\times\vcr_v||}||\vcr_u\times\vcr_v||\ dA\\
+\iint_S \vcF \ d\vec{S} =&\iint_R \vcF\big(\vcr(u,v)\big)\bullet(\vcr_u\times\vcr_v)\ dA.
+\end{align*}
+\end{definition}
+
+Note-- the sign of the result depends entirely on the \textbf{orientation} of the surface. When you're finding a normal vector to a surface, both $\vcr_u\times\vcr_v$ and $\vcr_v\times\vcr_u$ provide normal vectors. However, since the cross product is \hyperlink{crossprop}{antisymmetric}, the choice of orientation comes down to the choice of cross product. For a non-closed surface, there's nothing to really prefer one orientation over the other necessarily. However, if the surface is closed (e.g. a sphere), then we say that the surface is \textbf{positively oriented} if the normal vectors point away from the interior.
+
+\begin{exercise}{more sphere}
+Let $$\vcF=\bmat{x\\y\\z}$$ and let $S$ be the upper half of the unit sphere, parameterized by $$\vcr(\phi,\theta)=\bmat{\sin(\phi)\cos(\theta)\\\sin(\phi)\sin(\theta)\\\cos(\phi)}, $$ where $0\leq\phi\leq \pi/2$ and $0\leq \theta\leq 2\pi$. Compute $$\iint_S \vcF\ d\vcS. $$
+\end{exercise}
+
+\begin{exercise}{Surface Integral of $f(x,y)$}
+Let $S$ be a smooth surface in $\bbr^3$, $z=f(x,y)$ over the region $R$. We can parameterize this surface as $$\vcr(x,y)=\bmat{x\\y\\f(x,y)}.$$ Let $\vcF$ be a 3-dimensional vector field. Show that $$\iint_S \vcF \ d\vcS=\iint_R \vcF\bullet \bmat{-f_x\\-f_y\\1}\ dA.$$
+\end{exercise}
+
+\begin{pexercise}{Another Surface Integral}
+Let $$\vcF=\bmat{3x\\2z\\1-y^2}, $$ and let $S$ be the portion of $f(x,y)=2-3y+x^2$ that lies over the triangle in the $xy$-plane with vertices $(0,0)$, $(2,0)$ and $(2,-4)$. 
+\end{pexercise}

@@ -1,0 +1,81 @@
+\subsection{Partial Derivatives and Tangent Planes}
+Of course, this being a Calculus class, we probably want to get to some Calculus. So we start, as usual, with derivatives. However, we immediately run into a problem. When taking derivative of some function $y=f(x)$, we are interested in the derivative with respect to $x$: $f'(x)=\frac{dy}{dx}$. But what is $f'(x,y)$? Is it $\frac{d}{dx}f(x,y)$? What even does $\frac{d}{dx}f(x,y)$ even mean? Certainly, $y$ isn't a constant, but also it doesn't make any sense to use implicit differentiation, since $y$ isn't necessarily related to $x$ in some specific way. It turns out that in order to make sense of the situation, we must define a new type of derivative. Don't panic though, it's easier than it sounds! Basically, the \textbf{partial derivative} is a special type of derivative for surfaces that allows us to hold all other variables constant.
+
+\begin{definition}{Partial Derivatives}
+\begin{itemize}
+\item The \textbf{partial derivative} of $f(x,y)$ with respect to $x$ is defined as the derivative of $f(x,y)$ with respect to $x$, while holding $y$ constant. It is written as $f_x$ or $\frac{\del f}{\del x}$. The partial differential operator with respect to $x$ is $\delx{}$. 
+\vspace{1em}
+\item The \textbf{partial derivative} of $f(x,y)$ with respect to $y$ is defined as the derivative of $f(x,y)$ with respect to $y$, while holding $x$ constant. It is written as $f_y$ or $\frac{\del f}{\del y}$. The partial differential operator with respect to $y$ is $\dely{}$. 
+\end{itemize}
+\end{definition}
+
+\begin{exercise}{Partial Derivatives}
+Consider $f(x,y)=\sqrt{16-x^2-y^2}$.
+\vspace{1em}
+\begin{enumerate}
+\item Find $f_x$, the partial of $f$ with respect to $x$.
+\vspace{1em}
+\item Find $f_y$, the partial of $f$ with respect to $y$.
+\end{enumerate}
+\end{exercise}
+
+The partial derivative acts somewhat like the regular derivative from Calculus I, but deals with an issue inherent to the situation-- the ``slope" or rate of change on a surface depends entirely on which direction you are going along. The partial with respect to $x$ tells us the ``slope" (or rate of change of $z$ with respect to $x$) as we move parallel to the $x$-axis, while the partial with respect to $y$ tells us the ``slope" (or rate of change of $z$ with respect to $y$) as we move parallel to the $y$-axis. These two ``slopes" come together to generate the equation of the \textbf{tangent plane}.
+
+Note that when talking about planes in this section, we will not be using standard form, exactly. Instead, we will be presenting planes as some $z=f(x,y)$. So then, the plane $ax+by+cz=d$ would be written as $$f(x,y)=\frac{d}{c}-\frac{a}{c}x-\frac{b}{c}y.$$
+
+\begin{definition}{Tangent Plane}
+Let $f(x,y)$ be a surface. Then the plane tangent to $f(x,y)$ at the point $\big(x_0,y_0,f(x_0,y_0)\big)$ is $$\ell(x,y)=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0). $$
+\end{definition}
+
+\begin{exercise}{Tangent Plane Equation}
+Consider a function $f(x,y)$ and a point on that surface, $\big(x_0,y_0,f(x_0,y_0)\big)$. Then the partial with respect to $x$ at $(x_0,y_0)$ is $f_x(x_0,y_0)$ and the partial with respect to $y$ at $(x_0,y_0)$ is $f_y(x_0,y_0)$.
+\vspace{1em}
+\begin{enumerate}
+\item Explain why the vectors $$\vcf_x=\bmat{1\\0\\f_x(x_0,y_0)}\text{ and } \vcf_y=\bmat{0\\1\\f_y(x_0,y_0)}$$
+are parallel to the tangent plane to $f(x,y)$ at $(x_0,y_0)$.
+\vspace{1em}
+\item Using those two vectors and the point $\big(x_0,y_0,f(x_0,y_0)\big)$, give the equation of the tangent plane in vector dot product form, $$a(x-x_0)+b(y-y_0)+c(z-z_0)=0. $$
+\item Solve the above equation of the plane for $z$ and show that you get the equation of the tangent line from the definition above.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{Tangent Planes}
+Find the equation of the plane tangent to $f(x,y)=\sqrt{16-x^2-y^2}$ at the point $(1,1)$.
+\end{exercise}
+
+We can, of course, take multiple partial derivatives in the same way that we can take multiple regular derivatives. However, this brings up a new possibility of \textit{mixed} partial derivatives.
+
+\begin{definition}{Multiple Partial Derivatives}
+Let $z=f(x,y)$ be an infinitely differentiable surface.
+\vspace{1em}
+\begin{itemize}
+\item The second partial derivative with respect to $x$ is defined as $$f_{xx}(x,y)=\delx{}\big(f_x(x,y)\big). $$
+\item The second partial derivative with respect to $y$ is defined as $$f_{yy}(x,y)=\dely{}\big(f_y(x,y)\big). $$
+\item The mixed partial derivatives are defined as
+$$f_{xy}(x,y)=\dely{}\big(f_x(x,y)\big),\text{ and }f_{yx}(x,y)=\delx{}\big(f_y(x,y)\big),$$ depending on whether we take the $x$ partial or the $y$ partial first.
+\end{itemize}
+\end{definition}
+
+In general, the partial differential operators of different variables do not commute. However, in practice the two mixed partials are \textit{often} equal. The conditions for this are given by the following theorem of Clairaut and Schwarz,
+ (Clairaut being one of the first to prove it and Schwarz being the first rigorous proof).
+ 
+ \begin{theorem}{\hypertarget{cs}{Clairaut-Schwarz Theorem}}
+Let $f(x,y)$ be a function $f:D\to\bbr$ where $D$ (the domain) is a subset of $\bbr^2$. Let $(x_0,y_0)$ be in $D$. Then, if some neighborhood of $(x_0,y_0)$ is contained in $D$ and $f_{xy}$ and $f_{yx}$ are continuous on that neighborhood, $$f_{xy}(x_0,y_0)=f_{yx}(x_0,y_0). $$
+ \end{theorem}
+
+ Note: A neighborhood is a way of saying some collection of all the points near another point. You can think of it like an open disk (i.e. all the points that are within $\varepsilon$ of $(x_0,y_0)$,) but a neighborhood need not be a regular shape. We could just state a stronger version of this theorem with an open rectangle or open disk, but I think neighborhood is a very useful and intuitive topographical term!
+ 
+ Regardless, since most of the functions we see are continuous almost everywhere and infinitely differentiable almost everywhere, the \textbf{mixed partials are almost always equal.}
+ 
+ \begin{exercise}{An Example of Clairaut-Schwarz Working!}
+ Consider the function $$f(x,y)=\sin(x^2y^3).$$
+ \begin{enumerate}
+ \item Find $f_{xy}(x,y)$.
+ \vspace{1em}
+ \item Find $f_{yx}(x,y)$.
+ \vspace{1em}
+ \item Verify the criteria for Clairaut-Schwarz. That is, is $f(x,y)$ continuous? Are the mixed partials continuous?
+ \vspace{1em}
+ \item Verify the result for Clairaut-Schwarz. Are the two mixed partials equal?
+ \end{enumerate}
+ \end{exercise}

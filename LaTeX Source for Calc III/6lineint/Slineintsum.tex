@@ -1,0 +1,54 @@
+\renewcommand\thesubsection{\thesection.\Alph{subsection}}
+\setcounter{subsection}{18}
+\subsection{Line Integrals Summary}
+\begin{definition}{Vector Fields}
+\begin{itemize}
+\item \textbf{2-d Vector Field:} $$\vcF(x,y)=\bmat{P(x,y)\\Q(x,y)}. $$
+\item \textbf{3-d Vector Field:}$$\vcF(x,y,z)=\bmat{P(x,y,z)\\Q(x,y,z)\\R(x,y,z)}. $$
+\end{itemize}
+If $f$ is a function from $\bbr^n\to\bbr$, the gradient of $f$ is an $n$-d vector field, i.e. $\nabla f=\vcF$.
+\end{definition}
+
+\begin{definition}{Curl}
+\begin{itemize}
+\item \textbf{2-d Curl:} $$\curl \vcF=\delx{Q}-\dely{P}.$$
+\item \textbf{3-d Curl:} $$\curl \vcF=\nabla\times\vcF =\det\bmat{\vci & \vcj & \vck \\ \delx{} & \dely{} & \frac{\del}{\del z}\\ P&Q&R}.$$ 
+\end{itemize}
+\end{definition}
+
+\begin{definition}{Conservative Vector Fields}
+A vector field, $\vcF$ is conservative if and only if there exists some potential function $f$ such that $\nabla f=\vcF$.
+
+\vspace{1em}
+
+A vector field, $\vcF$ is conservative if and only if $\curl\vcF=\vzero$.
+\end{definition}
+
+\begin{definition}{Finding a Potential}
+Let $\vcF=\bmat{P(x,y)\\Q(x,y)}$ be conservative. Then there exists some $f(x,y)$ such that:
+\begin{align*}
+f(x,y)=&\int P(x,y)\ dx\\
+=&f_1(x,y)+g(y)\\
+f(x,y)=&\int Q(x,y)\ dy\\
+=&f_2(x,y)+h(x).
+\end{align*}
+\end{definition}
+
+\begin{definition}{Line Integral}
+$$\int_C \vcF \ d\vcr=\int_a^b \vcF\big(\vcr(t)\big)\bullet\vcr\vprime(t)\ dt. $$
+\end{definition}
+
+\begin{theorem}{FTLI Ver. 1}
+Let $C$ be a smooth curve parameterized by $\vcr(t)$, $a\leq t\leq b$. Let $f$ be a function such that $\nabla f$ is continuous over $C$. Then
+$$\int_C \nabla f \ dr=f\big(\vcr(b)\big)-f(\big(\vcr(a)\big). $$
+\end{theorem}
+
+\begin{theorem}{FTLI Ver. 2}
+Let $C$ be a smooth curve from $(x_1,y_1)$ to $(x_2,y_2)$, and $\vcF$ be a conservative vector field that is continuous on $C$ with potential $f$. Then $$\int_C \vcF \ dr=f(x_2,y_2)-f(x_1,y_1). $$ 
+\end{theorem}
+
+\begin{theorem}{Green's Theorem}
+Let $C$ be a closed, positively oriented, piecewise smooth, simple, curve. Let $D$ be the region enclosed by $C$, and let $\vcF$ be a 2-dimensional vector field with continuous first partials on $D$. Then $$\int_C \vcF \ dr=\iint_D\curl \vcF\ dA.$$
+\end{theorem}
+
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}

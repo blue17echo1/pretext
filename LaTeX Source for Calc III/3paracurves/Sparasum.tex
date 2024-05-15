@@ -1,0 +1,51 @@
+\renewcommand\thesubsection{\thesection.\Alph{subsection}}
+\setcounter{subsection}{18}
+\subsection{Parametric Curves Summary}
+
+\begin{definition}{Derivative of a Parametric Function}
+Let $$\vcr(t)=\bmat{x_1(t)\\x_2(t)\\\vdots\\x_n(t)}.$$ Then $$\vcr\vprime(t)=\bmat{x_1'(t)\\x_2'(t)\\\vdots\\x_n'(t)}. $$ This follows most of the expected rules for derivatives (linearity, product rules for scalar, dot and cross product, quotient rule for scalar quotient, etc.)
+\end{definition}
+
+\begin{definition}{Position, Velocity, Acceleration}
+Let $\vcr(t)$ define the position of an object in two or three dimensional space. Then $\vcr\vprime(t)=\vcv(t)$, the velocity of the object, and $\vcv\vprime'(t)=\vca(t)$, the acceleration of the object.
+\end{definition}
+
+\begin{definition}{Tangent Line}
+The parametric equation of the line tangent to $\vcr(t)$ at $t=a$ is $$\vcl(t)=\vcr\vprime(a)t+\vcr(a).$$
+\end{definition}
+
+\begin{definition}{Tangent Vector}
+The tangent vector, or unit tangent vector, $\vcT(t)$, is the unit vector in the direction of the velocity vector of a function. That is, $$\vcT(t)=\frac{\vcr\vprime(t)}{||\vcr\vprime(t)||}.$$
+\end{definition}
+
+\begin{definition}{Angular Velocity}
+The angular velocity, $\vomega(t)$ is the change in the tangent vector with respect to time. That is, $$\vomega(t)=\vcT\vprime(t).$$
+\end{definition}
+
+\begin{definition}{Normal Vector}
+The normal vector, or unit normal vector, $\vcN(t)$ is the unit vector in the direction of the angular velocity of a function. That is, $$\vcN(t)=\frac{\vcT\vprime(t)}{||\vcT\vprime(t)||}. $$
+\end{definition}
+
+\begin{definition}{Curvature}
+The curvature of a curve, $\kappa(t)$ is the ratio between the angular speed and linear speed of a curve, or $$\kappa(t)=\frac{||\vcT\vprime(t) ||}{||\vcr\vprime(t) ||}. $$ The radius of curvature, $R(t)$ is the reciprocal of the curvature. The radius of curvature is also the radius of the osculating circle, the best circular approximation of a function at a given point.
+\end{definition}
+
+\begin{definition}{Alternative Formula for Curvature}
+It is often more efficient to compute curvature using the alternative formula $$\kappa(t)=\frac{||\vcr\vprime(t)\times\vcr\vprime'(t) ||}{||\vcr\vprime(t) ||^3}.$$
+\end{definition}
+
+\begin{definition}{Evolute}
+The evolute of a curve, $\vcE(t)$, is the set of centers of the osculating circles for the curve, given as $$\vcE(t)=\vcr(t)+\frac{1}{\kappa(t)}\vcN(t). $$
+\end{definition}
+
+\begin{definition}{Integral of Parametric Function}
+Let $$\vcr(t)=\bmat{x_1(t)\\x_2(t)\\\vdots\\x_n(t)}.$$ Then $$\int\vcr(t)\ dt=\bmat{\int x_1(t) \ dt\\\int x_2(t)\ dt\\\vdots\\\int x_n(t)\ dt}. $$
+\end{definition}
+
+\begin{definition}{Arc Length of a Curve}
+Let $\vcr(t)$ be a $n$-dimensional vector valued function. Then the \textbf{arc length} of $\vcr(t)$ between $t=a$ and $t=b$ is $$\ell(t)=\int_{a}^{b} ||\vcr\vprime(t)|| \ dt. $$
+\end{definition}
+
+
+
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}

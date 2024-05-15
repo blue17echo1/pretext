@@ -1,0 +1,67 @@
+\subsection{Application: Center of Mass}
+
+Our other application that we want to cover is an application of both double and triple integration: center of mass. In Calculus II, you saw how to compute center of mass of a two dimensional object with constant density. Here, we consider objects with variable density in 1, 2 and 3 dimensions.
+
+First, however, we should consider a relatively easy physics problem. 
+
+\begin{example}{Give me a long enough lever}
+Suppose we have a 4000 kilogram elephant positioned 3 meters from the fulcrum of a seesaw. How far away from the fulcrum must an 80kg person stand in order to balance the seesaw?
+
+In order for the seesaw to be balanced, the torque on both sides must be the same. We'll ignore the mass of the seesaw for simplicity. Torque is rotational force, and is computed as $\tau=f\cdot d$, where $f$ is the force applied and $d$ is the distance from the fulcrum. In this situation our force is from gravity, so we get $f=gm$. Then our elephant torque is \begin{align*}\tau_1=&gm_1 x_1\\=&g(4000)(3)\\=&12000g.\end{align*} and the person's torque is \begin{align*}\tau_2=gm_2x_2\\=&g(80)x_2.\end{align*}
+When we set these equal to each other, we find that $$12000g=80gx_2.$$ We quickly find that $x_2=150$. So our 80kg human should stand 150m away from the fulcrum to lift the elephant.
+\end{example}
+
+Let's generalize.
+
+\begin{exercise}{Generalizing}
+Lets say that we have two objects on a line of negligible mass. Object 1 has a mass of $m_1$ and is at the coordinate $x_1$. Object 2 has a mass of $m_2$ and is at $x_2$. Let the center of mass be at the unknown coordinate $\overline{x}$. Then if the objects are balanced at the center of mass, their torques must be equal and opposite. That is: $$m_1(x_1-\overline{x})-m_2(x_2-\overline{x})=0. $$
+Solve the above formula for $\overline{x}$ to show that $$\overline{x}=\frac{m_1x_1+m_2x_2}{m_1+m_2}.$$
+\end{exercise}
+
+Note: We call the quantities $m_1x_1$ and $m_2x_2$ the \textit{moments} of the two objects respectively. So then the coordinate of the center of gravity is the sum of the moments divided by the sum of the masses (or the total mass). This yields the even more generalized formula for the center of mass of $n$ objects on the $x$-axis:
+$$\overline{x}=\frac{\sum_{k=1}^{n}m_kx_k }{\sum_{k=1}^{n}m_k}.$$
+
+\begin{exercise}{More Discrete Objects}
+Suppose that we have 4 objects on the $x$-axis. Object 1 is at $x=-2$ and has mass $3$kg. Object 2 is at $x=2$ and has mass $5$kg. Object 3 is at $x=-5$ and has mass $2$kg. Object 4 is at $x=7$ and has mass $1$kg. Find the center of gravity of the system.
+\end{exercise}
+
+We can continue to generalize even further. Rather than $n$ discrete objects, we can take a $1$-dimensional object with some continuous density function $\rho(x) $. Then, we get:
+
+\begin{definition}{1-Dimensional Center of Mass}
+Let $\rho(x)$ be an integrable density function over the integral $[a,b]$ which represents a rod of variable density. Then the center of mass is located at the point $\overline{x}=\frac{M}{m}$, where $M$ is the total moment and $m$ is the total mass of the object, which can be calculated as:
+$$M=\int_a^b x\rho(x)\ dx\text{ and }m=\int_a^{b}\rho(x)\ dx.$$
+\end{definition}
+
+Note 1: Notice the similarity between the discrete case, where $$\overline{x}=\frac{\displaystyle\sum_{k=1}^{n}m_kx_k }{\displaystyle\sum_{k=1}^{n}m_k} $$ and the continuous case where $$\overline{x}=\frac{\displaystyle\int_{a}^b x\rho(x)\ dx}{\displaystyle\int_a^b\rho(x)\ dx}. $$
+Note 2: The center of mass formulas you saw in Calculus II are simply taking a 2-dimensional object of uniform density and reducing it to a 1-dimensional object where the density is given at a single point as the width of that object at that point. You do this in the $x$-direction and the $y$-direction and end up with your two coordinates!
+
+Now lets take this same idea and bring it into higher dimensional objects.
+
+\begin{definition}{2-Dimensional Center of Mass}
+Consider a 2-dimensional region $R$ with density function $\rho(x,y)$ which is integrable over all of $R$. Then the center of mass of the region is $(\overline{x},\overline{y})$ where $$\overline{x}=\frac{1}{m}\iint_R x\cdot\rho(x,y) \ dA $$ and $$\overline{y}=\frac{1}{m}\iint_R y\cdot\rho(x,y)\ dA.$$
+As before, the mass of the object, $m$ is $$m=\iint_R \rho(x,y)\ dA. $$
+\end{definition}
+
+\begin{exercise}{The Cosine Gumdrop Revisited}
+Consider the shape between $y=\cos(x)$ and the $x$-axis with constant density $\rho(x,y)=1$. Find the center of gravity of this gumdrop shape using double integrals. Hint: Save some time by using symmetry!
+\end{exercise}
+
+\begin{exercise}{Variable Density}
+Consider a rectangular plate with opposite corners at $(0,0)$ and $(2,1)$, with density $\rho(x,y)=3-x$ (the plate is densest towards the $y$-axis and gets less dense as you move to the right). Find the center of gravity of the plate.
+\end{exercise}
+
+And of course, we can generalize yet again to three dimensional objects.
+
+\begin{definition}{3-Dimensional Center of Mass}
+Consider a 3-dimensional region $R$ with density function $\rho(x,y,z)$ which is integrable over all of $R$. Then the center of mass of the region is $(\overline{x},\overline{y},\overline{z})$, where
+ \begin{align*}
+ \overline{x}=&\frac{1}{m}\iiint_R x\cdot\rho(x,y,z) \ dV \\
+ \overline{y}=&\frac{1}{m}\iiint_R y\cdot\rho(x,y,z)\ dV \\
+ \overline{z}=&\frac{1}{m}\iiint_R z\cdot\rho(x,y,z)\ dV
+ \end{align*}
+ and $$m=\iiint_R \rho(x,y,z)\ dV. $$
+\end{definition}
+
+\begin{exercise}{3-Dimensional, Constant Density}
+Use triple integrals to find the center of gravity of the upper half sphere of radius 1 with constant unit density. Hint: You'll almost definitely want to use a change to polar coordinates for this. 
+\end{exercise}

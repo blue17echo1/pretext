@@ -1,0 +1,44 @@
+\renewcommand\thesubsection{\thesection.\Alph{subsection}}
+\setcounter{subsection}{18}
+\subsection{Vector Operations and Properties Summary}
+\begin{definition}{Vector Magnitude}
+$$||\vcv||=\sqrt{v_1^2+v_2^2+\cdots+v_n^2}.$$
+\end{definition}
+
+\begin{definition}{Unit Vector}
+Unit vectors have magnitude 1: $$\vcv_1=\frac{\vcv}{||\vcv||}. $$ 
+\end{definition}
+
+\begin{definition}{Vector Operations}
+$$\vcv\pm \vcu=\bmat{v_1\\v_2\\ \vdots\\v_n}\pm\bmat{u_1\\u_2\\ \vdots\\u_n}=\bmat{v_1\pm u_1\\v_2\pm u_2\\ \vdots\\v_n\pm u_n}. $$
+$$c\vcv=c\bmat{v_1\\v_2\\ \vdots\\v_n}=\bmat{cv_1\\cv_2\\ \vdots \\ c v_n}.$$
+\end{definition}
+
+\begin{definition}{Dot Product}
+\begin{align*}
+\vcv\bullet\vcw=&v_1 w_1 + v_2 w_2 +\cdots+v_n w_n 
+\end{align*}
+\end{definition}
+
+\begin{definition}{Dot Product and Angle Between Vectors}
+$$\vcv\bullet\vcw=||\vcv|| \ ||\vcw||\cos\theta$$
+Note: If $\vcv\bullet\vcw=0$, then $\vcv$ and $\vcw$ are perpendicular.
+\end{definition}
+
+\begin{definition}{Cross Product}
+$$\vcv\times\vcw=\vmat{\vci & \vcj & \vck \\ v_1 & v_2 & v_3 \\ w_1 & w_2 & w_3}=\begin{bmatrix} v_2w_3-v_3w_2 \\ v_3w_1-v_1w_3 \\ v_1w_2-v_2w_1 \end{bmatrix}. $$
+The cross product generates a vector that is perpendicular to both $\vcv$ and $\vcw$.
+\end{definition}
+
+\begin{definition}{Vector Projection}
+$$\proj{\vcw}{\vcv}=\frac{\vcw\bullet\vcv}{\vcv\bullet\vcv}\vcv. $$
+\end{definition}
+
+\subsubsection*{Companion Videos by Ken Monks}
+\begin{itemize}
+\item \href{https://www.youtube.com/watch?v=bSQFuWXoCsA}{Introduction to Vectors and Vector Operations}
+\item \href{https://www.youtube.com/watch?v=PH_6qc_U_Ak}{Proving Vector Properties: Magnitude and Projection}
+\item \href{https://www.youtube.com/watch?v=jOqwuD10_is}{Proving Vector Properties: Dot Product and Cross Product}
+\item \href{https://www.youtube.com/watch?v=JS2XEF9gKZQ}{Geometric Interpretations of Dot and Cross Product}
+\end{itemize}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}

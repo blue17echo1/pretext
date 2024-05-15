@@ -1,0 +1,92 @@
+\subsection{Curl and Finding Potentials}
+When thinking about vector fields, we have a couple of operators on vector fields that give us useful characteristics of a given vector field. The first of these two operators is \textbf{curl}.
+
+The curl of a vector field is a function that gives the ``rotational tendency" of the vector field at each point in the vector field. That is, if $\vcF$ is the velocity field of a fluid, then $\curl\vcF$ measures the tendency for particles to rotate about the axis that points in the direction of $\curl\vcF$. The direction of curl in 3-space is often visualized with a right hand rule-- if the thumb of your right hand points in the direction of $\curl(\vcF)$, then particles will rotate in the directions that your fingers curl around your palm. For 2-dimensional vector fields, curl always measures the tendency to rotate about a vector normal to the $xy$-plane, and so measures counterclockwise rotation if positive and clockwise if negative.
+
+\begin{definition}{Curl}
+The curl of a $3$-dimensional vector field $$\vcF(x,y,z)=\bmat{P(x,y,z)\\Q(x,y,z)\\R(x,y,z)}$$ can be calculated as $$\curl \vcF=\nabla\times\vcF =\det\bmat{\vci & \vcj & \vck \\ \delx{} & \dely{} & \frac{\del}{\del z}\\ P&Q&R}$$ where $$\det\bmat{\vci & \vcj & \vck \\ \delx{} & \dely{} & \frac{\del}{\del z}\\ P&Q&R}=\bmat{\dely{R} - \delz{Q}\\[6pt] \delz{P}-\delx{R}\\[6pt] \delx{Q}-\dely{P}}. $$
+For a 2-dimensional vector field, $$\vcF(x,y)=\bmat{P(x,y)\\Q(x,y)}, $$ curl can be defined as $$\curl \vcF=\nabla\times\vcF=\det\bmat{\delx{} & \dely{}\\ P& Q}, $$ which yields $$\curl \vcF=\delx{Q}-\dely{P}.$$
+\end{definition}
+
+\begin{example}{Curl in 2 Dimensions}
+Consider the vector field $$\vcF(x,y)=\bmat{-y\\x}. $$
+Then we can compute $\curl\vcF$:
+\begin{align*}
+\nabla\times\vcF=&\det\bmat{\delx{}&\dely{}\\ -y& x}\\
+=&\delx{}(x)-\dely{}(-y)\\
+=&1-(-1)\\
+=&2.
+\end{align*}
+This should line up with the \hyperlink{curl2}{vector field} that we saw earlier-- the positive curl tells us that our particles would be rotating in the counterclockwise direction.
+\end{example}
+
+\begin{exercise}{Computing Curl}
+For the following vector fields, compute the curl of the vector field.
+\vspace{1em}
+\begin{enumerate}
+\item $\vcF(x,y)=\bmat{y-1\\x+y}$.
+\vspace{1em}
+\item $\vcF(x,y,z)=\bmat{x^2y\\xyz\\z-3}$.
+\end{enumerate}
+\end{exercise}
+
+\begin{claim}{Curl of Gradient Fields}
+If $f(x,y,z)$ has continuous second partials, then $\curl(\nabla f)=\vzero$.
+\end{claim}
+
+\begin{exercise}{What?}
+Prove the above claim. Hint: Work through the definition and note that continuous second partials means that \hyperlink{cs}{Clairaut-Schwarz} applies.
+\end{exercise}
+
+\begin{claim}{$\curl\vcF=\vzero \iff$ $\vcF$ is Conservative}
+The previous claim tells us that if $\vcF$ is conservative, then $\curl\vcF=\vzero$. It is much harder to prove, but we will accept as fact, that if $\curl\vcF=\vzero$, then $\vcF$ is conservative. That is, if $\curl\vcF=\vzero$, then there exists a potential function $f$ such that $\nabla f=\vcF$. 
+\end{claim}
+
+\begin{example}{Finding a Potential Function}
+Let's consider the vector field, $$\vcF=\bmat{2xy^2-2x\\2x^2y-2y}. $$
+First, let's compute $\curl\vcF$. 
+\begin{align*}
+\nabla\times\vcF=&\det\bmat{\delx{}& \dely{}\\2xy^2-2x&2x^2y-2y}\\
+=&\delx{}\left(2x^2y-2y\right)-\dely{}\left(2xy^2-2x\right)\\
+=&4xy-4xy\\
+=&0
+\end{align*}
+Because $\curl\vcF=0$, we know that $\vcF$ is conservative. Can we find a function $f$ such that $\nabla f=\vcF$?
+
+\vspace{1em}
+
+Well, we know the following:
+\begin{align*}
+\delx{f}=&2xy^2-2x\\
+\dely{f}=&2x^2y-2y
+\end{align*}
+Note that the fundamental theorem of calculus tells us in the single variable case that: $$\int \frac{df}{dx}\ dx=f(x)+c. $$ However, when we integrate the partial with respect to $x$ of some $f(x,y)$ with respect to $x$, the ``constant" term can really be any function of $y$. That is, $$\int \delx{f} \ dx=f(x,y)+g(y) $$ where $g(y)$ is some unknown function of $y$. And similarly, $$\int\dely{f}\ dy=f(x,y)+h(x) $$ where $h(x)$ is some unknown function of $x$. These two integrals should allow us to piece together some $f(x,y)$ up to an unknown constant term.
+\begin{align*}
+\int\delx{f}\ dx=&\int2xy^2-2x\ dx\\
+f(x,y)=&x^2y^2-x^2+g(y).\\
+\int\dely{f}\ dy=&\int2x^2y-2y\ dy\\
+f(x,y)=&x^2y^2-y^2+h(x).
+\end{align*}
+Then we know that $g(y)=-y^2+c_1$ and $h(x)=-x^2+c_2$, so we can find our potential function, $$f(x,y)=x^2y^2-x^2-y^2+c.$$
+\end{example}
+
+This method may seem familiar to those of you who have taken Differential Equations. That's because this is almost \textit{exactly} the same method you used for finding the solution (or potential function) to an exact differential equation. For more on this connection, check out this \href{https://youtu.be/cBoF59YyH3Q}{video}.
+
+\begin{exercise}{Finding Potentials}
+Given the following vector fields, decide if $\vcF$ is conservative. If it is, find a potential function such that $\nabla f=\vcF$.
+\vspace{1em}
+\begin{enumerate}
+\item $\vcF=\bmat{3x^2y^2-2xy-y^2+3\\2x^3y-x^2+3y^2-2xy}$.
+\vspace{1em}
+\item $\vcF=\bmat{xy\cos(xy)\\x^2\cos(xy)}$.
+\vspace{1em}
+\item $\vcF=\bmat{yz+3x^2\\xz+2y\\xy+1}$.
+\end{enumerate}
+\end{exercise}
+
+% The second operator we want to consider in this section is the \textbf{divergence} operator. Where curl can be thought of as the cross product between the gradient operator and the vector field, that is $\curl\vcF=\nabla\times\vcF$, the divergence of a vector field can be thought of as the \textit{dot product} between the gradient operator and the vector field, that is, $\divo\vcF=\nabla\bullet\vcF$.
+
+% \begin{definition}{Div in 3 Dimensions}
+% Consider the vector field $\vcF$, where $$\vcF(x,y,z)=\bmat{P(x,y,z)\\Q(x,y,z)\\R(x,y,z)}. $$
+% Then $\divo\vcF=\nabla\bullet\vcf$, and can be evaluated as $$\delx{P}+\dely{Q}+\delz{R} $$
+% \end{definition}

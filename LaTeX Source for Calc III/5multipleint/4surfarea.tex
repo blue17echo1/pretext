@@ -1,0 +1,49 @@
+\subsection{Application: Surface Area}
+What can we use multiple integrals for? Well, there are direct applications in fields like statistics. Where something like the normal distribution calculates probability as an integral as the area beneath a probability function, for a multivariate probability, you would use multiple integrals! The two applications we will cover are \textit{surface area} and \textit{center of mass}.
+
+First, surface area. Surface area is computed with regards to a double integral in much the same way that \textit{arc length} is computed with respect to a single integral. Recall that the arc length of the function $f$ from $x=a$ to $x=b$ is computed as:
+$$\ell=\int_a^b \sqrt{1+(f')^2}\ dx. $$
+So then to compute the surface area, we use the following.
+
+\begin{definition}{\hypertarget{surfarea}{Surface Area}}
+The area of the surface $f(x,y)$ above the region $R$ in the $xy$-plane is $$S=\iint_R \sqrt{1+(f_x)^2+(f_y)^2}\ dA. $$
+\end{definition}
+
+Lets try it.
+
+\begin{example}{Surface Area}
+Let's find the surface area of the part of the plane $x+2y+z=4$ that lies in the first octant. First, we'll need to rewrite our plane as some function of $x$ and $y$. This is relatively simple, and we get the function $$f(x,y)=4-x-2y. $$
+Next, lets figure out our bounds. You can see a graph of this plane in Geogebra 3d \href{https://www.geogebra.org/3d/qevz8eev}{here}. The first octant is the area above the first quadrant in the $xy$ plane. To find our bounds then, we need to figure out where the function intersects the $xy$-plane, which is as straightforwards as letting $z=0$. In this case, we get that $x+2y=4$, which if we solve for $x$ we get $x=4-2y$. Then we can select our bounds:
+\begin{align*}
+0\leq x&\leq 4-2y \\
+0\leq y&\leq 2.
+\end{align*}
+Now we return to $f(x,y)$. We need our partials for the surface area formula:
+\begin{align*}
+f_x=&-1\\
+f_y=&-2
+\end{align*}
+Then our surface area integral is:
+\begin{align*}
+S=&\iint_R \sqrt{1+(f_x)^2+(f_y)^2}\ dA\\
+=&\int_{0}^2 \int_{0}^{4-2y}\sqrt{1+(-1)^2+(-2)^2}\ dx \ dy \\
+=&\int_{0}^2 \int_{0}^{4-2y}\sqrt{6}\ dx \ dy.
+\end{align*}
+Computing that integral:
+\begin{align*}
+\int_{0}^2 \int_{0}^{4-2y}\sqrt{6}\ dx \ dy =& \int_{0}^2\Bigg[\sqrt{6}\Bigg]_{x=0}^{x=4-2y}\ dy\\
+=&\int_0^2 \sqrt{6}(4-2y) \ dy\\
+=&\sqrt{6}\int_0^2 4-2y\ dy\\
+=&\sqrt{6}\Bigg[4y-y^2 \Bigg]_{y=0}^{y=2}\\
+=&\sqrt{6}(8-4)\\
+=&4\sqrt{6}.
+\end{align*}
+\end{example}
+
+\begin{pexercise}{Surface Area}
+Find the area of the surface $f(x,y)=3+2y+\frac{1}{4}x^4$ that lies above the region $R=\{(x,y):\ 0\leq x\leq 1,\ 0\leq y\leq x^5 \}$.
+\end{pexercise}
+
+\begin{exercise}{Surface Area of a Sphere}
+Find the surface area of a sphere with radius 1 using multiple integration. Hint: Note that the top half of a sphere with radius 1 is $f(x,y)=\sqrt{1-x^2-y^2}$. Take your partials, set up your integral as $$ S=2\iint_R \sqrt{1+(f_x)^2+(f_y)^2} \ dA,$$ then convert \textit{that} to polar coordinates!
+\end{exercise}

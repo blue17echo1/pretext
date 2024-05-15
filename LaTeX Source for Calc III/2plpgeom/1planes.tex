@@ -1,0 +1,63 @@
+\section{Points, Lines and Planes: Geometry in $\bbr^3$}
+\subsection{Planes in 3-space}
+You may have heard the term ``Linear" applied to many things-- ``linear" equations, ``linear" algebra, but it's a little bit of a misnomer. While a linear equation does describe a line in $2$-space, a linear equation actually doesn't describe a line in $3$-space. Instead, the equation $$ax+by+cz=d $$ describes a \textit{plane}, a 2-d object, in 3-space. In fact, a standard form linear equation in dimension $n$ actually always describes an $n-1$-dimensional object (which are generally called \textit{hyperplanes}). It would probably be better (and \textit{cooler}) to refer to linear algebra as ``hyperplanar algebra", but no one seems willing to make the switch.
+
+We have three different ways of describing a plane. First up is standard form.
+
+\begin{definition}{Standard Form of a Plane in $\bbr^3$}
+An equation of the form $$ax+by+cz=d$$ where $a$, $b$, $c$, $d\in\bbr$ represents a plane in $\bbr^3$. Note that the vector $$\vcn=\bmat{a\\b\\c}$$ is called the \textbf{normal vector} and is orthogonal to the plane.
+\end{definition}
+
+\begin{example}{Standard Form of a Plane}
+Visit this \href{https://www.geogebra.org/3d/t4qxhucj}{Geogebra 3d link} to see the plane $$2x+y-z=4.$$ You can also see the normal vector, which is placed with its tail on the plane at the point $(3,1,3)$.
+\end{example}
+
+We can also describe planes in a parametric form. Since planes are $2$-dimensional objects, we'll require $2$ parameters!
+
+\begin{definition}{\hypertarget{paraplane}{Parametric Form of a Plane in $\bbr^3$}}
+Let the point $\vcr_0=(x_0, y_0, z_0)$ lie on the plane, and $$\vcd_1=\bmat{a_1\\b_1\\c_1}, \vcd_2=\bmat{a_2\\b_2\\c_2}$$ be vectors parallel to the plane. Then we can represent the plane in \textbf{parametric form} by the system of equations:
+\begin{align*}
+x(s,t)&=x_0+a_1s+a_2t \\
+y(s,t)&=y_0+b_1s+b_2t \\
+z(s,t)&=z_0+c_1s+c_2t
+\end{align*}
+
+We can express this in vector form as $$\vcr(s,t)=\vcr_0+\vcd_1s+\vcd_2t.$$
+\end{definition}
+
+\begin{example}{Parametric Form of a Plane}
+Visit this \href{https://www.geogebra.org/3d/mzzqwynt}{Geogebra 3d link} to see the plane $$\vcr(s,t)=\bmat{-t+3\\t-s+1\\-t-s+3}.$$ Note that this is the same plane as the last example, just in parametric form. You can see our two direction vectors, here labeled as $v$ and $u$, lying in the plane with their tails at the point $(3,1,3)$.
+\end{example}
+
+Our third planar equation is a vector-dot product form.
+
+\begin{definition}{Vector-Dot Product Form of a Plane in $\bbr^3$}
+Let $\vcn$ be the normal vector to the plane and let $\vcr_0$ be the vector representation of a point $(x_0,y_0,z_0)$ on the plane. Then we can write the plane as $$(\vcx-\vcr_0)\bullet\vcn=0 $$
+where $$\vcx=\bmat{x\\y\\z} $$ represents an arbitrary unknown point in the plane.
+\end{definition}
+
+\begin{exercise}{Converting: Parametric to Vector-Dot Product to Standard}
+Let $P$ be the plane given in parametric form by
+$$\vcr(s,t)=\bmat{1+2s-t\\s+t\\2-s+2t}. $$
+\begin{enumerate}
+\item Identify $\vcr_0$, a point on $P$. Note that $\vcr_0=\vcr(0,0)$.
+\vspace{1em}
+\item Identify the two direction vectors for $P$, $\vcd_1$ and $\vcd_2$.
+\vspace{1em}
+\item Now we need the normal vector. The normal vector is orthogonal to the plane, and $\vcd_1$, $\vcd_2$ both lie in the plane. Luckily for us, we have a convenient tool for finding a vector that is orthogonal to two given vectors! Take the cross product to find the normal vector. That is, find $$\vcn=\vcd_1\times\vcd_2.$$
+\item Now that you have $\vcn$ and $\vcr_0$, write the plane in vector-dot product form.
+\vspace{1em}
+\item Multiply out the dot product, then put the resulting equation in the form $ax+by+cz=d$ to put the plane into standard form.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{Converting: Standard to Parametric}
+Let $P$ be the plane given by the equation $$2x-y+z=3.$$
+\begin{enumerate}
+\item Find three points on the plane, and generate the vector representations of those three points. Call the three vectors $\vcv$, $\vcw$ and $\vcu$. (hint: the most efficient way to do this might be to find the $x$, $y$ and $z$ intercepts by setting the other two variables equal to zero and solving).
+\vspace{1em}
+\item Using these three vectors that represent points in the plane, generate two direction vectors for $P$. Remember that the vector that goes between two vectors is the difference of those two vectors. Call these two vectors $\vcd_1$ and $\vcd_2$.
+\vspace{1em}
+\item Choose your favorite of the three points that you generated in part 1, and then use that and the two direction vectors you generated in part 2 to write the equation of the plane in parametric form.
+\end{enumerate}
+\end{exercise}

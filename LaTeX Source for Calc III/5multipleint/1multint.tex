@@ -1,0 +1,112 @@
+\section{Multiple Integrals}
+\subsection{Multiple Integrals}
+In an analogue to the area beneath a curve, the integral of a surface represents the volume beneath the surface on an open rectangle.
+
+\begin{definition}{Double Integral}
+Somewhat informally, we define the double integral over the rectangle $R$ of the function $f(x,y)$ as the area beneath the surface $f(x,y)$ bounded by the rectangle $R$ in the $xy$-plane, and it is written $$\iint_R f(x,y) \ dA $$  
+\end{definition}
+
+Technically, the double integral is defined using Riemann sums, in much the same way that the integral was defined in Calculus I. The primary difference is that the rectangles are now three dimensional rectangular prisms, and the sums must be taken over both an $x$ and a $y$ partition. For a more complete definition of the double integral, see the companion video \href{https://www.youtube.com/watch?v=ga7g3kuoGBY}{here.} However, Riemann sums are, as always, bulky. Due to the relative independence of the $x$ and $y$ variables, we can compute the double integral using the following theorem of Fubini.
+
+\begin{theorem}{Fubini's Theorem}
+Let $f(x,y)$ be continuous on the rectangle $R=[a,b]\times[c,d]$. Then $$\iint_R f(x,y)\ dA=\int_{a}^{b}\int_{c}^{d}f(x,y)\ dy\ dx=\int_{c}^{d}\int_{a}^{b}f(x,y)\ dx\ dy.$$ In other words, we can compute the double integral through iterated integration with respect to $x$ then with respect to $y$.
+\end{theorem}
+
+Note that much like partial derivatives, these ``partial" integrals assume you are holding all other variables constant.
+
+\begin{example}{Double Integral on a Rectangle}
+Consider the function $f(x,y)=xy$ on the rectangle $[2,4]\times [1,2]$. That is, the rectangle that has one corner at the point $(2,1)$ and the opposite corner at the point $(4,2)$. We can compute the area beneath this curve:
+\begin{align*}
+\iint_{R}xy\ dA=&\int_{1}^2\int_2^4 xy\ dx\ dy\\
+=&\int_{1}^2\Bigg[\frac{x^2y}{2} \Bigg]_{x=2}^{x=4} \ dy\\
+=&\int_1^2\frac{16y}{2}-\frac{4y}{2} \ dy\\
+=&\int_1^2 6y\ dy\\
+=&\Bigg[3y^2\Bigg]_{y=1}^{y=2}\\
+=&12-3\\
+=&9.
+\end{align*}
+\end{example}
+
+\begin{pexercise}{Double Integrals}
+Set up and evaluate the double integral $\iint_R f(x,y)\ dA$ for the following surfaces and rectangles.
+\vspace{1em}
+\begin{enumerate}
+\item $f(x,y)=6xy^2$, $R=[2,4]\times [1,2]$.%pon
+\vspace{1em}
+
+\item $f(x,y)=\dfrac{1}{(2x+3y)^2}$, $R=[0,1]\times[1,2]$.%pon
+\vspace{1em}
+
+\item $f(x,y)=xe^{xy}$, $R=[-1,2]\times[0,1]$. Hint: The order of integration being commutative might save you a headache here! %pon
+\end{enumerate}
+\end{pexercise}
+
+Rectangular regions are pretty straightforwards, but unfortunately not every region is rectangular. In particular, we can handle regions where the $x$ bounds can be written as some functions of $y$, i.e. $g(y)\leq x\leq h(y)$ or where the $y$ bounds can be written as some functions of $x$, i.e. $g(x)\leq y\leq h(x)$.
+
+\begin{definition}{Non-Rectangular Double Integrals}
+\begin{itemize}
+\item Let $f(x,y)$ be continuous on the domain $D=\{(x,y):\ a<x<b,\ g(x)<y<h(x) \}.$ Then: $$\iint_D f(x,y)\ dA=\int_{a}^{b}\int_{g(x)}^{h(x)}f(x,y)\ dy \ dx. $$
+\item Let $f(x,y)$ be continuous on the domain $D=\{(x,y):\ g(y)<x<h(y).\ a<y<b \}. $ Then: $$\iint_{D}f(x,y)\ dA=\int_{a}^b\int_{g(y)}^{h(y)}f(x,y)\ dx \ dy. $$
+\end{itemize}
+\end{definition}
+
+\begin{example}{A Non-Rectangular Region}
+Consider the right unit tetrahedron with it's right angle corner at the origin. That is, the volume bounded by the planes: \begin{align*}
+x+y+z=&1\\
+x=&1\\
+y=&1\\
+z=&1.
+\end{align*}
+You can look at this \href{https://www.geogebra.org/3d/bndxps3v}{here.} We can set this up as the surface $f(x,y)=1-x-y$ (this is just solving the plane $x+y+z=1$ for $z$.) on the region $D=\{(x,y):\ 0\leq x\leq 1,\ 0\leq y \leq 1-x \}.$ Then we can set up our double integral:
+$$\iint_D 1-x-y\ dA=\int_{0}^1\int_0^{1-x} 1-x-y \ dy\ dx. $$
+Then we can solve this integral:
+\begin{align*}
+\int_{0}^1\int_0^{1-x} 1-x-y \ dy\ dx=&\int_0^1\Bigg[y-xy-\frac{y^2}{2}\Bigg]_{y=0}^{y=1-x}\ dx\\
+=&\int_{0}^1 (1-x)-x(1-x)-\frac{(1-x)^2}{2} \ dx\\
+=&\int_0^1 1-2x+x^2-\frac{1-2x+x^2}{2} \ dx\\
+=&\int_0^1 \frac{1-2x+x^2}{2}\ dx\\
+=&\Bigg[\frac{x-x^2+\frac{x^3}{3}}{2}\Bigg]_{x=0}^{x=1}\\
+=&\frac{1-1+1/3}{2}\\
+=&\frac{1}{6}
+\end{align*}
+Since the shape is a triangular pyramid, the volume should be $\frac{1}{3}bh$. The base is area 1/2, the height is 1, so a volume of $1/6$ makes sense!
+\end{example}
+
+\begin{exercise}{More Irregular Domains}
+Set up and evaluate the double integral $\iint_D f(x,y)\ dA$ for the following surfaces and rectangles.
+\vspace{1em}
+\begin{enumerate}
+\item $f(x,y)=e^{\frac{x}{y}}$. $D=\{(x,y):\ y\leq x\leq y^2 ,\ 0\leq y\leq 2 \}$.
+\vspace{1em}
+\item $f(x,y)=xy-y^2$, $D$ is the region bounded by $y=\sqrt{x}$ and $y=x^2$.
+\vspace{1em}
+\item $f(x,y)=2xy$, $D$ is the triangle with vertices at $(0,0)$, $(1,2)$ and $(2,1)$. Hint: You may want to split this up into two separate integrals to make one of your bounds a pair of constants on each integral!
+\end{enumerate}
+\end{exercise}
+
+We can expand the ideas of double integrals into triple integrals and beyond.
+
+\begin{definition}{Triple Integral on a Rectangular Prism}
+Let $f(x,y,z)$ be a function and $R$ be the rectangular prism $R=[a,b]\times[c,d]\times[e,f]$. Then we can evaluate the triple integral $$\iiint_R f(x,y,z)\ dV=\int_e^f\int_c^d\int_a^b f(x,y,z) \ dx \ dy \ dz.$$
+You can also order the integration any of the 6 possible ways!
+\end{definition}
+
+\begin{exercise}{A Triple Integral}
+Let $R=[0,3]\times[0,2]\times[0,1]$. Evaluate $$\iiint_R 4xyz \ dV.$$
+\end{exercise}
+
+\begin{definition}{Triple Integral on an Arbitrary Region}
+Note: We examine here an integral where the $z$ bounds are a function of $x$ and $y$, and the $y$ bounds are a function of $x$. There are 6 possible parameterizations, and all resolve similarly, but for brevity, we'll stick to one case here!
+
+\vspace{1em}
+
+Let $f(x,y,z)$ be a function and $D$ be a region in $3$-space such that $$D=\big\{(x,y,z): \ a\leq x\leq b,\ g(x)\leq y\leq h(x),\ G(x,y)\leq z\leq H(x,y)  \big\}.$$ Then the triple integral can be evaluated as the iterated integral: $$\iiint_D f(x,y,z)\ dV=\int_a^b\int_{g(x)}^{h(x)}\int_{G(x,y)}^{H(x,y)}f(x,y,z)\ dz \ dy \ dx. $$
+\end{definition}
+
+\begin{pexercise}{A Triple Integral on a Non-Rectangular Region}%pon
+Let $D=\{(x,y,z):\ 0\leq x\leq 2,\ 0\leq y \leq 1,\ 0\leq z\leq 4-xy \}$. Evaluate $$\iiint_D 3-4x\ dV.$$
+\end{pexercise}
+
+\begin{pexercise}{Another Triple Integral on a Non-Rectangular Region}%pon
+Let $D=\{(x,y,z):\ 0\leq x\leq \frac{z}{2},\ 0\leq y\leq 10-2z,\ 0\leq z\leq 5 \}$. Evaluate $$\iiint_D 12y-8x\ dV. $$
+\end{pexercise}
