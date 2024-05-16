@@ -1,0 +1,130 @@
+
+	<section xml:id="dot-product">
+		<title>Dot Product</title>
+
+		<p>
+			You may have noticed that while we can add and subtract vectors, and we can multiply them by scalars, there is no allowance for multiplying or dividing two vectors. In general, there is no requirement for a well-defined product of two vectors in a vector space. However, there are a couple of useful “product" operations that show up with real-valued vectors. One of these is called the <term>dot product</term>.
+		</p>
+
+<definition>
+		<p>
+			Definition of Dot Product Let <m>\vcv</m> and <m>\vcw</m> be two vectors in <m>\bbr^n</m>. Then the <term>dot product</term> of <m>\vcv</m> and <m>\vcw</m> is defined as: <me>\begin{aligned}
+\vcv\bullet\vcw=&amp;\sum_{i=1}^n v_i w_i \\
+=&amp;v_1 w_1 + v_2 w_2 +\cdots+v_n w_n 
+\end{aligned}</me>
+		</p></definition>
+
+<exercise>
+		<p>
+			Find the following dot products:
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			<m>(3,2)\bullet(2,7)</m>
+		</p>
+			</li>
+
+			<li>
+					<p>
+			<m>(1,2,3)\bullet(-2,3,1)</m>
+		</p>
+			</li>
+
+			<li>
+					<p>
+			<m>(2,6,-4,-1)\bullet(-1,3,-4,2)</m>
+		</p>
+			</li>
+
+			<li>
+					<p>
+			<m>(3,-14,12)\bullet(-24,21,3)</m>
+		</p>
+			</li>
+
+		</ol></p></exercise>
+
+<exercise><title>The Law of Cosines and the Dot Product</title>
+		<p>
+			 Sometimes, given two vectors <m>\vcv=(v_1,v_2)</m>, <m>\vcw=(w_1,w_2)</m> with angle <m>\theta</m> between them the expression <me>\vcv\bullet\vcw=||\vcv|| \ ||\vcw||\cos\theta.</me> is referred to as "the dot product version of the law of cosines". Why? Let’s find out. We’ll start by constructing a vector triangle, placing <m>\vcv</m> and <m>\vcw</m> in standard position:
+		</p>
+
+<!-- div attr= class="center"-->
+<figure>
+	<caption>The Law of Cosines.</caption>
+	<image xml:id="dot-prod-tikz-1" width="70%">
+	<shortdescription>graph with the aboved described elements.</shortdescription>
+	<latex-image>
+\begin{tikzpicture}[scale=.7, x=1cm, y=1cm, semitransparent]
+	%\draw[step=1mm, line width=0.1mm, black!20!white] (0,0) grid (\width,\hauteur);
+	%\draw[step=5mm, line width=0.2mm, black!90!white] (0,0) grid (\width,\hauteur);
+	\draw[step=5cm, line width=0.5mm, black!90!white] (-5,-5) grid (4.99,4.99);
+	%\draw[step=1cm, line width=0.2mm, black!50!white] (-5,-5) grid (5,5);
+	\draw[->, color=blue,line width=0.5mm](0,0)--(30:4);
+	\node[color=blue] (v) at (1.25,1.5){$\vcv$};
+	\draw[->, color=red, line width=0.5mm](0,0)--(320:3);
+	\node[color=red] (u) at (.75,-1.25){$\vcw$};
+	\draw[->, color=violet, line width=0.5mm](320:3)--(30:4);
+        \draw[line width=0.5mm] (320:1) arc (-40:30:1);
+        \node (theta) at (-15:1.25){$\theta$};
+	%\node[color=violet] (w) at (7.8,4.5){$\vcw$};
+	\end{tikzpicture}
+</latex-image>
+</image>
+</figure>
+<!--</div attr= class="center">-->
+
+		<p><ul>
+			<li>
+					<p>
+			What is the purple vector (from the tip of <m>\vcw</m> to the tip of <m>\vcv</m>)? Hint: Think about the geometric difference of two vectors.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			What are the lengths of the three sides of this triangle? Hint: The length of a vector is its <xref ref="magnitude"><term>magnitude</term></xref>.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Using the Law of Cosines, write an expression relating your three side lengths and <m>\theta</m>.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Show that this expression simplifies to <me>\vcv\bullet\vcw=||\vcv|| \ ||\vcw||\cos\theta.</me> Hint: Leave <m>-2||\vcv|| \ ||\vcw||\cos\theta</m> alone for now, but expand out all of the other magnitudes using the magnitude formula, expand, then see if anything cancels.
+		</p>
+			</li>
+
+		</ul></p></exercise>
+
+		<p>
+			Note that this rule <me>\vcv\bullet\vcw=||\vcv|| \ ||\vcw||\cos\theta</me> does <em>not</em> just hold in <m>\bbr^2</m> but in all <m>\bbr^n</m>. So in fact, the dot product can be used to identify the angle between two given vectors in any <m>\bbr^n</m>. This is particularly useful when we’re deciding if two vectors are <term>orthogonal</term>, that is, if they have an angle of <m>90^\circ</m> between them.
+		</p>
+
+<exercise>
+		<p>
+			Use the dot product to find the following angles.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			Let <m>\vcv=2\vci+2\vcj</m> and let <m>\vcu=-\vci+\vcj</m>. Find the angle between <m>\vcv</m> and <m>\vcu</m>.
+		</p>
+			</li>
+
+			<li>
+					<p>
+			Let <m>\vcv=\bmat{3\\2\\1}</m> and let <m>\vcu=\bmat{2\\-5\\1}</m>. Find the angle between <m>\vcv</m> and <m>\vcu</m>.
+		</p>
+			</li>
+
+		</ol></p></exercise>
+	</section>
+

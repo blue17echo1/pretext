@@ -8,7 +8,8 @@
   <document-id>changeme</document-id>
   <!-- A brief description for the book in a catalog; see the links above. The @shelf is used only when publishing to Runestone; see https://runestone.academy/ns/books/index for a list of valid values. You must copy these @shelf names exactly, including capitalization. -->
   <blurb shelf="AP Computer Science"> A simple string (no markup is allowed) to describe your book. </blurb>
-
+<initialism>Calc III</initialism>
+<cross-references text="custom"></cross-references>
 
   <!-- The next three lines are likely for mature projects only: -->
 
@@ -19,7 +20,124 @@
   <!-- macros for defining latex math shortcuts. It is good practice -->
   <!-- to define these semantically, so that the macro relates to what-->
   <!-- it defines. -->
-  <macros> \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} </macros>
+  <macros> 
+
+    \newcommand{\sss}{\vspace{2 mm}\noindent}
+    \newcommand{\lss}{\vspace{5 mm}\noindent}
+    \newcommand{\lls}{\vspace{7 mm}\noindent}
+    \newcommand\Tstrut{\rule{0pt}{2.6ex}} 
+    \newcommand\Bstrut{\rule[-1ex]{0pt}{0pt}}
+    \newcommand{\ds}{\displaystyle}
+    \newcommand{\HR}{\vspace{5pt}\hrule height 1pt \vspace{5pt}}
+    \newcommand{\atext}[1]{\text{\quad #1 \quad }}
+    
+    \newcommand{\Proj}[2]{\ensuremath{\mathrm{Proj}_{#2}\left({#1}\right)}}
+    \newcommand{\proj}[2]{\ensuremath{\mathrm{Proj}_{#2}\left({#1}\right)}}
+    \newcommand{\ca}{\mathcal}
+    \newcommand{\fr}{\mathfrak}
+    \newcommand{\eucal}{\EuScript}
+    \newcommand{\scr}{\mathscr}
+    \newcommand{\bbf}{\mathbb{F}}
+    \newcommand{\bbn}{\mathbb{N}}
+    \newcommand{\bbr}{\mathbb{R}}
+    \newcommand{\bbq}{\mathbb{Q}}
+    \newcommand{\bbc}{\mathbb{C}}
+    \newcommand{\bbz}{\mathbb{Z}}
+    \newcommand{\bbp}{\mathbb{P}}
+    \newcommand{\bfa}{\mathbf{a}}
+    \newcommand{\bfb}{\mathbf{b}}
+    \newcommand{\bfc}{\mathbf{c}}
+    \newcommand{\bfu}{\mathbf{u}}
+    \newcommand{\bfv}{\mathbf{v}}
+    \newcommand{\bfx}{\mathbf{x}}
+    \newcommand{\vca}{\vec{a}}
+    \newcommand{\vcb}{\vec{b}}
+    \newcommand{\vcc}{\vec{c}}
+    \newcommand{\vcd}{\vec{d}}
+    \newcommand{\vce}{\vec{e}}
+    \newcommand{\vcf}{\vec{f}}
+    \newcommand{\vcg}{\vec{g}}
+    \newcommand{\vch}{\vec{h}}
+    \newcommand{\vci}{\hat{i}}
+    \newcommand{\vcj}{\hat{j}}
+    \newcommand{\vck}{\hat{k}}
+    \newcommand{\vcl}{\vec{l}}
+    \newcommand{\vcm}{\vec{m}}
+    \newcommand{\vcn}{\vec{n}}
+    \newcommand{\vco}{\vec{o}}
+    \newcommand{\vcp}{\vec{p}}
+    \newcommand{\vcq}{\vec{q}}
+    \newcommand{\vcr}{\vec{r}}
+    \newcommand{\vcs}{\vec{s}}
+    \newcommand{\vct}{\vec{t}}
+    \newcommand{\vcu}{\vec{u}}
+    \newcommand{\vcv}{\vec{v}}
+    \newcommand{\vcw}{\vec{w}}
+    \newcommand{\vcx}{\vec{x}}
+    \newcommand{\vcy}{\vec{y}}
+    \newcommand{\vcz}{\vec{z}}
+    \newcommand{\vcT}{\vec{T}}
+    \newcommand{\vcN}{\vec{N}}
+    \newcommand{\vcE}{\vec{E}}
+    \newcommand{\vcF}{\vec{F}}
+    \newcommand{\vcS}{\vec{S}}
+    \newcommand{\vomega}{\vec{\omega}}
+    \newcommand{\vprime}{\hspace{0.2em}'}
+    \newcommand{\vzero}{\vec{0}}
+    \newcommand{\mcl}{\mathcal{L}}
+    \newcommand{\mcm}{\mathcal{M}}
+    \newcommand{\del}{\partial}
+    \newcommand{\delx}[1]{\frac{\partial #1}{\partial x}}
+    \newcommand{\dely}[1]{\frac{\partial #1}{\partial y}}
+    \newcommand{\delz}[1]{\frac{\partial #1}{\partial z}}
+    
+    \newcommand{\inv}{^{-1}}
+    \newcommand{\into}{\hookrightarrow}
+    \newcommand{\onto}{\twoheadrightarrow}
+    \newcommand{\isom}{\overset{\sim}{\to}}
+    \renewcommand{\iff}{\Leftrightarrow}
+    \renewcommand{\implies}{\Rightarrow}
+    \renewcommand{\impliedby}{\Leftarrow}
+    \newcommand{\contradiction}{\Rightarrow\Leftarrow}
+    
+    \newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+    \newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
+    \newcommand{\vmat}[1]{\begin{vmatrix}#1\end{vmatrix}}
+    \newcommand{\floor}[1]{\lfloor #1 \rfloor}
+    \newcommand{\Floor}[1]{\left\lfloor #1 \right\rfloor}
+    \newcommand{\vect}[1]{\langle #1 \rangle}
+    
+    \newcommand{\Ad}{\operatorname{Ad}}
+    \newcommand{\ad}{\operatorname{ad}}
+    \newcommand{\disc}{\operatorname{disc}}
+    \newcommand{\domain}{\operatorname{domain}}
+    \newcommand{\Id}{\operatorname{Id}}
+    \newcommand{\im}{\operatorname{im}}
+    \newcommand{\ind}{\operatorname{ind}}
+    \newcommand{\nul}{\operatorname{Nul}}
+    \newcommand{\nullity}{\operatorname{nullity}}
+    \newcommand{\ord}{\operatorname{ord}}
+    \newcommand{\rank}{\operatorname{rank}}
+    \newcommand{\red}{\operatorname{red}}
+    \newcommand{\bbref}{\operatorname{rref}}
+    \newcommand{\tr}{\operatorname{tr}}
+    \newcommand{\trunc}{\operatorname{Trunc}}
+    \newcommand{\vspan}{\operatorname{span}}
+    \newcommand{\cl}{\operatorname{cl}}
+    \newcommand{\bd}{\operatorname{bd}}
+    \newcommand{\inte}{\operatorname{int}}
+    \newcommand{\sub}{\operatorname{sub}}
+    \newcommand{\sgn}{\operatorname{sgn}}
+    \newcommand{\fix}{\operatorname{Fix}}
+    \newcommand{\syl}{\operatorname{Syl}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\curl}{\operatorname{Curl}}
+    \newcommand{\divo}{\operatorname{Div}}
+    \newcommand{\de}{^\circ}
+    \newcommand*\dif{\mathop{}\!\mathtt{d}}
+    \def\width{10}
+    \def\hauteur{10}
+    </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->
   <!-- for those in the next element. -->
@@ -27,6 +145,7 @@
 
   <!-- It is possible to rename elements: -->
   <!-- <rename element="assemblage" xml:lang="en-US">Summary</rename> -->
+  <rename element="inlineexercise" xml:lang="en-US">Exercise</rename>
 
   <!-- Specify the default type of cross reference: -->
   <!-- <cross-references text="type-global" /> -->

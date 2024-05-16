@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="opsandprops-ch" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vector Operations and Properties</title>
+
+  <!-- include sections -->
+  <xi:include href="1vectornotation.ptx"/>
+  <xi:include href="2vectoroperations.ptx"/>
+  <xi:include href="3dotprod.ptx" />
+
+</chapter>

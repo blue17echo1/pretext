@@ -1,0 +1,357 @@
+
+	<section xml:id="basic-vector-operations">
+		<title>Basic Vector Operations</title>
+
+		<p>
+			We have a few vector operations that are worth mentioning. We start with what are called “unary" operators, or operations that only require a single input. Examples of unary operators on the real numbers are negation (i.e. turning <m>4</m> into <m>-4</m>), or reciprocation (i.e. turning <m>4</m> into <m>1/4</m>). The first unary operator we’ll look at for vectors is <term>magnitude</term>.
+		</p>
+
+<definition xml:id="magnitude"><title>Magnitude</title><idx><h>Magnitude</h></idx>
+		<p>
+			Let <m>\vcv</m> be an <m>n</m>-dimensional vector, that is <m>\vcv=\bmat{v_1\\v_2\\ \vdots \\ v_n}</m>. Then the magnitude of <m>\vcv</m> is: <me>||\vcv||=\sqrt{v_1^2+v_2^2+\cdots+v_n^2}.</me>
+		</p></definition>
+
+<exercise><title>Magnitudes </title><statement>
+		<p>
+			Find the magnitude for the following vectors:
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			<m>\vcv=(1,4)</m>
+		</p>
+			</li>
+
+			<li>
+					<p>
+			<m>\vcu=(3,-2)</m>
+		</p>
+			</li>
+
+			<li>
+					<p>
+			<m>\vca=(3,1,-2)</m>
+		</p>
+			</li>
+
+			<li>
+					<p>
+			<m>\vcb=(6,2,-4,12)</m>
+		</p>
+			</li>
+
+		</ol></p></statement>
+
+		<answer>
+<ol>
+	<li>
+	<p>
+		 <m>\sqrt{17}</m>.
+</p>
+</li>
+<li>
+	<p>
+		 <m>\sqrt{13}</m>.
+</p>
+</li>
+<li>
+	<p>
+		 <m>\sqrt{14}</m>.
+</p>
+</li>
+
+<li>
+	<p>
+		 <m>10\sqrt{2}</m>.
+</p>
+</li>
+</ol>
+
+	</answer>
+</exercise>
+
+		<p>
+			A related definition is that of the <term>unit vector</term>. Technically you can think of this as a unary operation that takes a vector and returns the unit version of that vector.
+		</p>
+
+<definition><title>Unit Vector</title>
+		<p>
+			We say that <m>\vcv</m> is a <term>unit</term> vector if <m>||\vcv||=1</m>. We can find a unit vector that is parallel (has the same direction) of <m>\vcv</m> by dividing <m>\vcv</m> by its own magnitude. That is: <me>\hat{v}=\frac{1}{||\vcv||}\vcv.</me>
+		</p></definition>
+
+<definition><title>Zero Vector</title>
+		<p>
+			 We say that <m>\vcv</m> is the <term>zero</term> vector if <m>||\vcv||=0</m>, and we write <m>\vcv=\vzero</m>.
+		</p></definition>
+
+		<p>
+			The second important unary operation is <term>negation</term>.
+		</p>
+
+<definition><title>Vector Negation</title>
+		<p>
+			 Let <m>\vcv\in\bbr^n</m>, that is, <m>\vcv=\bmat{v_1\\v_2\\ \vdots \\ v_n}</m>. Then <m>-\vcv=\bmat{-v_1\\-v_2\\ \vdots \\ -v_n}</m>.
+		</p></definition>
+
+		<p>
+			Then that brings us into our second category of operations, “binary" operators, or operators that require two inputs. Examples of binary operators on real numbers are addition, multiplication, etc. We see analogues for these for vectors in vector addition and scalar multiplication.
+		</p>
+
+<definition><title>Vector Addition</title>
+		<p>
+			 Let <m>\vcv</m> and <m>\vcu</m> be two vectors in <m>\bbr^n</m>. Then to add these two vectors, we add the corresponding coordinates. That is, <me>\vcv\pm \vcu=\bmat{v_1\\v_2\\ \vdots\\v_n}\pm\bmat{u_1\\u_2\\ \vdots\\u_n}=\bmat{v_1\pm u_1\\v_2\pm u_2\\ \vdots\\v_n\pm u_n}.</me>
+		</p></definition>
+
+<definition><title>Scalar Multiplication</title>
+		<p>
+			 Given a vector <m>\vcv</m> in <m>\bbr^n</m> and a number <m>c</m> in <m>\bbr</m> (called a scalar), their product is defined by distributing the scalar to each coordinate of the vector. That is, <me>c\vcv=c\bmat{v_1\\v_2\\ \vdots\\v_n}=\bmat{cv_1\\cv_2\\ \vdots \\ c v_n}.</me>
+		</p></definition>
+
+		<p>
+			The way we add vectors is “timewise". Vectors are typically drawn as arrows with a length(magnitude) and direction. If we place the tail of the vector <m>\vcv=(x,y)</m> on the origin, the tip of the arrow would land at the point <m>(x,y)</m>.
+		</p>
+
+<!-- div attr= class="center"-->
+<figure>
+	<caption>Vectors in standard position.</caption>
+	<image xml:id="vector-ops-tikz-1" width="70%">
+	<shortdescription>graph of two vectors, u and v.</shortdescription>
+	<latex-image>
+
+		\begin{tikzpicture}[scale=.7, x=1cm, y=1cm, semitransparent]
+		%\draw[step=1mm, line width=0.1mm, black!20!white] (0,0) grid (\width,\hauteur);
+		%\draw[step=5mm, line width=0.2mm, black!90!white] (0,0) grid (\width,\hauteur);
+		\draw[step=5cm, line width=0.5mm, black!90!white] (0,0) grid (\width,\hauteur);
+		\draw[step=1cm, line width=0.2mm, black!50!white] (0,0) grid (\width,\hauteur);
+		\draw[->, color=blue,line width=0.5mm](5,5)--(7.6,6);
+		\node[color=blue] (v) at (6,6){$\vcv$};
+		\draw[->, color=red, line width=0.5mm](5,5)--(7,3.6);
+		\node[color=red] (u) at (5.6,3.8){$\vcu$};
+		\end{tikzpicture}
+	</latex-image>
+</image>
+</figure>
+<!--</div attr= class="center">-->
+
+		<p>
+			Geometrically, to add two vectors, we follow one, then follow the other. That is, we place them tail to tip:
+		</p>
+
+<figure>
+	<caption>Vector sum.</caption>
+	<image xml:id="vector-ops-tikz-2" width="70%">
+	<shortdescription>graph of the sum of two vectors, u and v.</shortdescription>
+	<latex-image>
+
+		\begin{tikzpicture}[scale=.7, x=1cm, y=1cm, semitransparent]
+		%\draw[step=1mm, line width=0.1mm, black!20!white] (0,0) grid (\width,\hauteur);
+		%\draw[step=5mm, line width=0.2mm, black!90!white] (0,0) grid (\width,\hauteur);
+		\draw[step=5cm, line width=0.5mm, black!90!white] (0,0) grid (\width,\hauteur);
+		\draw[step=1cm, line width=0.2mm, black!50!white] (0,0) grid (\width,\hauteur);
+		\draw[->, color=blue,line width=0.5mm](5,5)--(7.6,6);
+		\node[color=blue] (v) at (6,6){$\vcv$};
+		\draw[->, color=red, line width=0.5mm](7.6,6)--(9.6,4.6);
+		\node[color=red] (u) at (8.5,6){$\vcu$};
+		\draw[->,color=violet,line width=0.5mm](5,5)--(9.6,4.6);
+		\node[color=violet](uv) at (7.3, 4.5){$\vcv+\vcu$};
+		\draw[->, color=red, line width=0.5mm](5,5)--(7,3.6);
+		\node[color=red] (u1) at (5.6,3.8){$\vcu$};
+		\draw[->, color=blue,line width=0.5mm](7,3.6)--(9.6,4.6);
+		\node[color=blue] (v1) at (8.5,3.5){$\vcv$};
+		\end{tikzpicture}
+	</latex-image>
+</image>
+</figure>
+		<p>
+			<!-- linebreak -->For a 3d example, look <url href="https://www.geogebra.org/3d/kdfbhfvx">here</url>.
+		</p><!--</div attr= class="center">-->
+
+		<p>
+			Note, commutativity holds! If we follow <m>\vcv</m> first, then <m>\vcu</m>, we end up at the same spot as if we followed <m>\vcu</m> first then <m>\vcv</m>. In fact, this makes a parallelogram.
+		</p>
+
+		<p>
+			The vector drawn from the starting point to the ending point is exactly the sum of the two vectors. The difference of two vectors can be found from the same triangle as the sum:
+		</p>
+
+<figure>
+	<caption>Vector difference.</caption>
+	<image xml:id="vector-ops-tikz-3" width="70%">
+	<shortdescription>graph of the difference of two vectors, u and v.</shortdescription>
+	<latex-image>
+
+		\begin{tikzpicture}[scale=.7, x=1cm, y=1cm, semitransparent]
+		%\draw[step=1mm, line width=0.1mm, black!20!white] (0,0) grid (\width,\hauteur);
+		%\draw[step=5mm, line width=0.2mm, black!90!white] (0,0) grid (\width,\hauteur);
+		\draw[step=5cm, line width=0.5mm, black!90!white] (0,0) grid (\width,\hauteur);
+		\draw[step=1cm, line width=0.2mm, black!50!white] (0,0) grid (\width,\hauteur);
+		\draw[->, color=blue,line width=0.5mm](5,5)--(7.6,6);
+		\node[color=blue] (v) at (6,6){$\vcv$};
+		\draw[->, color=red, line width=0.5mm](5,5)--(7,3.6);
+		\node[color=red] (u) at (5.6,3.8){$\vcu$};
+		\draw[->, color=violet, line width=0.5mm](7.6,6)--(7,3.6);
+		\node[color=violet] (w) at (8.6,4.5){$\vcw=\vcu-\vcv$};
+		\end{tikzpicture}
+	</latex-image>
+</image>
+</figure>
+		<p>
+			<!-- linebreak -->For a 3d example, look <url href="https://www.geogebra.org/3d/zqhabgw9">here</url>.
+		</p><!--</div attr= class="center">-->
+
+		<p>
+			Here, <m>\vcv+\vcw=\vcu</m>. Then it follows that <m>\vcu-\vcv=\vcw</m>. That is, the difference between two vectors is the vector that goes from the tip of the second (“negative") vector to the tip of the second (“positive") vector.
+		</p>
+
+		<p>
+			To multiply a vector by a scalar, we just scale the vector. In other words, the magnitude of the vector increases or decreases. For example:
+		</p>
+
+<figure>
+	<caption>Scalar multiplication.</caption>
+	<image xml:id="vector-ops-tikz-4" width="90%">
+	<shortdescription>paired graph of the vectors u and 2u. </shortdescription>
+	<latex-image>
+		\begin{tikzpicture}[scale=.5, x=1cm, y=1cm, semitransparent]
+		%\draw[step=1mm, line width=0.1mm, black!20!white] (0,0) grid (\width,\hauteur);
+		%\draw[step=5mm, line width=0.2mm, black!90!white] (0,0) grid (\width,\hauteur);
+		\draw[step=5cm, line width=0.5mm, black!90!white] (0,0) grid (\width,\hauteur);
+		\draw[step=1cm, line width=0.2mm, black!50!white] (0,0) grid (\width,\hauteur);
+		\draw[->, color=red, line width=0.5mm](5,5)--(7,3.6);
+		\node[color=red] (u) at (5.6,3.8){$\vcu$};
+		\end{tikzpicture}
+		\begin{tikzpicture}[scale=.5, x=1cm, y=1cm, semitransparent]
+		%\draw[step=1mm, line width=0.1mm, black!20!white] (0,0) grid (\width,\hauteur);
+		%\draw[step=5mm, line width=0.2mm, black!90!white] (0,0) grid (\width,\hauteur);
+		\draw[step=5cm, line width=0.5mm, black!90!white] (0,0) grid (\width,\hauteur);
+		\draw[step=1cm, line width=0.2mm, black!50!white] (0,0) grid (\width,\hauteur);
+		\draw[->, color=red, line width=0.5mm](5,5)--(9,2.2);
+		\node[color=red] (u) at (7,3){$2\vcu$};
+		\end{tikzpicture}
+	</latex-image>
+</image>
+</figure>
+<!--</div attr= class="center">-->
+
+		<p>
+			If that scalar is negative, the direction of the vector reverses! This is similar to how negative numbers go in the opposite direction of positive numbers along the number line. Another way of verifying this is that if you add <m>\vcv+(-\vcv)</m>, you should get the 0 vector, <m>\vzero</m>! In <m>\bbr\times \bbr</m>, <m>\vzero=(0,0)</m>.
+		</p>
+
+<figure>
+	<caption>Negation</caption>
+	<image xml:id="vector-ops-tikz-5" width="90%">
+	<shortdescription>paired graph of the vectors u and -2u.</shortdescription>
+	<latex-image>
+		\begin{tikzpicture}[scale=.5, x=1cm, y=1cm, semitransparent]
+		%\draw[step=1mm, line width=0.1mm, black!20!white] (0,0) grid (\width,\hauteur);
+		%\draw[step=5mm, line width=0.2mm, black!90!white] (0,0) grid (\width,\hauteur);
+		\draw[step=5cm, line width=0.5mm, black!90!white] (0,0) grid (\width,\hauteur);
+		\draw[step=1cm, line width=0.2mm, black!50!white] (0,0) grid (\width,\hauteur);
+		\draw[->, color=red, line width=0.5mm](5,5)--(7,3.6);
+		\node[color=red] (u) at (5.6,3.8){$\vcu$};
+		\end{tikzpicture}
+		\begin{tikzpicture}[scale=.5, x=1cm, y=1cm, semitransparent]
+		%\draw[step=1mm, line width=0.1mm, black!20!white] (0,0) grid (\width,\hauteur);
+		%\draw[step=5mm, line width=0.2mm, black!90!white] (0,0) grid (\width,\hauteur);
+		\draw[step=5cm, line width=0.5mm, black!90!white] (0,0) grid (\width,\hauteur);
+		\draw[step=1cm, line width=0.2mm, black!50!white] (0,0) grid (\width,\hauteur);
+		\draw[->, color=red, line width=0.5mm](5,5)--(1,7.8);
+		\node[color=red] (u) at (3.5,7.5){$-2\vcu$};
+		\end{tikzpicture}
+	</latex-image>
+</image>
+</figure>
+<!--</div attr= class="center">-->
+
+		<p>
+			Here, <m>-2\vcu</m> is in the opposite direction of <m>\vcu</m>, and twice as long!
+		</p>
+
+
+
+<exercise><title>Operating on Vectors Geometrically</title>
+		<p>
+			Consider the Geogebra interactive below. You can change the vectors <m>\vcu</m> and <m>\vcv</m> by dragging the dots at their endpoints. You can move the vectors <m>\vcu</m> and <m>\vcv</m> around by dragging the vectors themselves.
+		</p>
+		<figure xml:id="figure-geogebra">
+			<caption>Vector Sandbox by Steve Phelps powered by Geogebra </caption>
+			<interactive xml:id="geogebra-vecsum-triangle" geogebra="n3s753de" aspect="9:6" />
+		  </figure>
+<ol>
+	<li>
+	<p>
+		 Drag the vectors <m>\vcv</m> and <m>\vcu</m> such that they are tail to tip. What do you observe about the length between the tail of <m>\vcv</m> and the tip of <m>\vcu</m>. What happens if you switch the order of the two vectors?
+</p>
+</li>
+<li>
+	<p>
+		 Drag the vectors <m>\vcv</m> and <m>\vcu</m> such that the tails of <m>\vcv</m> and <m>\vcu</m> coincide. How does this relate to <m>\vcv-\vcu</m>? What about <m>\vcu-\vcv</m>?
+</p>
+</li>
+
+</ol>
+
+</exercise>
+
+<exercise>
+		<statement><p>
+			Find the following:
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+			<m>(1,4)+(3,2)=</m>
+		</p>
+			</li>
+
+			<li>
+					<p>
+			<m>3(2,3)-2(-1,6)=</m>
+		</p>
+			</li>
+
+		</ol></p></statement>
+	<answer>
+<ol>
+	<li>
+	<p>
+		 <m>(4,6)</m>.
+</p>
+</li>
+<li>
+	<p>
+		 <m>(8,-3)</m>.
+</p>
+</li>
+
+</ol>
+
+	</answer>
+	</exercise>
+
+		<p>
+			Note that we can write vectors in an alternative way using what are called <term>elementary basis vectors</term>.
+		</p>
+
+<definition><title>Elementary Basis Vectors in <m>\bbr^2</m> and <m>\bbr^3</m></title>
+		<p>
+			 In <m>\bbr^2</m>, we define two <term>elementary basis vectors</term> as <me>\hat{i}=\bmat{1\\0},\ \hat{j}=\bmat{0\\1}.</me> In <m>\bbr^3</m>, we define three <term>elementary basis vectors</term> as <me>\hat{i}=\bmat{1\\0\\0},\ \hat{j}=\bmat{0\\1\\0},\ \hat{k}=\bmat{0\\0\\1}.</me>
+		</p></definition>
+
+		<p>
+			We can decompose vectors into sums of elementary basis vectors:
+		</p>
+
+<example>
+		<p>
+			Let <me>\vcv=\bmat{4\\-3\\2}.</me> Then we can write <me>\begin{aligned}
+\vcv=&amp;\bmat{4\\0\\0}+\bmat{0\\-3\\0}+\bmat{0\\0\\2}\\
+=&amp;4\bmat{1\\0\\0}-3\bmat{0\\1\\0}+2\bmat{0\\0\\1}\\
+=&amp;4\hat{i}-3\hat{j}+2\hat{k}.
+\end{aligned}</me>
+		</p></example>
+	</section>
+
+

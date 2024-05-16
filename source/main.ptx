@@ -12,7 +12,9 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+    <xi:include href="./1opsandprops/opsandprops-ch.ptx" />
+    <xi:include href="./2vectoroperations/vectoroperations-ch.ptx"/>
+    <xi:include href="./6lineint/lineint-ch.ptx"/>
 
 
     <!-- Include backmatter -->

@@ -16,7 +16,7 @@
     <!-- There are four components (statement/hint/answer/solution) for each -->
     <!-- of five exercise types (inline/divisional/worksheet/reading/        -->
     <!-- project). Some examples:                                            -->
-    <exercise-inline statement="yes" hint="yes" answer="no" solution="no" />
+    <exercise-inline statement="yes" hint="yes" answer="yes" solution="no" />
     <exercise-divisional statement="yes" hint="yes" />
     <!-- Style of fill-in-the-blanks: -->
     <fillin textstyle="underline" mathstyle="shade" />
@@ -80,10 +80,10 @@
     <!-- Lots of elements have this possibility; see the guide -->
     <knowl
       theorem="no"
-      proof="yes"
+      proof="no"
       definition="no"
-      example="yes"
-      example-solution="yes"
+      example="no"
+      example-solution="no"
       project="no"
       task="no"
       remark="no"
@@ -93,7 +93,7 @@
       table="no"
       listing="no"
       list="no"
-      exercise-inline="yes"
+      exercise-inline="no"
       exercise-divisional="no"
       exercise-worksheet="no"
       exercise-readingquestion="no"
@@ -104,12 +104,7 @@
     <!-- See also                                              -->
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
     <css
-        style="default"
-        colors="blue_red"
-        knowls="default"
-        toc="default"
-        banner="default"
-        navbar="default"
+        style="oscarlevin"
     />
     <!-- Search can be default or none, or you can use a Google-cx number to use google's search
     feature (but then variant should be set to none to avoid conflict) -->

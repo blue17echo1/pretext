@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="lineint-ch" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Line Integrals</title>
+
+  <!-- include sections -->
+  <xi:include href="1vectorfields.ptx"/>
+
+</chapter>
