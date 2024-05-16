@@ -7,7 +7,7 @@ var ptx_lunr_docs = [
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
-  "body": "  My Website   copyright  "
+  "body": " copyright  "
 },
 {
   "id": "vector-operations-and-properties",
