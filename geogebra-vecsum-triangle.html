@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Calc III </title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta property="og:type" content="book">
+<meta property="book:title" content="My Great Book">
+<meta property="book:author" content="You">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\sss}{\vspace{2 mm}\noindent}
+\newcommand{\lss}{\vspace{5 mm}\noindent}
+\newcommand{\lls}{\vspace{7 mm}\noindent}
+\newcommand\Tstrut{\rule{0pt}{2.6ex}} 
+\newcommand\Bstrut{\rule[-1ex]{0pt}{0pt}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\HR}{\vspace{5pt}\hrule height 1pt \vspace{5pt}}
+\newcommand{\atext}[1]{\text{\quad #1 \quad }}
+
+\newcommand{\Proj}[2]{\ensuremath{\mathrm{Proj}_{#2}\left({#1}\right)}}
+\newcommand{\proj}[2]{\ensuremath{\mathrm{Proj}_{#2}\left({#1}\right)}}
+\newcommand{\ca}{\mathcal}
+\newcommand{\fr}{\mathfrak}
+\newcommand{\eucal}{\EuScript}
+\newcommand{\scr}{\mathscr}
+\newcommand{\bbf}{\mathbb{F}}
+\newcommand{\bbn}{\mathbb{N}}
+\newcommand{\bbr}{\mathbb{R}}
+\newcommand{\bbq}{\mathbb{Q}}
+\newcommand{\bbc}{\mathbb{C}}
+\newcommand{\bbz}{\mathbb{Z}}
+\newcommand{\bbp}{\mathbb{P}}
+\newcommand{\bfa}{\mathbf{a}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfc}{\mathbf{c}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\vca}{\vec{a}}
+\newcommand{\vcb}{\vec{b}}
+\newcommand{\vcc}{\vec{c}}
+\newcommand{\vcd}{\vec{d}}
+\newcommand{\vce}{\vec{e}}
+\newcommand{\vcf}{\vec{f}}
+\newcommand{\vcg}{\vec{g}}
+\newcommand{\vch}{\vec{h}}
+\newcommand{\vci}{\hat{i}}
+\newcommand{\vcj}{\hat{j}}
+\newcommand{\vck}{\hat{k}}
+\newcommand{\vcl}{\vec{l}}
+\newcommand{\vcm}{\vec{m}}
+\newcommand{\vcn}{\vec{n}}
+\newcommand{\vco}{\vec{o}}
+\newcommand{\vcp}{\vec{p}}
+\newcommand{\vcq}{\vec{q}}
+\newcommand{\vcr}{\vec{r}}
+\newcommand{\vcs}{\vec{s}}
+\newcommand{\vct}{\vec{t}}
+\newcommand{\vcu}{\vec{u}}
+\newcommand{\vcv}{\vec{v}}
+\newcommand{\vcw}{\vec{w}}
+\newcommand{\vcx}{\vec{x}}
+\newcommand{\vcy}{\vec{y}}
+\newcommand{\vcz}{\vec{z}}
+\newcommand{\vcT}{\vec{T}}
+\newcommand{\vcN}{\vec{N}}
+\newcommand{\vcE}{\vec{E}}
+\newcommand{\vcF}{\vec{F}}
+\newcommand{\vcS}{\vec{S}}
+\newcommand{\vomega}{\vec{\omega}}
+\newcommand{\vprime}{\hspace{0.2em}'}
+\newcommand{\vzero}{\vec{0}}
+\newcommand{\mcl}{\mathcal{L}}
+\newcommand{\mcm}{\mathcal{M}}
+\newcommand{\del}{\partial}
+\newcommand{\delx}[1]{\frac{\partial #1}{\partial x}}
+\newcommand{\dely}[1]{\frac{\partial #1}{\partial y}}
+\newcommand{\delz}[1]{\frac{\partial #1}{\partial z}}
+
+\newcommand{\inv}{^{-1}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\isom}{\overset{\sim}{\to}}
+\renewcommand{\iff}{\Leftrightarrow}
+\renewcommand{\implies}{\Rightarrow}
+\renewcommand{\impliedby}{\Leftarrow}
+\newcommand{\contradiction}{\Rightarrow\Leftarrow}
+
+\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\vmat}[1]{\begin{vmatrix}#1\end{vmatrix}}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\Floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\vect}[1]{\langle #1 \rangle}
+
+\newcommand{\Ad}{\operatorname{Ad}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\disc}{\operatorname{disc}}
+\newcommand{\domain}{\operatorname{domain}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\ind}{\operatorname{ind}}
+\newcommand{\nul}{\operatorname{Nul}}
+\newcommand{\nullity}{\operatorname{nullity}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\red}{\operatorname{red}}
+\newcommand{\bbref}{\operatorname{rref}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\trunc}{\operatorname{Trunc}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\bd}{\operatorname{bd}}
+\newcommand{\inte}{\operatorname{int}}
+\newcommand{\sub}{\operatorname{sub}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\fix}{\operatorname{Fix}}
+\newcommand{\syl}{\operatorname{Syl}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\curl}{\operatorname{Curl}}
+\newcommand{\divo}{\operatorname{Div}}
+\newcommand{\de}{^\circ}
+\newcommand*\dif{\mathop{}\!\mathtt{d}}
+\def\width{10}
+\def\hauteur{10}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">My Great Book:</span> <span class="subtitle">An example to get you started</span></a></h1>
+<p class="byline">You</p>
+</div>
+</div></header><div class="ptx-page"><main class="ptx-main"><div id="ptx-content" class="ptx-content" style="max-width: 1600px"><iframe src="https://www.geogebra.org/material/iframe/id/n3s753de/width/800/height/533/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" id="geogebra-vecsum-triangle" width="600" height="400"></iframe></div></main></div>
+</body>
+</html>
