@@ -41,20 +41,14 @@
 			
 		</output>
 	</sage>
-				<pre>x,y = var('x y')
-	plot_vector_field((-y,x), (x,-3,3), (y,-3,3))</pre>
-
-	<!-- div attr= xml:id="curl2"-->
-				<p>
-					is below:
-				</p><!--</div attr= xml:id="curl2">-->
-
-	<!-- div attr= class="center"-->
-				<p>
-					<image source='Figures/vfieldex1'/> <me>\vcF(x,y)=\bmat{-y\\x}</me>
-				</p><!--</div attr= class="center">--><!--</div attr= class="example">-->
+	<p> 
+		The first line of code defines our variables, then the second line of code actually generates the plot, using the syntax: <pre>plot_vector_field((P,Q), (xvar,xmin,xmax), (yvar,ymin,ymax)).</pre> 
+	</p>
+	<p>
+		You can use the evaluate code button above to see the outputted plot.
+	</p>
 </example>
-	<!-- div attr= class="example"-->
+	<example><title>A Gradient Vector Field</title>
 				<p>
 					A Gradient Vector Field Let <m>f(x,y)=\sqrt{1-x^2-y^2}</m>. You should recognize this surface as the top half of the sphere with radius 1. But we can find <m>\nabla f</m> and plot that as a <m>2</m>-dimensional vector field. <me>\begin{aligned}
 	\nabla f=&amp;\bmat{\delx{}(\sqrt{1-x^2-y^2})\\ \dely{}(\sqrt{1-x^2-y^2})}\\
@@ -74,11 +68,11 @@
 
 				<p>
 					When referring to a vector field that comes from the gradient of a function, that is some <m>\vcF=\nabla f</m>, then <m>\vcF</m> is the <term>gradient field</term> and <m>f</m> is the <term>potential function</term>. If <m>\vcF</m> is a vector field such that there exists some <m>f</m> such that <m>\vcF=\nabla f</m>, then we say that <m>\vcF</m> is a <term>conservative</term> vector field.
-				</p><!--</div attr= class="example">-->
+				</p></example>
 
-	<!-- div attr= class="exercise"-->
+	<exercise><title>Vector Fields</title>
 				<p>
-					Vector Fields For the following vector fields, generate a graph that has at least 5 vectors. You choose the points!
+					For the following vector fields, use Sage to generate a graph of the vector field.
 				</p>
 
 				<p><ol>
@@ -86,19 +80,35 @@
 								<p>
 					<m>\vcF(x,y)=\bmat{2x\\-2}</m>.
 				</p>
+				<sage>
+					<input>
+						
+					</input>
+					<output>
+						
+					</output>
+				</sage>
 					</li>
 
 					<li>
 								<p>
 					<m>\vcF(x,y)=\bmat{y-1\\x+y}</m>.
 				</p>
+				<sage>
+					<input>
+						
+					</input>
+					<output>
+						
+					</output>
+				</sage>
 					</li>
 
-				</ol></p><!--</div attr= class="exercise">-->
+				</ol></p></exercise>
 
-	<!-- div attr= class="exercise"-->
+	<exercise><title>Gradient Vector Fields</title>
 				<p>
-					Gradient Vector Fields For the following functions, give the associated gradient vector field.
+					For the following functions, give the associated gradient vector field.
 				</p>
 
 				<p><ol>
@@ -114,7 +124,7 @@
 				</p>
 					</li>
 
-				</ol></p><!--</div attr= class="exercise">-->
+				</ol></p></exercise>
 
 		</subsection>
 	</section>
