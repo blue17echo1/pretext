@@ -346,14 +346,11 @@ sagecell.makeSagecell({
 <div class="para">A plot of this vector field <a class="external" href="https://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot_field.html#" target="_blank">can be generated using SageMath</a><details class="ptx-footnote" aria-live="polite" id="vector-fields-7-2-3"><summary class="ptx-footnote__number" title="Footnote 3.1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="vector-fields-7-2-3"><code class="code-inline tex2jax_ignore">doc.sagemath.org/html/en/reference/plotting/sage/plot/plot_field.html#</code></div></details> at <a class="external" href="https://sagecell.sagemath.org/" target="_blank">SageMathCell</a><details class="ptx-footnote" aria-live="polite" id="vector-fields-7-2-5"><summary class="ptx-footnote__number" title="Footnote 3.1.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="vector-fields-7-2-5"><code class="code-inline tex2jax_ignore">sagecell.sagemath.org/</code></div></details> with the code below.</div>
 </div> <pre id="vector-fields-7-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">x,y = var('x y')
 plot_vector_field((-y,x), (x,-3,3), (y,-3,3))
-</script></pre>
-<pre class="code-block tex2jax_ignore">x,y = var('x y')
-	plot_vector_field((-y,x), (x,-3,3), (y,-3,3))
-</pre> <div class="para" id="vector-fields-7-5">is below:</div>  <div class="para logical" id="vector-fields-7-6"><div class="displaymath process-math">
-\begin{equation*}
-\vcF(x,y)=\bmat{-y\\x}
-\end{equation*}
-</div></div></article><div class="para logical" id="vector-fields-8">
+</script></pre> <div class="para" id="vector-fields-7-4">The first line of code defines our variables, then the second line of code actually generates the plot, using the syntax:<pre class="code-block tex2jax_ignore">plot_vector_field((P,Q), (xvar,xmin,xmax), (yvar,ymin,ymax)).
+</pre>
+</div> <div class="para" id="vector-fields-7-5">You can use the evaluate code button above to see the outputted plot.</div></article><article class="example example-like" id="vector-fields-8"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">A Gradient Vector Field.</span>
+</h4> <div class="para logical" id="vector-fields-8-2">
 <div class="para">A Gradient Vector Field Let <span class="process-math">\(f(x,y)=\sqrt{1-x^2-y^2}\text{.}\)</span> You should recognize this surface as the top half of the sphere with radius 1. But we can find <span class="process-math">\(\nabla f\)</span> and plot that as a <span class="process-math">\(2\)</span>-dimensional vector field.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -363,23 +360,34 @@ plot_vector_field((-y,x), (x,-3,3), (y,-3,3))
 \end{aligned}
 \end{equation*}
 </div>
-<div class="para">Then we can graph <span class="process-math">\(\nabla f\)</span> as a vector field: <pre id="vector-fields-8-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">x,y = var('x y')
+<div class="para">Then we can graph <span class="process-math">\(\nabla f\)</span> as a vector field: <pre id="vector-fields-8-2-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">x,y = var('x y')
 f=sqrt(1-x^2-y^2)
 plot_vector_field(f.gradient(), (x,-1,1),(y,-1,1))
 </script></pre>
 </div>
-</div>
-<div class="para" id="vector-fields-9">When referring to a vector field that comes from the gradient of a function, that is some <span class="process-math">\(\vcF=\nabla f\text{,}\)</span> then <span class="process-math">\(\vcF\)</span> is the <dfn class="terminology">gradient field</dfn> and <span class="process-math">\(f\)</span> is the <dfn class="terminology">potential function</dfn>. If <span class="process-math">\(\vcF\)</span> is a vector field such that there exists some <span class="process-math">\(f\)</span> such that <span class="process-math">\(\vcF=\nabla f\text{,}\)</span> then we say that <span class="process-math">\(\vcF\)</span> is a <dfn class="terminology">conservative</dfn> vector field.</div>
-<div class="para" id="vector-fields-10">Vector Fields For the following vector fields, generate a graph that has at least 5 vectors. You choose the points!</div>
-<div class="para logical" id="vector-fields-11"><ol class="decimal">
-<li id="vector-fields-11-1-1"><div class="para" id="vector-fields-11-1-1-1"><span class="process-math">\(\vcF(x,y)=\bmat{2x\\-2}\text{.}\)</span></div></li>
-<li id="vector-fields-11-1-2"><div class="para" id="vector-fields-11-1-2-1"><span class="process-math">\(\vcF(x,y)=\bmat{y-1\\x+y}\text{.}\)</span></div></li>
-</ol></div>
-<div class="para" id="vector-fields-12">Gradient Vector Fields For the following functions, give the associated gradient vector field.</div>
-<div class="para logical" id="vector-fields-13"><ol class="decimal">
-<li id="vector-fields-13-1-1"><div class="para" id="vector-fields-13-1-1-1"><span class="process-math">\(f(x,y)=y^2\cos(2x-y)\text{.}\)</span></div></li>
-<li id="vector-fields-13-1-2"><div class="para" id="vector-fields-13-1-2-1"><span class="process-math">\(f(x,y,z)=xze^{y}\text{.}\)</span></div></li>
-</ol></div></section></section></div>
+</div> <div class="para" id="vector-fields-8-3">When referring to a vector field that comes from the gradient of a function, that is some <span class="process-math">\(\vcF=\nabla f\text{,}\)</span> then <span class="process-math">\(\vcF\)</span> is the <dfn class="terminology">gradient field</dfn> and <span class="process-math">\(f\)</span> is the <dfn class="terminology">potential function</dfn>. If <span class="process-math">\(\vcF\)</span> is a vector field such that there exists some <span class="process-math">\(f\)</span> such that <span class="process-math">\(\vcF=\nabla f\text{,}\)</span> then we say that <span class="process-math">\(\vcF\)</span> is a <dfn class="terminology">conservative</dfn> vector field.</div></article><article class="exercise exercise-like" id="vector-fields-9"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Vector Fields.</span>
+</h4>
+<div class="para" id="vector-fields-9-2">For the following vector fields, use Sage to generate a graph of the vector field.</div>
+<div class="para logical" id="vector-fields-9-3"><ol class="decimal">
+<li id="vector-fields-9-3-1-1">
+<div class="para" id="vector-fields-9-3-1-1-1"><span class="process-math">\(\vcF(x,y)=\bmat{2x\\-2}\text{.}\)</span></div>
+<pre id="vector-fields-9-3-1-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+</script></pre>
+</li>
+<li id="vector-fields-9-3-1-2">
+<div class="para" id="vector-fields-9-3-1-2-1"><span class="process-math">\(\vcF(x,y)=\bmat{y-1\\x+y}\text{.}\)</span></div>
+<pre id="vector-fields-9-3-1-2-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+</script></pre>
+</li>
+</ol></div></article><article class="exercise exercise-like" id="vector-fields-10"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Gradient Vector Fields.</span>
+</h4>
+<div class="para" id="vector-fields-10-2">For the following functions, give the associated gradient vector field.</div>
+<div class="para logical" id="vector-fields-10-3"><ol class="decimal">
+<li id="vector-fields-10-3-1-1"><div class="para" id="vector-fields-10-3-1-1-1"><span class="process-math">\(f(x,y)=y^2\cos(2x-y)\text{.}\)</span></div></li>
+<li id="vector-fields-10-3-1-2"><div class="para" id="vector-fields-10-3-1-2-1"><span class="process-math">\(f(x,y,z)=xze^{y}\text{.}\)</span></div></li>
+</ol></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="lineint-ch.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
