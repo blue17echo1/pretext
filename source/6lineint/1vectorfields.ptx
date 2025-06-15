@@ -1,121 +1,120 @@
 
 
-		<section xml:id="vector-fields">
-			<title>Vector Fields</title>
+		<section xml:id="line-integrals">
+			<title>Line Integrals</title>
 
-			<p>
-				This semester we started with vector functions, or functions from <m>\bbr\to\bbr^n</m>. Next, we studied surfaces, or functions from <m>\bbr^n\to\bbr</m>. We conclude the semester by studying vector fields, which are functions from <m>\bbr^n\to\bbr^n</m>. In particular, we’ll be looking at vector fields from <m>\bbr^2\to\bbr^2</m> and vector fields from <m>\bbr^3\to\bbr^3</m>.
-			</p>
+			<subsection xml:id="vector-fields">
+				<title>Vector Fields</title>
 
-<!-- div attr= class="definition"-->
-			<p>
-				Vector Field in <m>2</m>-Dimensions Let <m>\vcF</m> be a function from <m>\bbr^2\to\bbr^2</m> such that <me>\vcF(x,y)=\bmat{P(x,y)\\Q(x,y)}=P(x,y)\vci+Q(x,y)\vcj.</me> We call <m>\vcF</m> a vector field from <m>\bbr^2</m> to <m>\bbr^2</m>.
-			</p><!--</div attr= class="definition">-->
+				<p>
+					This semester we started with vector functions, or functions from <m>\bbr\to\bbr^n</m>. Next, we studied surfaces, or functions from <m>\bbr^n\to\bbr</m>. We conclude the semester by studying vector fields, which are functions from <m>\bbr^n\to\bbr^n</m>. In particular, we’ll be looking at vector fields from <m>\bbr^2\to\bbr^2</m> and vector fields from <m>\bbr^3\to\bbr^3</m>.
+				</p>
 
-<!-- div attr= class="definition"-->
-			<p>
-				Vector Field in <m>3</m>-Dimensions Let <m>\vcF</m> be a function from <m>\bbr^3\to\bbr^3</m> such that <me>\vcF(x,y,z)=\bmat{P(x,y,z)\\Q(x,y,z)\\R(x,y,z)}=P(x,y,z)\vci+Q(x,y,z)\vcj+R(x,y,z)\vck.</me> We call <m>\vcF</m> a vector field from <m>\bbr^3</m> to <m>\bbr^3</m>.
-			</p><!--</div attr= class="definition">-->
+			<definition><title>Vector Field in <m>2</m>-Dimensions</title><idx><h><m>2</m>-Dimensional Vector Field</h></idx>
+				<p>
+					Let <m>\vcF</m> be a function from <m>\bbr^2\to\bbr^2</m> such that <me>\vcF(x,y)=\bmat{P(x,y)\\Q(x,y)}=P(x,y)\vci+Q(x,y)\vcj.</me> We call <m>\vcF</m> a vector field from <m>\bbr^2</m> to <m>\bbr^2</m>.
+				</p></definition>
 
-			<p>
-				As a note, we have actually already seen functions that were secretly vector fields. If you have some <m>f(x,y)=z</m>, then <me>\nabla f=\bmat{f_x(x,y)\\f_y(x,y)}</me> is a 2-dimensional vector field.
-			</p>
+			<definition><title>Vector Field in <m>3</m>-Dimensions</title><idx><h><m>3</m>-Dimensional Vector Field</h></idx>
+				<p>
+					Vector Field in <m>3</m>-Dimensions Let <m>\vcF</m> be a function from <m>\bbr^3\to\bbr^3</m> such that <me>\vcF(x,y,z)=\bmat{P(x,y,z)\\Q(x,y,z)\\R(x,y,z)}=P(x,y,z)\vci+Q(x,y,z)\vcj+R(x,y,z)\vck.</me> We call <m>\vcF</m> a vector field from <m>\bbr^3</m> to <m>\bbr^3</m>.
+				</p></definition>
 
-			<p>
-				Vector fields are often graphed by taking the domain, then picking some arbitrary points in the domain and drawing the resulting vector of that coordinates at that point in the domain. That is, to graph the vector field <me>\vcF(x,y)=\bmat{-y\\x}</me> we would plot the vector <m>\bmat{-1\\1}</m> at <m>(1,1)</m>, the vector <m>\bmat{-2\\1}</m> at <m>(1,2)</m> and so on and so forth. We often scale the vectors that we plot for clarity.
-			</p>
+				<p>
+					As a note, we have actually already seen functions that were secretly vector fields. If you have some <m>f(x,y)=z</m>, then <me>\nabla f=\bmat{f_x(x,y)\\f_y(x,y)}</me> is a 2-dimensional vector field.
+				</p>
 
-<!-- div attr= class="example"-->
-			<p>
-				A 2-Dimensional Vector Field Let <me>\vcF(x,y)=\bmat{-y\\x}.</me> A plot of this vector field <url href="https://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot_field.html#">generated using SageMath</url> at <url href="https://sagecell.sagemath.org/">SageMathCell</url> with the code
-			</p>
-<sage>
-	<input>
-x,y = var('x y')
-plot_vector_field((-y,x), (x,-3,3), (y,-3,3))
-	</input>
-	<output>
-		
-	</output>
-</sage>
-			<pre>x,y = var('x y')
-plot_vector_field((-y,x), (x,-3,3), (y,-3,3))</pre>
+				<p>
+					Vector fields are often graphed by taking the domain, then picking some arbitrary points in the domain and drawing the resulting vector of that coordinates at that point in the domain. That is, to graph the vector field <me>\vcF(x,y)=\bmat{-y\\x}</me> we would plot the vector <m>\bmat{-1\\1}</m> at <m>(1,1)</m>, the vector <m>\bmat{-2\\1}</m> at <m>(1,2)</m> and so on and so forth. We often scale the vectors that we plot for clarity.
+				</p>
 
-<!-- div attr= xml:id="curl2"-->
-			<p>
-				is below:
-			</p><!--</div attr= xml:id="curl2">-->
+	<example><title>A <m>2</m>-Dimensional Vector Field</title>
+				<p>
+					Let <me>\vcF(x,y)=\bmat{-y\\x}.</me> A plot of this vector field <url href="https://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot_field.html#">can be generated using SageMath</url> at <url href="https://sagecell.sagemath.org/">SageMathCell</url> with the code below.
+				</p>
+	<sage>
+		<input>
+	x,y = var('x y')
+	plot_vector_field((-y,x), (x,-3,3), (y,-3,3))
+		</input>
+		<output>
+			
+		</output>
+	</sage>
+				<pre>x,y = var('x y')
+	plot_vector_field((-y,x), (x,-3,3), (y,-3,3))</pre>
 
-<!-- div attr= class="center"-->
-			<p>
-				<image source='Figures/vfieldex1'/> <me>\vcF(x,y)=\bmat{-y\\x}</me>
-			</p><!--</div attr= class="center">--><!--</div attr= class="example">-->
+	<!-- div attr= xml:id="curl2"-->
+				<p>
+					is below:
+				</p><!--</div attr= xml:id="curl2">-->
 
-<!-- div attr= class="example"-->
-			<p>
-				A Gradient Vector Field Let <m>f(x,y)=\sqrt{1-x^2-y^2}</m>. You should recognize this surface as the top half of the sphere with radius 1. But we can find <m>\nabla f</m> and plot that as a <m>2</m>-dimensional vector field. <me>\begin{aligned}
-\nabla f=&amp;\bmat{\delx{}(\sqrt{1-x^2-y^2})\\ \dely{}(\sqrt{1-x^2-y^2})}\\
-=&amp;\bmat{-\frac{x}{\sqrt{1-x^2-y^2}}\\-\frac{y}{\sqrt{1-x^2-y^2}}}.
-\end{aligned}</me> Then we can graph <m>\nabla f</m> as a vector field:
-<sage>
-	<input>
-x,y = var('x y')
-f=sqrt(1-x^2-y^2)
-plot_vector_field(f.gradient(), (x,-1,1),(y,-1,1))
-	</input>
-	<output>
-		
-	</output>
-</sage>
-			</p>
+	<!-- div attr= class="center"-->
+				<p>
+					<image source='Figures/vfieldex1'/> <me>\vcF(x,y)=\bmat{-y\\x}</me>
+				</p><!--</div attr= class="center">--><!--</div attr= class="example">-->
+</example>
+	<!-- div attr= class="example"-->
+				<p>
+					A Gradient Vector Field Let <m>f(x,y)=\sqrt{1-x^2-y^2}</m>. You should recognize this surface as the top half of the sphere with radius 1. But we can find <m>\nabla f</m> and plot that as a <m>2</m>-dimensional vector field. <me>\begin{aligned}
+	\nabla f=&amp;\bmat{\delx{}(\sqrt{1-x^2-y^2})\\ \dely{}(\sqrt{1-x^2-y^2})}\\
+	=&amp;\bmat{-\frac{x}{\sqrt{1-x^2-y^2}}\\-\frac{y}{\sqrt{1-x^2-y^2}}}.
+	\end{aligned}</me> Then we can graph <m>\nabla f</m> as a vector field:
+	<sage>
+		<input>
+	x,y = var('x y')
+	f=sqrt(1-x^2-y^2)
+	plot_vector_field(f.gradient(), (x,-1,1),(y,-1,1))
+		</input>
+		<output>
+			
+		</output>
+	</sage>
+				</p>
 
-<!-- div attr= class="center"-->
-			<p>
-				<image source='Figures/gradvfieldex'/><!-- linebreak -->Gradient Vector Field for <m>f(x,y)=\sqrt{1-x^2-y^2}</m>.
-			</p><!--</div attr= class="center">-->
+				<p>
+					When referring to a vector field that comes from the gradient of a function, that is some <m>\vcF=\nabla f</m>, then <m>\vcF</m> is the <term>gradient field</term> and <m>f</m> is the <term>potential function</term>. If <m>\vcF</m> is a vector field such that there exists some <m>f</m> such that <m>\vcF=\nabla f</m>, then we say that <m>\vcF</m> is a <term>conservative</term> vector field.
+				</p><!--</div attr= class="example">-->
 
-			<p>
-				When referring to a vector field that comes from the gradient of a function, that is some <m>\vcF=\nabla f</m>, then <m>\vcF</m> is the <term>gradient field</term> and <m>f</m> is the <term>potential function</term>. If <m>\vcF</m> is a vector field such that there exists some <m>f</m> such that <m>\vcF=\nabla f</m>, then we say that <m>\vcF</m> is a <term>conservative</term> vector field.
-			</p><!--</div attr= class="example">-->
+	<!-- div attr= class="exercise"-->
+				<p>
+					Vector Fields For the following vector fields, generate a graph that has at least 5 vectors. You choose the points!
+				</p>
 
-<!-- div attr= class="exercise"-->
-			<p>
-				Vector Fields For the following vector fields, generate a graph that has at least 5 vectors. You choose the points!
-			</p>
+				<p><ol>
+					<li>
+								<p>
+					<m>\vcF(x,y)=\bmat{2x\\-2}</m>.
+				</p>
+					</li>
 
-			<p><ol>
-				<li>
-							<p>
-				<m>\vcF(x,y)=\bmat{2x\\-2}</m>.
-			</p>
-				</li>
+					<li>
+								<p>
+					<m>\vcF(x,y)=\bmat{y-1\\x+y}</m>.
+				</p>
+					</li>
 
-				<li>
-							<p>
-				<m>\vcF(x,y)=\bmat{y-1\\x+y}</m>.
-			</p>
-				</li>
+				</ol></p><!--</div attr= class="exercise">-->
 
-			</ol></p><!--</div attr= class="exercise">-->
+	<!-- div attr= class="exercise"-->
+				<p>
+					Gradient Vector Fields For the following functions, give the associated gradient vector field.
+				</p>
 
-<!-- div attr= class="exercise"-->
-			<p>
-				Gradient Vector Fields For the following functions, give the associated gradient vector field.
-			</p>
+				<p><ol>
+					<li>
+								<p>
+					<m>f(x,y)=y^2\cos(2x-y)</m>.
+				</p>
+					</li>
 
-			<p><ol>
-				<li>
-							<p>
-				<m>f(x,y)=y^2\cos(2x-y)</m>.
-			</p>
-				</li>
+					<li>
+								<p>
+					<m>f(x,y,z)=xze^{y}</m>.
+				</p>
+					</li>
 
-				<li>
-							<p>
-				<m>f(x,y,z)=xze^{y}</m>.
-			</p>
-				</li>
+				</ol></p><!--</div attr= class="exercise">-->
 
-			</ol></p><!--</div attr= class="exercise">-->
-
+		</subsection>
 	</section>
