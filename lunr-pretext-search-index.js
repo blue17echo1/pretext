@@ -334,18 +334,45 @@ var ptx_lunr_docs = [
   "body": " Vector Operations and Properties   "
 },
 {
-  "id": "vector-fields",
+  "id": "line-integrals",
   "level": "1",
-  "url": "vector-fields.html",
+  "url": "line-integrals.html",
   "type": "Section",
   "number": "3.1",
-  "title": "Vector Fields",
-  "body": " Vector Fields  This semester we started with vector functions, or functions from . Next, we studied surfaces, or functions from . We conclude the semester by studying vector fields, which are functions from . In particular, we’ll be looking at vector fields from and vector fields from .   Vector Field in -Dimensions Let be a function from such that We call a vector field from to .   Vector Field in -Dimensions Let be a function from such that We call a vector field from to .  As a note, we have actually already seen functions that were secretly vector fields. If you have some , then is a 2-dimensional vector field.  Vector fields are often graphed by taking the domain, then picking some arbitrary points in the domain and drawing the resulting vector of that coordinates at that point in the domain. That is, to graph the vector field we would plot the vector at , the vector at and so on and so forth. We often scale the vectors that we plot for clarity.   A 2-Dimensional Vector Field Let A plot of this vector field generated using SageMath at SageMathCell with the code   x,y = var('x y') plot_vector_field((-y,x), (x,-3,3), (y,-3,3))   is below:        A Gradient Vector Field Let . You should recognize this surface as the top half of the sphere with radius 1. But we can find and plot that as a -dimensional vector field. Then we can graph as a vector field:     Gradient Vector Field for .  When referring to a vector field that comes from the gradient of a function, that is some , then is the gradient field and is the potential function . If is a vector field such that there exists some such that , then we say that is a conservative vector field.   Vector Fields For the following vector fields, generate a graph that has at least 5 vectors. You choose the points!     .     .     Gradient Vector Fields For the following functions, give the associated gradient vector field.     .     .    "
+  "title": "Line Integrals",
+  "body": " Line Integrals   Vector Fields  This semester we started with vector functions, or functions from . Next, we studied surfaces, or functions from . We conclude the semester by studying vector fields, which are functions from . In particular, we’ll be looking at vector fields from and vector fields from .  Vector Field in -Dimensions -Dimensional Vector Field  Let be a function from such that We call a vector field from to .  Vector Field in -Dimensions -Dimensional Vector Field  Vector Field in -Dimensions Let be a function from such that We call a vector field from to .  As a note, we have actually already seen functions that were secretly vector fields. If you have some , then is a 2-dimensional vector field.  Vector fields are often graphed by taking the domain, then picking some arbitrary points in the domain and drawing the resulting vector of that coordinates at that point in the domain. That is, to graph the vector field we would plot the vector at , the vector at and so on and so forth. We often scale the vectors that we plot for clarity.  A -Dimensional Vector Field  Let A plot of this vector field can be generated using SageMath at SageMathCell with the code below.   x,y = var('x y') plot_vector_field((-y,x), (x,-3,3), (y,-3,3))   is below:         A Gradient Vector Field Let . You should recognize this surface as the top half of the sphere with radius 1. But we can find and plot that as a -dimensional vector field. Then we can graph as a vector field:   When referring to a vector field that comes from the gradient of a function, that is some , then is the gradient field and is the potential function . If is a vector field such that there exists some such that , then we say that is a conservative vector field.   Vector Fields For the following vector fields, generate a graph that has at least 5 vectors. You choose the points!     .     .     Gradient Vector Fields For the following functions, give the associated gradient vector field.     .     .     "
 },
 {
-  "id": "vector-fields-14",
+  "id": "vector-fields-3",
   "level": "2",
-  "url": "vector-fields.html#vector-fields-14",
+  "url": "line-integrals.html#vector-fields-3",
+  "type": "Definition",
+  "number": "3.1.1",
+  "title": "Vector Field in <span class=\"process-math\">\\(2\\)<\/span>-Dimensions.",
+  "body": "Vector Field in -Dimensions -Dimensional Vector Field  Let be a function from such that We call a vector field from to . "
+},
+{
+  "id": "vector-fields-4",
+  "level": "2",
+  "url": "line-integrals.html#vector-fields-4",
+  "type": "Definition",
+  "number": "3.1.2",
+  "title": "Vector Field in <span class=\"process-math\">\\(3\\)<\/span>-Dimensions.",
+  "body": "Vector Field in -Dimensions -Dimensional Vector Field  Vector Field in -Dimensions Let be a function from such that We call a vector field from to . "
+},
+{
+  "id": "vector-fields-7",
+  "level": "2",
+  "url": "line-integrals.html#vector-fields-7",
+  "type": "Example",
+  "number": "3.1.3",
+  "title": "A <span class=\"process-math\">\\(2\\)<\/span>-Dimensional Vector Field.",
+  "body": "A -Dimensional Vector Field  Let A plot of this vector field can be generated using SageMath at SageMathCell with the code below.   x,y = var('x y') plot_vector_field((-y,x), (x,-3,3), (y,-3,3))   is below:       "
+},
+{
+  "id": "vector-fields-9",
+  "level": "2",
+  "url": "line-integrals.html#vector-fields-9",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",

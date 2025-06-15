@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Calc III Vector Operations and Properties</title>
+<title>Calc III Line Integrals</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -123,7 +135,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="opsandprops-ch.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="opsandprops-ch.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="basic-vector-operations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\sss}{\vspace{2 mm}\noindent}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="lineint-ch.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="lineint-ch.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\sss}{\vspace{2 mm}\noindent}
 \newcommand{\lss}{\vspace{5 mm}\noindent}
 \newcommand{\lls}{\vspace{7 mm}\noindent}
 \newcommand\Tstrut{\rule{0pt}{2.6ex}} 
@@ -247,10 +259,10 @@ window.MathJax = {
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="opsandprops-ch.html" class="internal"><span class="codenumber">1</span> <span class="title">Vector Operations and Properties</span></a></div>
-<ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="vector-operations-and-properties.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vector Operations and Properties</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="vector-operations-and-properties.html#vector-notation-and-introduction" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Vector Notation and Introduction</span></a></div></li></ul>
 </li>
@@ -259,9 +271,9 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="vectoroperations-ch.html" class="internal"><span class="codenumber">2</span> <span class="title">Vector Operations and Properties</span></a></div></li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="lineint-ch.html" class="internal"><span class="codenumber">3</span> <span class="title">Line Integrals</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="line-integrals.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Line Integrals</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="line-integrals.html#vector-fields" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Vector Fields</span></a></div></li></ul>
 </li></ul>
@@ -274,52 +286,102 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="vector-operations-and-properties"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Vector Operations and Properties</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="line-integrals"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.1</span><span class="space"> </span><span class="title">Line Integrals</span>
 </h2>
-<section class="subsection" id="vector-notation-and-introduction"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="space"> </span><span class="title">Vector Notation and Introduction</span>
+<section class="subsection" id="vector-fields"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="space"> </span><span class="title">Vector Fields</span>
 </h3>
-<div class="para" id="vector-notation-and-introduction-2">Your previous journeys into Calculus so far have been generally restricted to experimentation with just <span class="process-math">\(\bbr\text{,}\)</span> the set of real numbers. You have mastered (hopefully!) derivatives and integrals of functions <span class="process-math">\(f:\bbr\to\bbr\)</span> that take a single real number to a second real number. Calculus III expands on this idea by introducing <dfn class="terminology">vectors</dfn>, which are essentially ordered lists of real numbers.</div>
-<article class="definition definition-like" id="vector-notation-and-introduction-3"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(n\)</span>-Dimensional Real Euclidean Space.</span>
-</h4> <div class="para logical" id="vector-notation-and-introduction-3-3">
-<div class="para">Define <dfn class="terminology"><span class="process-math">\(n\)</span>-dimensional real Euclidean space</dfn> to be the set of all lists of exactly <span class="process-math">\(n\)</span> real numbers. In set builder notation,</div>
+<div class="para" id="vector-fields-2">This semester we started with vector functions, or functions from <span class="process-math">\(\bbr\to\bbr^n\text{.}\)</span> Next, we studied surfaces, or functions from <span class="process-math">\(\bbr^n\to\bbr\text{.}\)</span> We conclude the semester by studying vector fields, which are functions from <span class="process-math">\(\bbr^n\to\bbr^n\text{.}\)</span> In particular, we’ll be looking at vector fields from <span class="process-math">\(\bbr^2\to\bbr^2\)</span> and vector fields from <span class="process-math">\(\bbr^3\to\bbr^3\text{.}\)</span>
+</div>
+<article class="definition definition-like" id="vector-fields-3"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Vector Field in <span class="process-math">\(2\)</span>-Dimensions.</span>
+</h4> <div class="para logical" id="vector-fields-3-3">
+<div class="para">Let <span class="process-math">\(\vcF\)</span> be a function from <span class="process-math">\(\bbr^2\to\bbr^2\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathbb{R}^n=\left\lbrace \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n\end{bmatrix}:a_i\in\bbr\right\rbrace,
+\vcF(x,y)=\bmat{P(x,y)\\Q(x,y)}=P(x,y)\vci+Q(x,y)\vcj.
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(n\in\bbn\)</span> or <span class="process-math">\(n\)</span> is a natural number.</div>
-</div></article><article class="definition definition-like" id="vector-notation-and-introduction-4"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Vector.</span>
-</h4> <div class="para logical" id="vector-notation-and-introduction-4-3">
-<div class="para">A single element of <span class="process-math">\(n\)</span>-dimensional real Euclidean space is called a <dfn class="terminology">vector</dfn> and usually written with a short arrow above it. For example,</div>
+<div class="para">We call <span class="process-math">\(\vcF\)</span> a vector field from <span class="process-math">\(\bbr^2\)</span> to <span class="process-math">\(\bbr^2\text{.}\)</span>
+</div>
+</div></article><article class="definition definition-like" id="vector-fields-4"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Vector Field in <span class="process-math">\(3\)</span>-Dimensions.</span>
+</h4> <div class="para logical" id="vector-fields-4-3">
+<div class="para">Vector Field in <span class="process-math">\(3\)</span>-Dimensions Let <span class="process-math">\(\vcF\)</span> be a function from <span class="process-math">\(\bbr^3\to\bbr^3\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vcv=\bmat{x\\y\\z}
+\vcF(x,y,z)=\bmat{P(x,y,z)\\Q(x,y,z)\\R(x,y,z)}=P(x,y,z)\vci+Q(x,y,z)\vcj+R(x,y,z)\vck.
 \end{equation*}
 </div>
-<div class="para">would describe a vector in <span class="process-math">\(\bbr^3\text{.}\)</span> While vertical vectors are often the best for us, to save space you will occasionally see vectors written horizontally with parentheses or angle brackets, that is:</div>
+<div class="para">We call <span class="process-math">\(\vcF\)</span> a vector field from <span class="process-math">\(\bbr^3\)</span> to <span class="process-math">\(\bbr^3\text{.}\)</span>
+</div>
+</div></article><div class="para logical" id="vector-fields-5">
+<div class="para">As a note, we have actually already seen functions that were secretly vector fields. If you have some <span class="process-math">\(f(x,y)=z\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vcv=\bmat{x\\y\\z}=(x,y,z)=\langle x,y,z\rangle
+\nabla f=\bmat{f_x(x,y)\\f_y(x,y)}
 \end{equation*}
 </div>
-<div class="para">all represent the same vector!</div>
-</div></article><div class="para" id="vector-notation-and-introduction-5">We actually need quite a bit of <em class="emphasis">linear algebra</em> to accurately define the definition of the term <dfn class="terminology">dimension</dfn>, but it’s important enough that we’ll give an informal definition here.</div>
-<article class="definition definition-like" id="vector-notation-and-introduction-6"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Dimension.</span>
-</h4> <div class="para" id="vector-notation-and-introduction-6-3">The <dfn class="terminology">dimension</dfn> of a vector space is the number of values needed to exactly describe an object in that vector space. The <dfn class="terminology">dimension</dfn> of a vector is the dimension of the vector space that that vector lives in.</div></article><div class="para" id="vector-notation-and-introduction-7">Note that the dimension of <span class="process-math">\(\bbr^n\)</span> is <span class="process-math">\(n\text{,}\)</span> since we need a list of <span class="process-math">\(n\)</span> real numbers to exactly describe a single vector in <span class="process-math">\(\bbr^n\text{.}\)</span>
+<div class="para">is a 2-dimensional vector field.</div>
 </div>
-<div class="para" id="vector-notation-and-introduction-8">We typically draw vectors in <span class="process-math">\(n\)</span>-dimensional Euclidean space as arrows, where the tail of the arrow lies on the origin and the tip of the arrow lies at the point whose coordinates are exactly said vector.</div>
-<article class="example example-like" id="vector-notation-and-introduction-9"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(n=2\)</span>.</span>
-</h4> <div class="para" id="vector-notation-and-introduction-9-2">Let <span class="process-math">\(\vcv\)</span> and <span class="process-math">\(\vcu\)</span> be vectors in <span class="process-math">\(\bbr^2\text{,}\)</span> and <span class="process-math">\(\vcv=\bmat{3\\1}\)</span> and <span class="process-math">\(\vcu=\bmat{2\\-2}\text{.}\)</span> Then we draw <span class="process-math">\(\vcv\)</span> and <span class="process-math">\(\vcu\)</span> in the Euclidean plane as below: <figure class="figure figure-like" id="vector-notation-and-introduction-9-2-8"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="generated/latex-image/vector-notation-tikz.svg" role="img" class="contained" alt="image of the the two vectors described earlier in standard position"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.5<span class="period">.</span></span><span class="space"> </span>Vectors in standard position.</figcaption></figure>
-</div> </article></section></section></div>
+<div class="para logical" id="vector-fields-6">
+<div class="para">Vector fields are often graphed by taking the domain, then picking some arbitrary points in the domain and drawing the resulting vector of that coordinates at that point in the domain. That is, to graph the vector field</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vcF(x,y)=\bmat{-y\\x}
+\end{equation*}
+</div>
+<div class="para">we would plot the vector <span class="process-math">\(\bmat{-1\\1}\)</span> at <span class="process-math">\((1,1)\text{,}\)</span> the vector <span class="process-math">\(\bmat{-2\\1}\)</span> at <span class="process-math">\((1,2)\)</span> and so on and so forth. We often scale the vectors that we plot for clarity.</div>
+</div>
+<article class="example example-like" id="vector-fields-7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">A <span class="process-math">\(2\)</span>-Dimensional Vector Field.</span>
+</h4> <div class="para logical" id="vector-fields-7-2">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vcF(x,y)=\bmat{-y\\x}.
+\end{equation*}
+</div>
+<div class="para">A plot of this vector field <a class="external" href="https://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot_field.html#" target="_blank">can be generated using SageMath</a><details class="ptx-footnote" aria-live="polite" id="vector-fields-7-2-3"><summary class="ptx-footnote__number" title="Footnote 3.1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="vector-fields-7-2-3"><code class="code-inline tex2jax_ignore">doc.sagemath.org/html/en/reference/plotting/sage/plot/plot_field.html#</code></div></details> at <a class="external" href="https://sagecell.sagemath.org/" target="_blank">SageMathCell</a><details class="ptx-footnote" aria-live="polite" id="vector-fields-7-2-5"><summary class="ptx-footnote__number" title="Footnote 3.1.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="vector-fields-7-2-5"><code class="code-inline tex2jax_ignore">sagecell.sagemath.org/</code></div></details> with the code below.</div>
+</div> <pre id="vector-fields-7-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">x,y = var('x y')
+plot_vector_field((-y,x), (x,-3,3), (y,-3,3))
+</script></pre>
+<pre class="code-block tex2jax_ignore">x,y = var('x y')
+	plot_vector_field((-y,x), (x,-3,3), (y,-3,3))
+</pre> <div class="para" id="vector-fields-7-5">is below:</div>  <div class="para logical" id="vector-fields-7-6"><div class="displaymath process-math">
+\begin{equation*}
+\vcF(x,y)=\bmat{-y\\x}
+\end{equation*}
+</div></div></article><div class="para logical" id="vector-fields-8">
+<div class="para">A Gradient Vector Field Let <span class="process-math">\(f(x,y)=\sqrt{1-x^2-y^2}\text{.}\)</span> You should recognize this surface as the top half of the sphere with radius 1. But we can find <span class="process-math">\(\nabla f\)</span> and plot that as a <span class="process-math">\(2\)</span>-dimensional vector field.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\nabla f=&amp;\bmat{\delx{}(\sqrt{1-x^2-y^2})\\ \dely{}(\sqrt{1-x^2-y^2})}\\
+=&amp;\bmat{-\frac{x}{\sqrt{1-x^2-y^2}}\\-\frac{y}{\sqrt{1-x^2-y^2}}}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">Then we can graph <span class="process-math">\(\nabla f\)</span> as a vector field: <pre id="vector-fields-8-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">x,y = var('x y')
+f=sqrt(1-x^2-y^2)
+plot_vector_field(f.gradient(), (x,-1,1),(y,-1,1))
+</script></pre>
+</div>
+</div>
+<div class="para" id="vector-fields-9">When referring to a vector field that comes from the gradient of a function, that is some <span class="process-math">\(\vcF=\nabla f\text{,}\)</span> then <span class="process-math">\(\vcF\)</span> is the <dfn class="terminology">gradient field</dfn> and <span class="process-math">\(f\)</span> is the <dfn class="terminology">potential function</dfn>. If <span class="process-math">\(\vcF\)</span> is a vector field such that there exists some <span class="process-math">\(f\)</span> such that <span class="process-math">\(\vcF=\nabla f\text{,}\)</span> then we say that <span class="process-math">\(\vcF\)</span> is a <dfn class="terminology">conservative</dfn> vector field.</div>
+<div class="para" id="vector-fields-10">Vector Fields For the following vector fields, generate a graph that has at least 5 vectors. You choose the points!</div>
+<div class="para logical" id="vector-fields-11"><ol class="decimal">
+<li id="vector-fields-11-1-1"><div class="para" id="vector-fields-11-1-1-1"><span class="process-math">\(\vcF(x,y)=\bmat{2x\\-2}\text{.}\)</span></div></li>
+<li id="vector-fields-11-1-2"><div class="para" id="vector-fields-11-1-2-1"><span class="process-math">\(\vcF(x,y)=\bmat{y-1\\x+y}\text{.}\)</span></div></li>
+</ol></div>
+<div class="para" id="vector-fields-12">Gradient Vector Fields For the following functions, give the associated gradient vector field.</div>
+<div class="para logical" id="vector-fields-13"><ol class="decimal">
+<li id="vector-fields-13-1-1"><div class="para" id="vector-fields-13-1-1-1"><span class="process-math">\(f(x,y)=y^2\cos(2x-y)\text{.}\)</span></div></li>
+<li id="vector-fields-13-1-2"><div class="para" id="vector-fields-13-1-2-1"><span class="process-math">\(f(x,y,z)=xze^{y}\text{.}\)</span></div></li>
+</ol></div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="opsandprops-ch.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="basic-vector-operations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="lineint-ch.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
